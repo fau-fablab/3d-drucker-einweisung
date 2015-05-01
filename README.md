@@ -1,9 +1,9 @@
 3D-Drucker Einweisung
 =====================
 
-Einweisung des [FAU FabLab](https://fablab.fau.de) in [3D-Drucker](https://fablab.fau.de/tool/3d-drucker-ultimaker).
+Einweisung des [FAU FabLab](https://fablab.fau.de) in den [3D-Drucker](https://fablab.fau.de/tool/3d-drucker-ultimaker).
 
-Die neueste Version des Einweisung aus [github](https://github.com/fau-fablab/3D-Drucker-einweisung) ist als PDF unter https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/Einweisung_3D-Drucker.pdf abrufbar.
+Die neueste Version der Einweisung aus [github](https://github.com/fau-fablab/3d-drucker-einweisung) ist als PDF unter https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/Einweisung_3D-Drucker.pdf abrufbar.
 
 auschecken
 ----------
