@@ -15,6 +15,7 @@ git clone --recursive git@github.com:fau-fablab/3d-drucker-einweisung.git
 Technische Details zum Buildserver siehe auf macgyver `/home/buildserver/README`
 
 [![Build Status](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/status.svg)](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/)
+[![TODOs](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/status-todos.svg)](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/)
 
 Lizenz
 ------
