@@ -24,12 +24,13 @@
 \title{Einweisung 3D-Drucker}
 
 \begin{document}
-~\\
-Diese Einweisung ist für die 3D-Drucker Makerbot Replicator 2X und den Ultimaker gedacht.
 
-\textbf{Nur eingewiesene Benutzer dürfen den Drucker selbstständig benutzen}, um teure Beschädigungen zu vermeiden. Wenn du noch nicht eingewiesen bist, frage einen Betreuer.
+\maketitle
+\begin{center}
+	Für die 3D-Drucker \textbf{Makerbot Replicator 2X} und den \textbf{Ultimaker Original}
+\end{center}
 
-Er erklärt dir die Bedienung und lässt dich unter Aufsicht dein gewünschtes Teil ausdrucken. Wenn du alles verstanden hast, darfst auch du dann die Einweisung unterschreiben und den Drucker in Zukunft selbstständig verwenden.
+\textbf{Nur eingewiesene Benutzer dürfen den Drucker selbstständig benutzen}, um teure Beschädigungen zu vermeiden. Wenn du noch nicht eingewiesen bist, frage einen Betreuer. Er erklärt dir die Bedienung und lässt dich unter Aufsicht dein gewünschtes Teil ausdrucken. Wenn du alles verstanden hast, darfst auch du dann die Einweisung unterschreiben und den Drucker in Zukunft selbstständig verwenden.
 
 \section{Regeln und Hinweise}
 % Hier sollte nur das wichtigste gegen "Kaputtmachen" des Druckers stehen.
@@ -39,7 +40,7 @@ Für die Benutzung ist es wichtig, dass du folgende Hinweise beachtest:
  \item Obwohl das 3D-Drucken unter den Begriff ``Rapid Prototyping'' fällt, kann ein Druck je nach Größe und 
  Präzision gut mehrere Stunden dauern. Betreuer helfen dir, die Dauer abzuschätzen. 
  \item Nicht unbeaufsichtigt drucken, immer wieder mal einen Blick darauf werfen, besonders am Anfang. 
- \item Anleitung exakt beachten, wenn du nicht ganz genau weißt was du tust.\\ Wenn du nicht weiter weißt oder dir unsicher bist, frag einen Betreuer.
+ \item Anleitung exakt beachten. Wenn du nicht weiter weißt oder dir unsicher bist, frag einen Betreuer.
  \item Verbrennungsgefahr an heißen Teilen:
   \begin{itemize}
    \item Bodenplatte des Replicators wird knallheiß. Erst vorsichtig testen und evtl. Temperatur vorher absenken.
@@ -52,8 +53,8 @@ Für die Benutzung ist es wichtig, dass du folgende Hinweise beachtest:
   \item Replicator hinten rechts am Gehäuse, beim Ultimaker vorne am Gehäuse den Power-Switch betätigen
  \end{itemize}
  \item Wenn die Folie auf der Plattform beschädigt ist, bitte einen Betreuer es zu wechseln.
- \item Keinen Schaber, Messer oder ähnliches verwenden, um Objekte von der Plattform zu lösen, denn dies beschädigt die Folie.
- \item am Drucker nichts von Hand bewegen (siehe Abschnitt \ref{manuelles-verfahren} Manuelles Verfahren auf Seite\,\pageref{manuelles-verfahren})
+ \item \textbf{Keinen Schaber, Messer oder Ähnliches} verwenden, um Objekte von der Plattform zu lösen, denn dies beschädigt die Folie.
+ \item am Drucker nichts von Hand bewegen ($\to$ \ref{manuelles-verfahren} Manuelles Verfahren auf Seite\, \pageref{manuelles-verfahren})
  \item \textbf{Wiegen und Bezahlen nicht vergessen!}
 \end{itemize}
 \newpage
@@ -139,8 +140,10 @@ In diesem Abschnitt wird kurz beschrieben, welche Formen sich besonders gut druc
 
 Wenn die Sorte bekannt ist, sortenreinen Kunststoffabfall in den entsprechend beschrifteten Behälter zum Recycling geben. Gemischte, verdreckte oder unbekannte Kunststoffreste bitte in den Restmüll.
 
+\todoUnwichtig{welche Behälter} \todoUnwichtig{wann muss geputzt werden}
+
 \subsection{Vorheizen}
-Vorheizen ist normalerweise nicht nötig, da es automatisch vor dem Druck geschieht. Es ist in Kapitel \ref{vorheizen} beschrieben.
+Vorheizen ist normalerweise nicht nötig, da es automatisch vor dem Druck geschieht ($\to$ Kapitel \ref{vorheizen}).
 
 \subsection{Material auswählen - PLA vs. ABS}
 Grunsätzlich lässt sich PLA etwas einfacher und besser verarbeiten als ABS. Für ABS beötigt man z.B. eine beheiztes
@@ -154,8 +157,8 @@ Vorliebe. Im Internet lässt sich einiges zu diesem Thema finden.
 \item weniger elastisch, wird aber bei 70 °C weich
 \item benötigt nicht zwingend ein beheiztes Bett (wenn vorhanden Bett trotzdem auf ca. 90°C aufheizen)
 \item Drucktemperatur beträgt meistens 210 °C. Je nach Material kann sie allerdings variieren.
-\item für den Druck von PLA mit dem Replicator muss man oberhalb des Extruders, ca. 5cm das PLA mit einem speziellen
-Öl einfetten. Frag hierzu am besten einen Betreuer.
+\item für den Druck von PLA mit dem Replicator muss man oberhalb des Extruders, ca. 5cm das PLA mit einem speziellen Öl einfetten. Frag hierzu am besten einen Betreuer \todoUnwichtig{welches Öl, immer nötig?}
+\item löst sich in Aceton, bzw. Aceton-Dampf auf
 \end{itemize}
 
 \subsubsection{ABS}
@@ -164,53 +167,30 @@ Vorliebe. Im Internet lässt sich einiges zu diesem Thema finden.
  \item elastisch, stabil
  \item beheiztes Bett notwendig (der Druck haftet sonst nicht gleichmäßig auf dem Bett), aufheizen auf 110°C
  \item Drucktemperatur beträgt meistens 230 °C. Je nach Material kann sie allerdings variieren.
- \item ABS besitzt eine stärkere Wärmeausdehnung als PLA. Größere zusammenhängende Objekte aus ABS (z.B. ein 15x5x5cm Quader) können sich während des Drucks verziehen und ganz oder teilweise von der Druckplatte ablösen.
- \item ABS löst sich in Aceton, bzw. Aceton-Dampf auf. 
+ \item besitzt eine stärkere Wärmeausdehnung als PLA. Größere zusammenhängende Objekte aus ABS (z.B. ein 15x5x5cm Quader) können sich während des Drucks verziehen und ganz oder teilweise von der Druckplatte ablösen.
+ \item löst sich in Aceton, bzw. Aceton-Dampf auf
  %\todo{Beispielbild}
 \end{itemize}
 
 \subsection{Materialwechsel}
-Der Materialwechsel sollte nur durch einen Betreuer erfolgen. Die Spezifikationen des aktuell geladenen Materials
-stehen auf einem Schild an dem jeweiligen Drucker. Wir haben oft noch andere Materialsorten und -farben auf Lager,
-wenn du eine andere möchtest, frag einfach nach. Infos für Betreuer unter \ref{filamentwechsel}.
+Der Materialwechsel sollte \textbf{nur durch einen Betreuer} erfolgen.
+% Die Spezifikationen des aktuell geladenen Materials stehen auf einem Schild an dem jeweiligen Drucker.
+Wir haben oft noch andere Materialsorten und -farben auf Lager,
+wenn du eine andere möchtest, frag einfach nach. Infos für Betreuer $\to$ \ref{filamentwechsel}.
+
+\pagebreak
 
 \section{3D-Modell umwandeln und ausdrucken}
-\subsection{MakerWare für Replicator}
-\begin{itemize}
-\item auf ``Add'' klicken und STL-Datei auswählen
-\item Objekt nach Wunsch skalieren, bewegen, drehen etc.
-\item evtl. weitere Objekte hinzufügen
-\item über ``Object'' den gewünschten Extruder auswählen
-\item auf ``Make'' klicken
-\item Von oben nach unten in Dialogfenster:
- \begin{itemize}
-  \item ``Make it now'' für direktes Starten, ``Export to file'' für Druck von SD-Karte, momentan wird nur der Druck von SD-Karte unterstützt
-  \item ``Make with'': immer Replicator 2X auswählen
-  \item gewünschtes Material auswählen
-  \item gewünschte Präzision auswählen (Achtung! Höhere Präzion bedeutet längere Druckdauer)
-  \item evtl. Supports und Raft (zusätzliche Bodenschicht für bessere Haftung, lässt sich nach dem Druck entfernen) auswählen
-  \item Advanced Options:
-   \begin{itemize}
-    \item Unter Quality reichen in dem meisten Fällen 10\% Infill und 2 Shells
-    \item Unter Temperature die Temperatur auf dem Zettel am Replicator für das entsprechende Material einstellen: 
-    Build Plate: ABS 110°C, PLA 90°C
-   \end{itemize}
-  \item um eine Preview und eine Abschätzung der Druckzeit des Baujobs zu erhalten, setze einen Haken bei ``Preview before printing''
-  \item mit Klick auf ``Make it'' wird der Druck gestartet, bzw. die Datei exportiert
-  \item wenn gewünscht, kann man die Anordnung, Skalierung etc. als .thing Datei speicher über ``Save''
- \end{itemize}
-\item für mehr Infos und Troubleshooting einen Betreuer fragen
-\end{itemize}
 
 \subsection{Cura für Ultimaker}
 \begin{itemize}
 \item mit Klick auf ``Load'' STL-Datei öffnen
 \item Objekt nach Wunsch skalieren, bewegen, drehen etc.
 \item In der Leiste links die gewünschten Einstellungen festlegen: (falls die nicht zu finden ist $\Rightarrow$ ``Tools'' $\Rightarrow$ ``Switch to full settings...''
-\item \todo{Switch to quickprint erklären?}
+\item \todoUnwichtig{Switch to quickprint erklären?}
  \begin{itemize}
   \item mit File $\rightarrow$ Reset Profile $\rightarrow$ Yes kann man die Einstellungen auf Standardwerte zurücksetzen
-  \item \todo{Vordefinierte Profile abspeichern}
+  \item \todoUnwichtig{Vordefinierte Profile abspeichern}
   \item Unter Basic:
   \item minimale ``Layer height'' 0,1mm
   \item ``Printing Temperature'' einstellen, steht auf einem Schild am Ultimaker
@@ -223,11 +203,38 @@ wenn du eine andere möchtest, frag einfach nach. Infos für Betreuer unter \ref
 \item wenn aufgeheizt, ``Print'' oder ``Send to SD'' klicken und die erzeugte .gcode-Datei auf die SD-Karte kopieren
 \end{itemize}
 
+\subsection{MakerWare für Replicator}
+\begin{itemize}
+	\item auf ``Add'' klicken und STL-Datei auswählen
+	\item Objekt nach Wunsch skalieren, bewegen, drehen etc.
+	\item evtl. weitere Objekte hinzufügen
+	\item über ``Object'' den gewünschten Extruder auswählen
+	\item auf ``Make'' klicken
+	\item Von oben nach unten in Dialogfenster:
+	\begin{itemize}
+		\item ``Make it now'' für direktes Starten, ``Export to file'' für Druck von SD-Karte, momentan wird nur der Druck von SD-Karte unterstützt
+		\item ``Make with'': immer Replicator 2X auswählen
+		\item gewünschtes Material auswählen
+		\item gewünschte Präzision auswählen (Achtung! Höhere Präzion bedeutet längere Druckdauer)
+		\item evtl. Supports und Raft (zusätzliche Bodenschicht für bessere Haftung, lässt sich nach dem Druck entfernen) auswählen
+		\item Advanced Options:
+		\begin{itemize}
+			\item Unter Quality reichen in dem meisten Fällen 10\% Infill und 2 Shells
+			\item Unter Temperature die Temperatur auf dem Zettel am Replicator für das entsprechende Material einstellen: 
+			Build Plate: ABS 110°C, PLA 90°C
+		\end{itemize}
+		\item um eine Preview und eine Abschätzung der Druckzeit des Baujobs zu erhalten, setze einen Haken bei ``Preview before printing''
+		\item mit Klick auf ``Make it'' wird der Druck gestartet, bzw. die Datei exportiert
+		\item wenn gewünscht, kann man die Anordnung, Skalierung etc. als .thing Datei speicher über ``Save''
+	\end{itemize}
+	\item für mehr Infos und Troubleshooting einen Betreuer fragen
+\end{itemize}
+
 \section{Bezahlen und abschließen}
 
 Um das Objekt von der Platte zu lösen vorsichtig arbeiten. Meistens lässt es sich von Hand lösen. Wenn nicht,
 warten bis sich die Platte etwas abgekühlt hat. \textbf{Nicht versuchen, das Objekt mit scharfen oder spitzen Gegenständen herunter zu hebeln!}
-Sollte das Tape oder die Folie auf der Plattform beim Herunterlösen kaputt gehen, bitte einen Betreuer es zu erneuern.
+Sollte das Tape oder die Folie auf der Plattform beim Herunterlösen kaputt gehen, bitte einen \textbf{Betreuer es zu erneuern}.
 
 Drucker reinigen, siehe \ref{putzen}.
 
@@ -238,6 +245,13 @@ Es muss alles mitgewogen werden, auch die Stützstruktur und der Müllstreifen, 
 \subsection{Vorheizen} \label{vorheizen}
 Das Vorheizen ist nicht zwingend nötig. Der Drucker heizt auch von selber auf, wenn er den Druckauftrag erhält.
 
+\subsubsection{Ultimaker}
+\begin{itemize}
+	\item \textbf{Beim normalen Drucken nicht vorheizen}! Wenn der Extuder länger leersteht, brennt Material fest!
+	\item direkt am Drucker aus dem Hauptmenü ''Prepare`` auswählen
+	\item danach je nach Material ''Preheat PLA`` oder ''Preheat ABS`` anwählen
+\end{itemize}
+
 \subsubsection{Replicator}
 \begin{itemize}
  \item direkt am Drucker aus dem Hauptmenü ''Preheat`` auswählen
@@ -247,26 +261,19 @@ Das Vorheizen ist nicht zwingend nötig. Der Drucker heizt auch von selber auf, 
  \item Die Preheat Temperatur lässt sich unter ''Info and Settings`` $\Rightarrow$ ''Preheat Settings`` ändern
 \end{itemize}
 
-\subsubsection{Ultimaker}
-\begin{itemize}
- \item Beim normalen Drucken nicht vorheizen! Wenn der Extuder länger leersteht, brennt Material fest!
- \item direkt am Drucker aus dem Hauptmenü ''Prepare`` auswählen
- \item danach je nach Material ''Preheat PLA`` oder ''Preheat ABS`` anwählen
-\end{itemize}
-
 \subsection{Manuelles Verfahren}\label{manuelles-verfahren}
 Manchmal muss man vor einem Druck, z.B. um die Plattform oder die Düse zu säubern, den Extruder bewegen.
-\textbf{Das darf bei beiden Druckern nicht von Hand gemacht werden!}
+Das darf bei beiden Druckern \textbf{nicht von Hand} gemacht werden!
+
+\subsubsection{Ultimaker}
+\begin{itemize}
+	\item Am Drucker selbst aus dem Hauptmenü ''Prepare`` $\Rightarrow$ ''Move Axis``
+	\item hier können die Achsen bewegt werden
+\end{itemize}
 
 \subsubsection{Replicator}
 \begin{itemize}
  \item Am Drucker selbst aus dem Hauptmenü ''Utilities`` $\Rightarrow$ ''Jog Mode``
- \item hier können die Achsen bewegt werden
-\end{itemize}
-
-\subsubsection{Ultimaker}
-\begin{itemize}
- \item Am Drucker selbst aus dem Hauptmenü ''Prepare`` $\Rightarrow$ ''Move Axis``
  \item hier können die Achsen bewegt werden
 \end{itemize}
 
@@ -281,8 +288,8 @@ Wer schon einmal eine komplexere STL-Datei gesliced hat weiß, dass das dauern k
 oft schon gleich am Anfang. Um jetzt nicht jedes Mal komplett von Null zu beginnen, kann man eine gcode-Dateien erstellen
 und laden.
 \begin{itemize}
-\item zum erstellen bei ''Make`` ''Export to a File`` wählen, nach den Einstellungen auf ''Make It!`` und Datei als ''.gcode`` abspeichern
-\item zum Laden auf ''File`` $\Rightarrow$ ''Make from File...`` oder Ctrl+Alt+P drücken und entsprechende ''.gcode-Datei`` auswählen (Achtung keine Preview!)
+\item zum erstellen bei ''Make`` ''Export to a File`` wählen, nach den Einstellungen auf ''Make It!'' und Datei als \texttt{.gcode} abspeichern
+\item zum Laden auf ''File`` $\Rightarrow$ ''Make from File...`` oder Ctrl+Alt+P drücken und entsprechende \texttt{.gcode-Datei} auswählen (Achtung keine Preview!)
 \end{itemize}
 
 \subsection{Kurze Einführung in die wichtigsten Fachbegriffe bei STL:}
@@ -322,19 +329,6 @@ Körpers existieren.
 
 \subsection{Filamentwechsel}\label{filamentwechsel}
 
-\subsubsection{Replicator}
-
-\begin{itemize}
-\item Deckel entfernen, wenn vorhanden
-\item Filament-Führungsrohr entfernen
-\item Drucker Vorheizen
-\item ''Utilities``$\Rightarrow$ ''Change Filament``$\Rightarrow$ ''Unload left/right``
-\item Warten bis Filament den Extruder Verlassen hat 
-\item Neues Filament einfädeln und Führungsrohr einstecken
-\item Auf ''Load``gehen
-\item Warten bis neues Filament extrudiert wird
-\end{itemize}
-
 \subsubsection{Ultimaker}
 
 \begin{itemize}
@@ -347,11 +341,24 @@ Körpers existieren.
 \item ''Extrude``bis Neues Filament extrudiert wird
 \end{itemize}
 
+\subsubsection{Replicator}
+
+\begin{itemize}
+	\item Deckel entfernen, wenn vorhanden
+	\item Filament-Führungsrohr entfernen
+	\item Drucker Vorheizen
+	\item ''Utilities``$\Rightarrow$ ''Change Filament``$\Rightarrow$ ''Unload left/right``
+	\item Warten bis Filament den Extruder Verlassen hat 
+	\item Neues Filament einfädeln und Führungsrohr einstecken
+	\item Auf ''Load``gehen
+	\item Warten bis neues Filament extrudiert wird
+\end{itemize}
+
 \subsection{Ausrichten der Buildplate}
 
 dieser Schritt ist für beide Drucker gleich
 \begin{itemize}
-\item Beide Drucker besitzen in ihrer Software einen Wizard, meist unter: ''Utilities`` $\Rightarrow$ ''Level buildplate``
+\item Beide Drucker besitzen in ihrer Software einen Assistenten, meist unter: ''Utilities`` $\Rightarrow$ ''Level buildplate``
 \item Dazu den Drucker per USB mit dem Rechner verbinden
 \item Am besten einen Flyer oder ein Stück Papier holen, um den Abstand Düse-Buildplate zu überprüfen
 \item anhand den vier Schrauben die Höhe der Buildplate regeln
@@ -400,7 +407,7 @@ Ultimaker: \url{https://www.youtube.com/watch?v=grHmmmSoOfc}
 \begin{itemize}
 \item den Drucker über USB mit dem Rechner verbinden
 \item Cura oder MakerWare zum Updaten verwenden
-\item Achtung, die Firmware des Ultimaker ist nicht die Werksfirmware. Hier nicht einfach Updates einspielen! \todo{github repo für Firmware mit Config anlegen}
+\item Achtung, die Firmware des Ultimaker ist nicht die Werksfirmware. Hier nicht einfach Updates einspielen! \todoUnwichtig{github repo für Firmware mit Config anlegen}
 \end{itemize}
 
 \ccLicense{3d-drucker-einweisung}{Einweisung 3D-Drucker}
