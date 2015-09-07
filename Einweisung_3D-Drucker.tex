@@ -29,7 +29,7 @@
 
 \maketitle
 \begin{center}
-	Für die 3D-Drucker \textbf{Makerbot Replicator 2X} und den \textbf{Ultimaker Original}
+	Für die 3D-Drucker \textbf{Ultimaker Original, Ultimaker\ts2} und \textbf{Makerbot Replicator 2X}
 \end{center}
 
 \textbf{Nur eingewiesene Benutzer dürfen den Drucker selbstständig benutzen}, um teure Beschädigungen zu vermeiden. Wenn du noch nicht eingewiesen bist, frage einen Betreuer. Er erklärt dir die Bedienung und lässt dich unter Aufsicht dein gewünschtes Teil ausdrucken. Wenn du alles verstanden hast, darfst auch du dann die Einweisung unterschreiben und den Drucker in Zukunft selbstständig verwenden.
@@ -47,14 +47,19 @@ Wenn du nicht bis zum Ende deines Drucks da sein kannst, frage vorher einen Betr
 Wenn du nicht weiter weißt oder dir unsicher bist, frag einen Betreuer.
  \item Verbrennungsgefahr an heißen Teilen:
   \begin{itemize}
-   \item Bodenplatte des Replicators wird knallheiß. Erst vorsichtig testen und evtl. Temperatur vorher absenken.
+   \item Bodenplatte des Replicators und des Ultimakers\ts2 wird knallheiß. Erst vorsichtig testen und evtl. Temperatur vorher absenken.
    \item Extruder wird sehr heiß! Nicht direkt berühren, Vorsicht beim Abputzen.
   \end{itemize}
  \item Drucker ausschalten,
  \begin{itemize}
   \item wenn der Drucker groben Unfug oder sehr seltsame Geräusche macht
   \item wenn der Drucker nicht mehr benötigt wird
-  \item Replicator hinten rechts am Gehäuse, beim Ultimaker vorne am Gehäuse den Power-Switch betätigen
+  \item Power-Switch befindet sich
+  \begin{itemize}
+   \item beim Utlimaker\ts2 hinten links am Gehäuse
+   \item beim Ultimaker Original vorne am Gehäuse
+   \item beim Replicator hinten rechts am Gehäuse
+  \end{itemize}
  \end{itemize}
  \item Wenn die Folie auf der Plattform beschädigt ist, bitte einen Betreuer es zu wechseln.
  \item \textbf{Keinen Schaber, Messer oder Ähnliches} verwenden, um Objekte von der Plattform zu lösen, denn dies beschädigt die Folie.
@@ -105,6 +110,7 @@ Grundlage oder gleich zum fertig ausdrucken.
 \begin{itemize}
  \item Makerbot: L:250 B:160 H:150mm
  \item Ultimaker: L:210 B:210 H:205mm
+ \item Ultimaker\ts2: L:230 B:225 H:205mm
  \item zur Sicherheit lieber ein paar Millimeter kleiner.
  \item Es ist in der Praxis meist nicht möglich, den Bauraum des Druckers auch nur annähernd auszunutzen! Wenn möglich, gestalte deine Objekte kleiner als 10x10x5cm (LxBxH).
 \end{itemize}
@@ -152,7 +158,7 @@ Vorheizen ist normalerweise nicht nötig, da es automatisch vor dem Druck geschi
 
 \subsection{Material auswählen - PLA vs. ABS}
 Grunsätzlich lässt sich PLA etwas einfacher und besser verarbeiten als ABS. Für ABS beötigt man z.B. eine beheiztes
-Bett, das im Ultimaker nicht vorhanden ist. Mit PLA tut sich der Replicator dafür schwerer. Für die meisten 
+Bett, das im Ultimaker Original nicht vorhanden ist. Mit PLA tut sich der Replicator dafür schwerer. Für die meisten 
 Anwendungen ist es egal welches Material man verwendet, die Entscheidung richtet sich mehr nach der persönlichen
 Vorliebe. Im Internet lässt sich einiges zu diesem Thema finden.
 
@@ -196,7 +202,7 @@ wenn du eine andere möchtest, frag einfach nach. Infos für Betreuer $\to$ \ref
   \item \todoUnwichtig{Vordefinierte Profile abspeichern}
   \item Unter Basic:
   \item minimale ``Layer height'' 0,1mm
-  \item ``Printing Temperature'' einstellen, steht auf einem Schild am Ultimaker
+  \item ``Printing Temperature'' auf 210 °C einstellen
   \item ggf. ``Support`` und ''Platform adhesion type`` auswählen
  \end{itemize}
 \item Solange die Daten umgerechnet werden, ist der Print- oder Send-to-SD-Knopf ausgegraut. Unter dem Knopf erscheint ein Fortschrittsbalken.
@@ -273,6 +279,7 @@ Das darf bei beiden Druckern \textbf{nicht von Hand} gemacht werden!
 	\item Am Drucker selbst aus dem Hauptmenü ''Prepare`` \ra ''Move Axis``
 	\item hier können die Achsen bewegt werden
 \end{itemize}
+Beim Ultimaker\ts2 können die Axen nicht verfahren werden.
 
 \subsubsection{Replicator}
 \begin{itemize}
@@ -333,15 +340,20 @@ Körpers existieren.
 \subsection{Filamentwechsel}\label{filamentwechsel}
 
 \subsubsection{Ultimaker}
-
 \begin{itemize}
-\item Drucker vorheizen
-\item ''Prepare``$\Rightarrow$ ''Move Axis``$\Rightarrow$ ''1 mm`` $\Rightarrow$ ''Extruder``
-\item Filament aus der Düse zurückfahren
-\item Extruder öffnen
-\item Filament herausziehen
-\item neues Filament einfädeln
-\item ''Extrude``bis Neues Filament extrudiert wird
+    \item Drucker vorheizen
+    \item ''Prepare``\ra ''Move Axis``\ra ''1 mm`` \ra ''Extruder``
+    \item Filament aus der Düse zurückfahren
+    \item Extruder öffnen
+    \item Filament herausziehen
+    \item neues Filament einfädeln
+    \item ''Extrude``bis Neues Filament extrudiert wird
+\end{itemize}
+
+\subsubsection{Ultimaker\ts2}
+\begin{itemize}
+    \item ''Material'' \ra ''Change''
+    \item Folge den Anweisungen auf dem Display
 \end{itemize}
 
 \subsubsection{Replicator}
@@ -377,7 +389,7 @@ dieser Schritt ist für beide Drucker gleich
 \item danach Buildplate ausrichten
 \end{itemize}
 
-\subsection{Ultimaker Düse demontieren und putzen}
+\subsection{Ultimaker Original Düse demontieren und putzen}
 Lasse es dir vorher von jemand mit Ahnung zeigen! Nur durchführen wenn unbedingt nötig.
 
 Probiere vorher, die Düse im aufgeheizten Zustand mit einer 0,25\,mm Akupunkturnadel (im Lab vorrätig) freizustochern.
@@ -412,7 +424,7 @@ Ultimaker: \url{https://www.youtube.com/watch?v=grHmmmSoOfc}
 \begin{itemize}
 \item den Drucker über USB mit dem Rechner verbinden
 \item Cura oder MakerWare zum Updaten verwenden
-\item Achtung, die Firmware des Ultimaker ist nicht die Werksfirmware. Hier nicht einfach Updates einspielen! \todoUnwichtig{github repo für Firmware mit Config anlegen}
+\item Achtung, die Firmware des Ultimaker Original ist nicht die Werksfirmware. Hier nicht einfach Updates einspielen! \todoUnwichtig{github repo für Firmware mit Config anlegen}
 \end{itemize}
 
 \ccLicense{3d-drucker-einweisung}{Einweisung 3D-Drucker}
