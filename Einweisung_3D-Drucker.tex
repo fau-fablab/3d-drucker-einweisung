@@ -16,6 +16,8 @@
 \usepackage{float} % Ermöglicht H als Platzierungsoption
 \renewcommand{\texteuro}{\euro}
 \newcommand{\fachbegriff}[1]{(\textit{#1})}
+\newcommand{\ts}[1]{\textsuperscript{#1}}
+\newcommand{\ra}{$\Rightarrow$}
 
 % \linespread{1.2}
 % \fancyhead{}
@@ -188,9 +190,9 @@ wenn du eine andere möchtest, frag einfach nach. Infos für Betreuer $\to$ \ref
 \begin{itemize}
 \item mit Klick auf ``Load'' STL-Datei öffnen
 \item Objekt nach Wunsch skalieren, bewegen, drehen etc.
-\item In der Leiste links die gewünschten Einstellungen festlegen: (falls die nicht zu finden ist, befindest du dich im ``Schnelldruck'' Modus mit vereinfachten Einstellungsmöglichkeiten. Wechseln: $\Rightarrow$ ``Tools'' $\Rightarrow$ ``Switch to full settings...''
+\item In der Leiste links die gewünschten Einstellungen festlegen: (falls die nicht zu finden ist, befindest du dich im ``Schnelldruck'' Modus mit vereinfachten Einstellungsmöglichkeiten. Wechseln: \ra ``Tools'' \ra ``Switch to full settings...''
  \begin{itemize}
-  \item mit File $\rightarrow$ Reset Profile $\rightarrow$ Yes kann man die Einstellungen auf Standardwerte zurücksetzen
+  \item mit File \ra Reset Profile \ra Yes kann man die Einstellungen auf Standardwerte zurücksetzen
   \item \todoUnwichtig{Vordefinierte Profile abspeichern}
   \item Unter Basic:
   \item minimale ``Layer height'' 0,1mm
@@ -198,7 +200,7 @@ wenn du eine andere möchtest, frag einfach nach. Infos für Betreuer $\to$ \ref
   \item ggf. ``Support`` und ''Platform adhesion type`` auswählen
  \end{itemize}
 \item Solange die Daten umgerechnet werden, ist der Print- oder Send-to-SD-Knopf ausgegraut. Unter dem Knopf erscheint ein Fortschrittsbalken.
-\item Über \enquote{View mode} $\rightarrow$ Layer im rechten oberen Eck kann man sich eine Vorschau der Druckbahnen inklusive Stützstruktur anzeigen lassen.
+\item Über \enquote{View mode} \ra Layer im rechten oberen Eck kann man sich eine Vorschau der Druckbahnen inklusive Stützstruktur anzeigen lassen.
 \item ``Print'' oder ``Send to SD'' klicken. Wenn der Knopf ausgegraut ist, warten, bis die Datei fertig gescliced wurde und dann nochmal klicken.
 \item im sich öffnenden Dialog bei ``Temp'' die gewünschte Temperatur eingeben und enter drücken um aufzuheizen
 \item wenn aufgeheizt, ``Print'' oder ``Send to SD'' klicken und die erzeugte .gcode-Datei auf die SD-Karte kopieren
@@ -249,8 +251,8 @@ Das Vorheizen ist nicht zwingend nötig. Der Drucker heizt auch von selber auf, 
 \subsubsection{Ultimaker}
 \begin{itemize}
 	\item \textbf{Beim normalen Drucken nicht vorheizen}! Wenn der Extuder länger leersteht, brennt Material fest!
-	\item direkt am Drucker aus dem Hauptmenü ''Prepare`` auswählen
-	\item danach je nach Material ''Preheat PLA`` oder ''Preheat ABS`` anwählen
+    \item \textbf{Ultimaker}: am Drucker aus dem Hauptmenü ''Prepare`` \ra ''Preheat PLA`` oder ''Preheat ABS`` (je nach Material)
+    \item \textbf{Ultimaker\ts2}: am Drucker aus dem Hauptmenü ''Maintanance`` \ra ''Advanced'' \ra ''Heatup nozzle'' und ''Heatup buildplate'' auswählen
 \end{itemize}
 
 \subsubsection{Replicator}
@@ -259,7 +261,7 @@ Das Vorheizen ist nicht zwingend nötig. Der Drucker heizt auch von selber auf, 
  \item Beim normalen Drucken nur das Heizbett, aber nicht die Extruder vorheizen! Wenn der Extuder länger leersteht, brennt Material fest!
  \item gewünschte Tools für den Preheat an oder aus schalten
  \item danach ''Start Preheat``
- \item Die Preheat Temperatur lässt sich unter ''Info and Settings`` $\Rightarrow$ ''Preheat Settings`` ändern
+ \item Die Preheat Temperatur lässt sich unter ''Info and Settings`` \ra ''Preheat Settings`` ändern
 \end{itemize}
 
 \subsection{Manuelles Verfahren}\label{manuelles-verfahren}
@@ -268,13 +270,13 @@ Das darf bei beiden Druckern \textbf{nicht von Hand} gemacht werden!
 
 \subsubsection{Ultimaker}
 \begin{itemize}
-	\item Am Drucker selbst aus dem Hauptmenü ''Prepare`` $\Rightarrow$ ''Move Axis``
+	\item Am Drucker selbst aus dem Hauptmenü ''Prepare`` \ra ''Move Axis``
 	\item hier können die Achsen bewegt werden
 \end{itemize}
 
 \subsubsection{Replicator}
 \begin{itemize}
- \item Am Drucker selbst aus dem Hauptmenü ''Utilities`` $\Rightarrow$ ''Jog Mode``
+ \item Am Drucker selbst aus dem Hauptmenü ''Utilities`` \ra ''Jog Mode``
  \item hier können die Achsen bewegt werden
 \end{itemize}
 
@@ -290,7 +292,7 @@ oft schon gleich am Anfang. Um jetzt nicht jedes Mal komplett von Null zu beginn
 und laden.
 \begin{itemize}
 \item zum erstellen bei ''Make`` ''Export to a File`` wählen, nach den Einstellungen auf ''Make It!'' und Datei als \texttt{.gcode} abspeichern
-\item zum Laden auf ''File`` $\Rightarrow$ ''Make from File...`` oder Ctrl+Alt+P drücken und entsprechende \texttt{.gcode-Datei} auswählen (Achtung keine Preview!)
+\item zum Laden auf ''File`` \ra ''Make from File...`` oder Ctrl+Alt+P drücken und entsprechende \texttt{.gcode-Datei} auswählen (Achtung keine Preview!)
 \end{itemize}
 
 \subsection{Kurze Einführung in die wichtigsten Fachbegriffe bei STL:}
@@ -343,12 +345,11 @@ Körpers existieren.
 \end{itemize}
 
 \subsubsection{Replicator}
-
 \begin{itemize}
 	\item Deckel entfernen, wenn vorhanden
 	\item Filament-Führungsrohr entfernen
 	\item Drucker Vorheizen
-	\item ''Utilities``$\Rightarrow$ ''Change Filament``$\Rightarrow$ ''Unload left/right``
+	\item ''Utilities``\ra ''Change Filament``\ra ''Unload left/right``
 	\item Warten bis Filament den Extruder Verlassen hat 
 	\item Neues Filament einfädeln und Führungsrohr einstecken
 	\item Auf ''Load``gehen
@@ -359,7 +360,7 @@ Körpers existieren.
 
 dieser Schritt ist für beide Drucker gleich
 \begin{itemize}
-\item Beide Drucker besitzen in ihrer Software einen Assistenten, meist unter: ''Utilities`` $\Rightarrow$ ''Level buildplate``
+\item Beide Drucker besitzen in ihrer Software einen Assistenten, meist unter: ''Utilities`` \ra ''Level buildplate``
 \item Dazu den Drucker per USB mit dem Rechner verbinden
 \item Am besten einen Flyer oder ein Stück Papier holen, um den Abstand Düse-Buildplate zu überprüfen
 \item anhand den vier Schrauben die Höhe der Buildplate regeln
