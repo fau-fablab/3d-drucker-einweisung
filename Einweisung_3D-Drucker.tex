@@ -1,3 +1,4 @@
+% !TeX spellcheck = de_DE_frami
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % COPYRIGHT: (C) 2012-2015 FAU FabLab and others
 % Bearbeitungen ab 2015-02-20 fallen unter CC-BY-SA 3.0
@@ -43,12 +44,11 @@ Für die Benutzung ist es wichtig, dass du folgende Hinweise beachtest:
  Präzision gut mehrere Stunden dauern. Betreuer helfen dir, die Dauer abzuschätzen. 
  \item Nicht unbeaufsichtigt drucken, immer wieder mal einen Blick darauf werfen, besonders am Anfang.\\
 Wenn du nicht bis zum Ende deines Drucks da sein kannst, frage vorher einen Betreuer und hinterlasse einen Zettel mit Name und Kontaktdaten.
- \item Anleitung exakt beachten, wenn du nicht ganz genau weißt was du tust.\\
-Wenn du nicht weiter weißt oder dir unsicher bist, frag einen Betreuer.
+ \item Anleitung exakt beachten. Wenn du nicht weiter weißt oder dir unsicher bist, frag einen Betreuer.
  \item Verbrennungsgefahr an heißen Teilen:
   \begin{itemize}
-   \item Bodenplatte des Replicators und des Ultimakers\ts2 wird knallheiß. Erst vorsichtig testen und evtl. Temperatur vorher absenken.
    \item Extruder wird sehr heiß! Nicht direkt berühren, Vorsicht beim Abputzen.
+   \item Bodenplatte des Replicators und des Ultimakers\ts2 wird sehr heiß. Erst abkühlen lassen und vorsichtig testen.
   \end{itemize}
  \item Drucker ausschalten,
  \begin{itemize}
@@ -56,7 +56,7 @@ Wenn du nicht weiter weißt oder dir unsicher bist, frag einen Betreuer.
   \item wenn der Drucker nicht mehr benötigt wird
   \item Power-Switch befindet sich
   \begin{itemize}
-   \item beim Utlimaker\ts2 hinten links am Gehäuse
+   \item beim Ultimaker\ts2 hinten links am Gehäuse
    \item beim Ultimaker Original vorne am Gehäuse
    \item beim Replicator hinten rechts am Gehäuse
   \end{itemize}
@@ -68,10 +68,12 @@ Wenn du nicht weiter weißt oder dir unsicher bist, frag einen Betreuer.
  \item \textbf{Wiegen und Bezahlen nicht vergessen!}
 \end{itemize}
 \newpage
+
+% % % % % % % % % % % % % % % %
+
 \renewcommand{\contentsname}{Inhaltsverzeichnis / Arbeitsablauf}
 \setcounter{tocdepth}{2}
 \tableofcontents
-
 \newpage
 
 % % % % % % % % % % % % % % % %
@@ -81,21 +83,21 @@ Wenn du nicht weiter weißt oder dir unsicher bist, frag einen Betreuer.
 Im STL-Dateiformat, Einheit: Millimeter. Alle gängigen 3D-Programme haben einen STL-Export.
 
 \begin{itemize}
-\item auf thingiverse.com gibt es viele vorgefertigte Modelle, als
+\item auf \href{https://thingiverse.com}{Thingiverse.com} gibt es viele vorgefertigte Modelle, als
 Grundlage oder gleich zum fertig ausdrucken.
 \item oder erstelle es mit einem Programm deiner Wahl
 \begin{table}[H]
 \centering
 \begin{tabularx}{\textwidth}{|l|X|}
 \hline \textbf{Name} & \textbf{Beschreibung} \\
-\hline \textit{kostenlose Software} &  \\ 
-\hline Blender & relativ komplex aber auch für Freiformflächen geeignet  \\ 
-\hline OpenSCAD & Skriptsprache für Konstruktion aus geometrischen Grundkörpern \\ 
-\hline DesignSpark Mechanical & Angelehnt an professionelle CAD-Software, aber relativ einfach zu bedienen  \\ 
-\hline TinkerCAD & sehr einfach, für Kinder gut geeignet  \\ 
+\hline \multicolumn{2}{|c|}{\textit{kostenlose Software}}  \\
+\hline Blender & relativ komplex aber auch für Freiformflächen geeignet  \\
+\hline OpenSCAD & Skriptsprache für Konstruktion aus geometrischen Grundkörpern \\
+\hline DesignSpark Mechanical & Angelehnt an professionelle CAD-Software, aber relativ einfach zu bedienen  \\
+\hline TinkerCAD & sehr einfach, für Kinder gut geeignet  \\
 \hline Google SketchUp & wenig Einarbeitung, geringer Funktionsumfang, für einfache Teile \\
 \hline & \\
-\hline \textit{kostenpflichtige Software} & \\
+\hline \multicolumn{2}{|c|}{\textit{kostenpflichtige Software (proprietär)}}  \\
 \hline PTC Creo, Solid Edge, Siemens NX & kostenlos beim RRZE für Studenten, professionelle Software \\
 \hline Autocad Inventor & kostenlos bei Autodesk für Studenten ebenfalls für professionelle Anwendungen \\
 \hline 
@@ -114,16 +116,14 @@ Grundlage oder gleich zum fertig ausdrucken.
  \item zur Sicherheit lieber ein paar Millimeter kleiner.
  \item Es ist in der Praxis meist nicht möglich, den Bauraum des Druckers auch nur annähernd auszunutzen! Wenn möglich, gestalte deine Objekte kleiner als 10x10x5cm (LxBxH).
 \end{itemize}
-\item große Teile dauern ewig, während des Drucks muss jemand dabeibleiben. Druckzeit für 30x30x30mm sind je 
+\item \textbf{große Teile dauern ewig}, während des Drucks muss jemand dabeibleiben. Druckzeit für 30x30x30mm sind je
 nach Präzision etwa 30-45 Minuten, ein größeres Volumen braucht entsprechend länger.
-\item Durch das Druckverfahren gibt es gewisse Formen, die sich schlecht drucken lassen. Theoretisch ist fast
-alles möglich, praktisch ist oft Ausprobieren angesagt. 
-\item Damit man auch \enquote{schwierige} Formen drucken kann, kann die Software Stützstrukturen erstellen. Wenn man Stützstruktur anschaltet,
+\item Durch das Druckverfahren sind gewisse Formen schlecht druckbar. Oft ist Ausprobieren angesagt.
+\item Damit man auch \enquote{schwierige} Formen drucken kann, kann die Software \textbf{Stützstrukturen} erstellen. Wenn man dies erlaubt,
 erzeugt der Drucker ein loses Geflecht unter Überhängen und Brücken,
 das sich nach dem Ausdrucken mit einer Zange oder einem Skalpell entfernen lässt. So kann
 man diese Begrenzungen umgehen. Nachteil ist die schlechtere
-Oberflächenqualität und der Aufwand durch die mechanische
-Nachbearbeitung.
+Oberflächenqualität und der Nachbereitungs-Aufwand.
 \end{itemize}
 
 \subsubsection{Drucken ohne Stützstruktur}
@@ -138,13 +138,15 @@ In diesem Abschnitt wird kurz beschrieben, welche Formen sich besonders gut druc
 \item Das Objekt sollte mit ausreichend großer Fläche plan auf dem Boden aufliegen
 \item Der untere Teil des Objekts sollte immer eine stabile Unterlage für die darüberliegenden Schichten bilden. (Den Eiffelturm sollte man also nicht auf dem Kopf stehend drucken.)
 \end{itemize}
+\newpage
 
 % % % % % % % % % % % %
+
 \section{Vorbereitung}
 
 \subsection{Putzen} \label{putzen}
 
-Spätestens bei schlechten Druckergebnissen sollte geputzt werden.
+Spätestens bei sichtabrem Schmutz (Staub o.Ä. auf der Plattform) oder bei schlechten Druckergebnissen
 
 \begin{itemize}
  \item Bodenplatte mit Papiertuch und Oberflächenreiniger reinigen
@@ -157,43 +159,42 @@ Spätestens bei schlechten Druckergebnissen sollte geputzt werden.
 Vorheizen ist normalerweise nicht nötig, da es automatisch vor dem Druck geschieht ($\to$ Kapitel \ref{vorheizen}).
 
 \subsection{Material auswählen - PLA vs. ABS}
-Grunsätzlich lässt sich PLA etwas einfacher und besser verarbeiten als ABS. Für ABS beötigt man z.B. eine beheiztes
-Bett, das im Ultimaker Original nicht vorhanden ist. Mit PLA tut sich der Replicator dafür schwerer. Für die meisten 
+Grundsätzlich lässt sich PLA etwas einfacher und besser verarbeiten als ABS. Für ABS benötigt man z.B. eine beheiztes
+Bett, das im Ultimaker Original nicht vorhanden ist. Mit PLA tut sich der Replicator dafür schwerer. Für die meisten
 Anwendungen ist es egal welches Material man verwendet, die Entscheidung richtet sich mehr nach der persönlichen
 Vorliebe. Im Internet lässt sich einiges zu diesem Thema finden.
 
 \subsubsection{PLA}
 \begin{itemize}
 \item Organisches Material, Biokunststoff
-\item weniger elastisch, wird aber bei 70 °C weich
+\item weniger elastisch, wird aber bei 70°C weich
 \item benötigt nicht zwingend ein beheiztes Bett (wenn vorhanden Bett trotzdem auf ca. 90°C aufheizen)
 \item Drucktemperatur beträgt meistens 210 °C. Je nach Material kann sie allerdings variieren.
-\item löst sich in Aceton, bzw. Aceton-Dampf auf
 \end{itemize}
 
 \subsubsection{ABS}
 \begin{itemize}
  \item synthetisches Material, aus Erdöl
  \item elastisch, stabil
- \item beheiztes Bett notwendig (der Druck haftet sonst nicht gleichmäßig auf dem Bett), aufheizen auf 110°C
+ \item beheiztes Bett notwendig (da sich ABS beim Abkühlen zu stark zusammenzieht), aufheizen auf 110°C
+ \item Größere zusammenhängende Objekte (z.B. 15x5x5cm Quader) können sich wegen der hohen Wärmeausdehnung während des Drucks verziehen oder von der Druckplatte ablösen.
  \item Drucktemperatur beträgt meistens 230 °C. Je nach Material kann sie allerdings variieren.
- \item besitzt eine stärkere Wärmeausdehnung als PLA. Größere zusammenhängende Objekte aus ABS (z.B. ein 15x5x5cm Quader) können sich während des Drucks verziehen und ganz oder teilweise von der Druckplatte ablösen.
- \item löst sich in Aceton, bzw. Aceton-Dampf auf
- %\todo{Beispielbild}
 \end{itemize}
 
-\subsection{Materialwechsel}
-Der Materialwechsel sollte \textbf{nur durch einen Betreuer} erfolgen.
-% Die Spezifikationen des aktuell geladenen Materials stehen auf einem Schild an dem jeweiligen Drucker.
-Wir haben oft noch andere Materialsorten und -farben auf Lager,
-wenn du eine andere möchtest, frag einfach nach. Infos für Betreuer $\to$ \ref{filamentwechsel}.
+Beide Materialien lösen sich in Aceton(Dampf) auf..
+%\todo{Beispielbild}
 
-\pagebreak
+\subsection{Materialwechsel}
+Wir haben verschiedene Materialsorten und -Farben auf Lager. Wenn du eine andere möchtest, frag einfach nach.
+Der Materialwechsel sollte aber \textbf{nur durch einen Betreuer} erfolgen. (Infos für Betreuer $\to$ \ref{filamentwechsel})
+
+% % % % % % % % % % % %
 
 \section{3D-Modell umwandeln und ausdrucken}
 
-\subsection{Cura für Ultimaker}
+\subsection{Cura für Ultimaker (Original und 2)}
 \begin{itemize}
+    \item \colorbox{yellow}{\textbf{Neu}:} Unter ''Machine'' den Drucker auswählen (Ultimaker Original oder Ultimaker\ts2)
 \item mit Klick auf ``Load'' STL-Datei öffnen
 \item Objekt nach Wunsch skalieren, bewegen, drehen etc.
 \item In der Leiste links die gewünschten Einstellungen festlegen: (falls die nicht zu finden ist, befindest du dich im ``Schnelldruck'' Modus mit vereinfachten Einstellungsmöglichkeiten. Wechseln: \ra ``Tools'' \ra ``Switch to full settings...''
@@ -247,16 +248,22 @@ Sollte das Tape oder die Folie auf der Plattform beim Herunterlösen kaputt gehe
 
 Drucker reinigen, siehe \ref{putzen}.
 
-Objekt mit Feinwaage (steht meist bei den 3D-Druckern) abwiegen, Preis pro Gramm ist im Kassensystem eingetragen. 
+Objekt mit Feinwaage (steht meist bei den 3D-Druckern) abwiegen, Preis pro Gramm ist im Kassensystem eingetragen.
 
-Es muss alles mitgewogen werden, auch die Stützstruktur und der Müllstreifen, den der Extruder anfangs ausspuckt. \textbf{Fehldrucke müssen ebenfalls bezahlt werden.}
+Es muss alles mitgewogen werden, auch die Stützstruktur und der Müll, den der Extruder anfangs ausspuckt. \textbf{Fehldrucke müssen ebenfalls bezahlt werden.}
+\pagebreak
+
+% % % % % % % % % % % %
+
 \section{Zusatzinfos für Benutzer}
+
 \subsection{Vorheizen} \label{vorheizen}
-Das Vorheizen ist nicht zwingend nötig. Der Drucker heizt auch von selber auf, wenn er den Druckauftrag erhält.
+Das Vorheizen ist nicht zwingend nötig. Der Drucker heizt auch von selber auf, wenn er den Druckauftrag erhält. \textbf{Im Gegenteil:}
+
+\begin{center}\textbf{Wenn der Extruder länger leersteht, brennt das Material fest!}\end{center}
 
 \subsubsection{Ultimaker}
 \begin{itemize}
-	\item \textbf{Beim normalen Drucken nicht vorheizen}! Wenn der Extuder länger leersteht, brennt Material fest!
     \item \textbf{Ultimaker}: am Drucker aus dem Hauptmenü ''Prepare`` \ra ''Preheat PLA`` oder ''Preheat ABS`` (je nach Material)
     \item \textbf{Ultimaker\ts2}: am Drucker aus dem Hauptmenü ''Maintanance`` \ra ''Advanced'' \ra ''Heatup nozzle'' und ''Heatup buildplate'' auswählen
 \end{itemize}
@@ -264,7 +271,7 @@ Das Vorheizen ist nicht zwingend nötig. Der Drucker heizt auch von selber auf, 
 \subsubsection{Replicator}
 \begin{itemize}
  \item direkt am Drucker aus dem Hauptmenü ''Preheat`` auswählen
- \item Beim normalen Drucken nur das Heizbett, aber nicht die Extruder vorheizen! Wenn der Extuder länger leersteht, brennt Material fest!
+ \item Beim normalen Drucken \textbf{nur das Heizbett, aber nicht die Extruder vorheizen!}
  \item gewünschte Tools für den Preheat an oder aus schalten
  \item danach ''Start Preheat``
  \item Die Preheat Temperatur lässt sich unter ''Info and Settings`` \ra ''Preheat Settings`` ändern
@@ -274,12 +281,12 @@ Das Vorheizen ist nicht zwingend nötig. Der Drucker heizt auch von selber auf, 
 Manchmal muss man vor einem Druck, z.B. um die Plattform oder die Düse zu säubern, den Extruder bewegen.
 Das darf bei beiden Druckern \textbf{nicht von Hand} gemacht werden!
 
-\subsubsection{Ultimaker}
+\subsubsection{Ultimaker Original}
 \begin{itemize}
 	\item Am Drucker selbst aus dem Hauptmenü ''Prepare`` \ra ''Move Axis``
 	\item hier können die Achsen bewegt werden
 \end{itemize}
-Beim Ultimaker\ts2 können die Axen nicht verfahren werden.
+Beim \textbf{Ultimaker\ts2} können die Axen nicht verfahren werden.
 
 \subsubsection{Replicator}
 \begin{itemize}
@@ -288,6 +295,7 @@ Beim Ultimaker\ts2 können die Axen nicht verfahren werden.
 \end{itemize}
 
 % % % % % % % % % % % % % % %
+
 \section{Infos für Experten}
 
 \subsection{Experteninfos - Makerware} \label{expinfos}
@@ -334,7 +342,8 @@ gehören. Es dürfen also zum Beispiel keine Flächen innerhalb eines
 Körpers existieren.
 \end{itemize}
 
-% % % % % % % % % % % % % % 
+% % % % % % % % % % % % % %
+
 \section{Infos für Betreuer}
 
 \subsection{Filamentwechsel}\label{filamentwechsel}
@@ -354,6 +363,7 @@ Körpers existieren.
 \begin{itemize}
     \item ''Material'' \ra ''Change''
     \item Folge den Anweisungen auf dem Display
+    \item \todoUnwichtig{Reicht das?}
 \end{itemize}
 
 \subsubsection{Replicator}
@@ -370,9 +380,15 @@ Körpers existieren.
 
 \subsection{Ausrichten der Buildplate}
 
-dieser Schritt ist für beide Drucker gleich
+\subsubsection{Ultimaker\ts2}
 \begin{itemize}
-\item Beide Drucker besitzen in ihrer Software einen Assistenten, meist unter: ''Utilities`` \ra ''Level buildplate``
+\item Assistent:
+\item \todo{Leveling Assistent beschreiben}
+\end{itemize}
+
+\subsubsection{Ultimaker Original, Makerbot}
+\begin{itemize}
+\item Assistent: ''Utilities`` \ra ''Level buildplate``
 \item Dazu den Drucker per USB mit dem Rechner verbinden
 \item Am besten einen Flyer oder ein Stück Papier holen, um den Abstand Düse-Buildplate zu überprüfen
 \item anhand den vier Schrauben die Höhe der Buildplate regeln
