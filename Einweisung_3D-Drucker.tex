@@ -197,14 +197,21 @@ Der Materialwechsel sollte aber \textbf{nur durch einen Betreuer} erfolgen. (Inf
     \item \colorbox{yellow}{\textbf{Neu}:} Unter ''Machine'' den Drucker auswählen (Ultimaker Original oder Ultimaker\ts2)
 \item mit Klick auf ``Load'' STL-Datei öffnen
 \item Objekt nach Wunsch skalieren, bewegen, drehen etc.
-\item In der Leiste links die gewünschten Einstellungen festlegen: (falls die nicht zu finden ist, befindest du dich im ``Schnelldruck'' Modus mit vereinfachten Einstellungsmöglichkeiten. Wechseln: \ra ``Tools'' \ra ``Switch to full settings...''
+\item Einfacher Modus (''Expert'' \ra ''Switch to quickprint...''):
+  \begin{itemize}
+    \item links die gewünschte Qualität einstellen (''normal'' reicht normalerweise, ''high'' dauert sehr lange, ''fast'' ist oft auch noch i.O., wobei man es schon bemerkt)
+    \item je nach Objekt Stützstrukturen erlauben
+  \end{itemize}
+\item falls du mehr einstellen willst: \ra ``Expert'' \ra ``Switch to full settings...''
  \begin{itemize}
-  \item mit File \ra Reset Profile \ra Yes kann man die Einstellungen auf Standardwerte zurücksetzen
+  \item mit ''File'' \ra ''Reset Profile'' \ra ''Yes'' kann man die Einstellungen auf Standardwerte zurücksetzen
   \item \todoUnwichtig{Vordefinierte Profile abspeichern}
   \item Unter Basic:
-  \item minimale ``Layer height'' 0,1mm
-  \item ``Printing Temperature'' auf 210 °C einstellen
-  \item ggf. ``Support`` und ''Platform adhesion type`` auswählen
+  \begin{itemize}
+    \item minimale ``Layer height'' 0,1mm
+    \item ``Printing Temperature'' auf 210 °C einstellen
+    \item ggf. ``Support`` und ''Platform adhesion type`` auswählen
+   \end{itemize}
  \end{itemize}
 \item Solange die Daten umgerechnet werden, ist der Print- oder Send-to-SD-Knopf ausgegraut. Unter dem Knopf erscheint ein Fortschrittsbalken.
 \item Über \enquote{View mode} \ra Layer im rechten oberen Eck kann man sich eine Vorschau der Druckbahnen inklusive Stützstruktur anzeigen lassen.
@@ -286,7 +293,7 @@ Das darf bei beiden Druckern \textbf{nicht von Hand} gemacht werden!
 	\item Am Drucker selbst aus dem Hauptmenü ''Prepare`` \ra ''Move Axis``
 	\item hier können die Achsen bewegt werden
 \end{itemize}
-Beim \textbf{Ultimaker\ts2} können die Axen nicht verfahren werden.
+Beim \textbf{Ultimaker\ts2} können die Achsen nicht verfahren werden.
 
 \subsubsection{Replicator}
 \begin{itemize}
