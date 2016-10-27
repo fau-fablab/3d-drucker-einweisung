@@ -5,8 +5,8 @@ Einweisung des [FAU FabLab](https://fablab.fau.de) in den [3D-Drucker](https://f
 
 Die neueste Version aus [github](https://github.com/fau-fablab/3d-drucker-einweisung) ist als PDF abrufbar:
 
-- [Einweisung](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/Einweisung_3D-Drucker.pdf)
-- [Einweisungsliste](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/Einweisungsliste_3D-Drucker.pdf)
+- [Einweisung](https://brain.fablab.fau.de/build/3d-drucker-einweisung/Einweisung_3D-Drucker.pdf)
+- [Einweisungsliste](https://brain.fablab.fau.de/build/3d-drucker-einweisung/Einweisungsliste_3D-Drucker.pdf)
 
 auschecken
 ----------
@@ -17,8 +17,8 @@ git clone --recursive git@github.com:fau-fablab/3d-drucker-einweisung.git
 
 Technische Details zum Buildserver siehe auf macgyver `/home/buildserver/README`
 
-[![Build Status](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/status.svg)](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/)
-[![TODOs](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/status-todos.svg)](https://user.fablab.fau.de/~buildserver/3d-drucker-einweisung/)
+[![Build Status](https://brain.fablab.fau.de/build/3d-drucker-einweisung/status.svg)](https://brain.fablab.fau.de/build/3d-drucker-einweisung/)
+[![TODOs](https://brain.fablab.fau.de/build/3d-drucker-einweisung/status-todos.svg)](https://brain.fablab.fau.de/build/3d-drucker-einweisung/)
 
 Lizenz
 ------
