@@ -12,6 +12,7 @@
 \usepackage{amssymb} % Symbole für Knöpfe
 \usepackage{subfigure,caption}
 \usepackage{eurosym}
+\usepackage{textcomp} % \textcelsius
 \usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
 \usepackage{wrapfig} % Textumlauf um Bilder
 \usepackage{float} % Ermöglicht H als Platzierungsoption
@@ -133,7 +134,7 @@ In diesem Abschnitt wird kurz beschrieben, welche Formen sich besonders gut druc
 \end{center}
 \begin{itemize}
 \item Überhänge sollten nicht zu groß sein
-(Empfehlung {\textless}45°)
+(Empfehlung {\textless}45\textcelsius{})
 \item Brücken sollten nicht zu weit sein (Empfehlung {\textless}5mm)
 \item Das Objekt sollte mit ausreichend großer Fläche plan auf dem Boden aufliegen
 \item Der untere Teil des Objekts sollte immer eine stabile Unterlage für die darüberliegenden Schichten bilden. (Den Eiffelturm sollte man also nicht auf dem Kopf stehend drucken.)
@@ -167,18 +168,18 @@ Vorliebe. Im Internet lässt sich einiges zu diesem Thema finden.
 \subsubsection{PLA}
 \begin{itemize}
 \item Organisches Material, Biokunststoff
-\item weniger elastisch, wird aber bei 70°C weich
-\item benötigt nicht zwingend ein beheiztes Bett (wenn vorhanden Bett trotzdem auf ca. 90°C aufheizen)
-\item Drucktemperatur beträgt meistens 210 °C. Je nach Material kann sie allerdings variieren.
+\item weniger elastisch, wird aber bei 70\textcelsius{} weich
+\item benötigt nicht zwingend ein beheiztes Bett (wenn vorhanden Bett trotzdem auf ca. 90\textcelsius{} aufheizen)
+\item Drucktemperatur beträgt meistens 210\textcelsius{}. Je nach Material kann sie allerdings variieren.
 \end{itemize}
 
 \subsubsection{ABS}
 \begin{itemize}
  \item synthetisches Material, aus Erdöl
  \item elastisch, stabil
- \item beheiztes Bett notwendig (da sich ABS beim Abkühlen zu stark zusammenzieht), aufheizen auf 110°C
+ \item beheiztes Bett notwendig (da sich ABS beim Abkühlen zu stark zusammenzieht), aufheizen auf 110\textcelsius{}
  \item Größere zusammenhängende Objekte (z.\,B. 15x5x5cm Quader) können sich wegen der hohen Wärmeausdehnung während des Drucks verziehen oder von der Druckplatte ablösen.
- \item Drucktemperatur beträgt meistens 230 °C. Je nach Material kann sie allerdings variieren.
+ \item Drucktemperatur beträgt meistens 230\textcelsius{}. Je nach Material kann sie allerdings variieren.
 \end{itemize}
 
 Beide Materialien lösen sich in Aceton(Dampf) auf..
@@ -209,7 +210,7 @@ Der Materialwechsel sollte aber \textbf{nur durch einen Betreuer} erfolgen. (Inf
   \item Unter Basic:
   \begin{itemize}
     \item minimale ``Layer height'' 0,1mm
-    \item ``Printing Temperature'' auf 210 °C einstellen
+    \item ``Printing Temperature'' auf 210\textcelsius{} einstellen
     \item ggf. ``Support`` und ''Platform adhesion type`` auswählen
    \end{itemize}
  \end{itemize}
@@ -238,7 +239,7 @@ Der Materialwechsel sollte aber \textbf{nur durch einen Betreuer} erfolgen. (Inf
 		\begin{itemize}
 			\item Unter Quality reichen in dem meisten Fällen 10\% Infill und 2 Shells
 			\item Unter Temperature die Temperatur auf dem Zettel am Replicator für das entsprechende Material einstellen:
-			Build Plate: ABS 110°C, PLA 90°C
+			Build Plate: ABS 110\textcelsius{}, PLA 90\textcelsius{}
 		\end{itemize}
 		\item um eine Preview und eine Abschätzung der Druckzeit des Baujobs zu erhalten, setze einen Haken bei ``Preview before printing''
 		\item mit Klick auf ``Make it'' wird der Druck gestartet, bzw. die Datei exportiert
@@ -429,7 +430,7 @@ Es kann allerdings auch sein, dass die Düse schlicht verschlissen ist und ausge
  \item sinnvollerweise das Filament rausnehmen
  \item Düse mit 10er Gabelschlüssel abschrauben. Dabei den Alublock (Heizelement) mit einem Rollgabelschlüssel festhalten. Achtung, der Alublock darf nicht verdreht werden, da sonst das empfindliche Temperatursensorkabel abreißen kann!
  \item Für den folgenden Schritt Handschuhe und Gesichtsschutz tragen, es dürfen keine anderen Leute im Lab-Hauptraum sein, weil Kunststoffspritzer herumfliegen! Fenster öffnen und Lüftung anschalten.
- \item Düse auf feuerfeste Unterlage (Steinplatte) auf der Werkbank legen, mit Heißluftpistole auf 600°C einige Minuten lang erwärmen.
+ \item Düse auf feuerfeste Unterlage (Steinplatte) auf der Werkbank legen, mit Heißluftpistole auf 600\textcelsius{} einige Minuten lang erwärmen.
  \item Düse mit Zange greifen und mit Druckluft durchpusten.
  \item So oft aufheizen und auspusten, bis man durchschauen kann.
  \item Düse wieder einbauen (Alublock festhalten, Drucker muss aufgeheizt sein!). Dabei nur ganz schwach festschrauben.
