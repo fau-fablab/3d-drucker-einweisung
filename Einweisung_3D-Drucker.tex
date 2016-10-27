@@ -157,7 +157,8 @@ Spätestens bei sichtbarem Schmutz (Staub o.Ä. auf der Plattform) oder bei schl
 \end{itemize}
 
 \subsection{Vorheizen}
-Vorheizen ist normalerweise nicht nötig, da es automatisch vor dem Druck geschieht ($\to$ Kapitel \ref{vorheizen}).
+Vorheizen ist nicht nötig, da es automatisch vor dem Druck geschieht.\\
+\textbf{Im Gegenteil: Wenn der Extruder länger leersteht, brennt das Material fest!}
 
 \subsection{Material auswählen - PLA vs. ABS}
 Grundsätzlich lässt sich PLA etwas einfacher und besser verarbeiten als ABS. Für ABS benötigt man z.\,B. eine beheiztes
@@ -182,7 +183,7 @@ Vorliebe. Im Internet lässt sich einiges zu diesem Thema finden.
  \item Drucktemperatur beträgt meistens 230\textcelsius{}. Je nach Material kann sie allerdings variieren.
 \end{itemize}
 
-Beide Materialien lösen sich in Aceton(Dampf) auf..
+Beide Materialien lösen sich in Aceton(Dampf) auf.
 %\todo{Beispielbild}
 
 \subsection{Materialwechsel}
@@ -264,26 +265,6 @@ Es muss alles mitgewogen werden, auch die Stützstruktur und der Müll, den der 
 % % % % % % % % % % % %
 
 \section{Zusatzinfos für Benutzer}
-
-\subsection{Vorheizen} \label{vorheizen}
-Das Vorheizen ist nicht zwingend nötig. Der Drucker heizt auch von selber auf, wenn er den Druckauftrag erhält. \textbf{Im Gegenteil:}
-
-\begin{center}\textbf{Wenn der Extruder länger leersteht, brennt das Material fest!}\end{center}
-
-\subsubsection{Ultimaker}
-\begin{itemize}
-    \item \textbf{Ultimaker}: am Drucker aus dem Hauptmenü ''Prepare`` \ra ''Preheat PLA`` oder ''Preheat ABS`` (je nach Material)
-    \item \textbf{Ultimaker\ts2}: am Drucker aus dem Hauptmenü ''Maintanance`` \ra ''Advanced'' \ra ''Heatup nozzle'' und ''Heatup buildplate'' auswählen
-\end{itemize}
-
-\subsubsection{Replicator}
-\begin{itemize}
- \item direkt am Drucker aus dem Hauptmenü ''Preheat`` auswählen
- \item Beim normalen Drucken \textbf{nur das Heizbett, aber nicht die Extruder vorheizen!}
- \item gewünschte Tools für den Preheat an oder aus schalten
- \item danach ''Start Preheat``
- \item Die Preheat Temperatur lässt sich unter ''Info and Settings`` \ra ''Preheat Settings`` ändern
-\end{itemize}
 
 \subsection{Manuelles Verfahren}\label{manuelles-verfahren}
 Manchmal muss man vor einem Druck, z.\,B. um die Plattform oder die Düse zu säubern, den Extruder bewegen.
@@ -382,7 +363,7 @@ Körpers existieren.
 \begin{itemize}
 	\item Deckel entfernen, wenn vorhanden
 	\item Filament-Führungsrohr entfernen
-	\item Drucker Vorheizen
+	\item Drucker vorheizen
 	\item ''Utilities``\ra ''Change Filament``\ra ''Unload left/right``
 	\item Warten bis Filament den Extruder Verlassen hat
 	\item Neues Filament einfädeln und Führungsrohr einstecken
