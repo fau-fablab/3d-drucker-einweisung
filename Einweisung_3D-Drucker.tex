@@ -31,10 +31,10 @@
 
 \maketitle
 \begin{center}
-	Für die 3D-Drucker \textbf{Ultimaker Original, Ultimaker\ts2} und \textbf{Makerbot Replicator 2X}
+	Für die 3D-Drucker \textbf{Ultimaker\ts{2+}} und \textbf{Ultimaker\ts{3}}
 \end{center}
 
-\textbf{Nur eingewiesene Benutzer dürfen den Drucker selbstständig benutzen}, um teure Beschädigungen zu vermeiden. Wenn du noch nicht eingewiesen bist, frage einen Betreuer. Er erklärt dir die Bedienung und lässt dich unter Aufsicht dein gewünschtes Teil ausdrucken. Wenn du alles verstanden hast, darfst auch du dann die Einweisung unterschreiben und den Drucker in Zukunft selbstständig verwenden.
+\textbf{Nur eingewiesene Benutzer dürfen den Drucker selbstständig benutzen}, um teure Beschädigungen zu vermeiden. Wenn du noch nicht eingewiesen bist, frage eine:n Betreuer:in. Er erklärt dir die Bedienung und lässt dich unter Aufsicht dein gewünschtes Teil ausdrucken. Wenn du alles verstanden hast, darfst auch du dann die Einweisung unterschreiben und den Drucker in Zukunft selbstständig verwenden.
 
 \section{Regeln und Hinweise}
 % Hier sollte nur das wichtigste gegen "Kaputtmachen" des Druckers stehen.
@@ -42,10 +42,10 @@ Für die Benutzung ist es wichtig, dass du folgende Hinweise beachtest:
 
 \begin{itemize}
  \item Obwohl das 3D-Drucken unter den Begriff ``Rapid Prototyping'' fällt, kann ein Druck je nach Größe und
- Präzision gut mehrere Stunden dauern. Betreuer helfen dir, die Dauer abzuschätzen.
+ Präzision gut mehrere Stunden dauern. Betreuer:innen helfen dir, die Dauer abzuschätzen.
  \item Nicht unbeaufsichtigt drucken, immer wieder mal einen Blick darauf werfen, besonders am Anfang.\\
 Wenn du nicht bis zum Ende deines Drucks da sein kannst, frage vorher einen Betreuer und hinterlasse einen Zettel mit Name und Kontaktdaten.
- \item Anleitung exakt beachten. Wenn du nicht weiter weißt oder dir unsicher bist, frag einen Betreuer.
+ \item Anleitung exakt beachten. Wenn du nicht weiter weißt oder dir unsicher bist, frag eine:n Betreuer:in.
  \item Verbrennungsgefahr an heißen Teilen:
   \begin{itemize}
    \item Extruder wird sehr heiß! Nicht direkt berühren, Vorsicht beim Abputzen.
@@ -57,15 +57,13 @@ Wenn du nicht bis zum Ende deines Drucks da sein kannst, frage vorher einen Betr
   \item wenn der Drucker nicht mehr benötigt wird
   \item Power-Switch befindet sich
   \begin{itemize}
-   \item beim Ultimaker\ts2 hinten links am Gehäuse
-   \item beim Ultimaker Original vorne am Gehäuse
-   \item beim Replicator hinten rechts am Gehäuse
+   \item beim Ultimaker\ts{2+} hinten links am Gehäuse
+   \item beim Ultimaker\ts{3} hinten rechts am Gehäuse
   \end{itemize}
  \end{itemize}
- \item Wenn die Folie auf der Plattform beschädigt ist, bitte einen Betreuer diese zu wechseln.
- \item \textbf{Keinen Schaber, Messer oder Ähnliches} verwenden, um Objekte von der Plattform zu lösen, denn dies beschädigt die Folie.
+ \item \textbf{Keinen Schaber, Messer oder Ähnliches} verwenden, um Objekte von der Plattform zu lösen, denn dies kann die Glasplatte verkratzen
  \item am Drucker nichts von Hand bewegen ($\to$ \ref{manuelles-verfahren} Manuelles Verfahren auf Seite\, \pageref{manuelles-verfahren})
- \item Materialwechsel und sonstige Wartung darf nur gemeinsam mit einem Betreuer durchgeführt werden.
+ \item Materialwechsel und sonstige Wartung darf nur gemeinsam mit einer Betreuerin/einem Betreuer durchgeführt werden.
  \item \textbf{Wiegen und Bezahlen nicht vergessen!}
 \end{itemize}
 \newpage
@@ -111,13 +109,16 @@ Grundlage oder gleich zum fertig ausdrucken.
 \begin{itemize}
 \item \textbf{Maximale Abmessungen}
 \begin{itemize}
- \item Makerbot: L:250 B:160 H:150mm
- \item Ultimaker: L:210 B:210 H:205mm
- \item Ultimaker\ts2: L:223 B:223 H:205mm
+ \item Ultimaker\ts{2+}: L:223 B:220 H:205mm
+ \item Ultimaker\ts3:
+ \begin{itemize}
+   \item Nur linke oder rechte Düse: L:215 B:215 H:200mm
+   \item Beide Düsen gleichzeitig: L:197 B:215 H:200mm
+ \end{itemize}
  \item zur Sicherheit lieber ein paar Millimeter kleiner.
  \item Es ist in der Praxis meist nicht möglich, den Bauraum des Druckers auch nur annähernd auszunutzen! Wenn möglich, gestalte deine Objekte kleiner als 10x10x5cm (LxBxH).
 \end{itemize}
-\item \textbf{große Teile dauern ewig}, während des Drucks muss jemand dabeibleiben. Druckzeit für 30x30x30mm sind je
+\item \textbf{große Teile dauern ewig}, während des Drucks muss jemand dabei bleiben. Druckzeit für 30x30x30mm sind je
 nach Präzision etwa 30-45 Minuten, ein größeres Volumen braucht entsprechend länger.
 \item Durch das Druckverfahren sind gewisse Formen schlecht druckbar. Oft ist Ausprobieren angesagt.
 \item Damit man auch \enquote{schwierige} Formen drucken kann, kann die Software \textbf{Stützstrukturen} erstellen. Wenn man dies erlaubt,
@@ -153,100 +154,52 @@ Spätestens bei sichtbarem Schmutz (Staub o.Ä. auf der Plattform) oder bei schl
  \item Bodenplatte mit Papiertuch und Oberflächenreiniger reinigen
  \item Extruderdüse ebenfalls mit Papiertuch reinigen
  \item \textbf{VORSICHT EVENTUELL HEISS!}
- \item Kunststoffabfälle in den Restmüll
+ \item Kunststoff(Filament)abfälle und leere Filamentspulen in die Sammelbox bei den Drucken
 \end{itemize}
 
 \subsection{Vorheizen}
 Vorheizen ist nicht nötig, da es automatisch vor dem Druck geschieht.\\
 \textbf{Im Gegenteil: Wenn der Extruder länger leersteht, brennt das Material fest!}
 
-\subsection{Material auswählen - PLA vs. ABS}
-Grundsätzlich lässt sich PLA etwas einfacher und besser verarbeiten als ABS. Für ABS benötigt man z.\,B. eine beheiztes
-Bett, das im Ultimaker Original nicht vorhanden ist. Mit PLA tut sich der Replicator dafür schwerer. Für die meisten
-Anwendungen ist es egal welches Material man verwendet, die Entscheidung richtet sich mehr nach der persönlichen
-Vorliebe. Im Internet lässt sich einiges zu diesem Thema finden.
-
+\subsection{Material}
+Ich Fablab drucken wir ausschließlich mit  PLA. Andere Materialien können wir leider nicht anbieten.
 \subsubsection{PLA}
 \begin{itemize}
-\item Organisches Material, Biokunststoff
-\item weniger elastisch, wird aber bei 70\textcelsius{} weich
-\item benötigt nicht zwingend ein beheiztes Bett (wenn vorhanden Bett trotzdem auf ca. 90\textcelsius{} aufheizen)
-\item Drucktemperatur beträgt meistens 210\textcelsius{}. Je nach Material kann sie allerdings variieren.
+\item Organisches Material, Biokunststoff, nicht UV- und wetterbeständig
+\item wird bei ca. 60\textcelsius{} weich
+\item benötigt nicht zwingend ein beheiztes Bett es ist dennoch meist ratsam Das Druckbett auf ca. 60\textcelsius{} aufzuheizen. Das ist in Cura auch so voreingestellt.
+\item Drucktemperatur beträgt meistens 210\textcelsius{}. Je nach Material kann sie allerdings ein wenig variieren.
 \end{itemize}
 
-\subsubsection{ABS}
-\begin{itemize}
- \item synthetisches Material, aus Erdöl
- \item elastisch, stabil
- \item beheiztes Bett notwendig (da sich ABS beim Abkühlen zu stark zusammenzieht), aufheizen auf 110\textcelsius{}
- \item Größere zusammenhängende Objekte (z.\,B. 15x5x5cm Quader) können sich wegen der hohen Wärmeausdehnung während des Drucks verziehen oder von der Druckplatte ablösen.
- \item Drucktemperatur beträgt meistens 230\textcelsius{}. Je nach Material kann sie allerdings variieren.
-\end{itemize}
-
-Beide Materialien lösen sich in Aceton(Dampf) auf.
+PLA löst sich in Aceton(Dampf) auf.
 %\todo{Beispielbild}
 
 \subsection{Materialwechsel}
-Wir haben verschiedene Materialsorten und -Farben auf Lager. Wenn du eine andere möchtest, frag einfach nach.
-Der Materialwechsel sollte aber \textbf{nur durch einen Betreuer} erfolgen. (Infos für Betreuer $\to$ \ref{filamentwechsel})
+Wir haben verschiedene Materialfarben auf Lager. Wenn du eine andere möchtest, frag einfach nach.
+Der Materialwechsel sollte aber \textbf{nur durch einen Betreuer:innen} erfolgen. (Infos für Betreuer:innen $\to$ \ref{filamentwechsel})
 
 % % % % % % % % % % % %
 
 \section{3D-Modell umwandeln und ausdrucken}
 
-\subsection{Cura für Ultimaker (Original und 2)}
+\subsection{Cura für Ultimaker (2\texttt{+} und 3)}
 \begin{itemize}
-    \item \colorbox{yellow}{\textbf{Neu}:} Unter ''Machine'' den Drucker auswählen (Ultimaker Original oder Ultimaker\ts2)
-\item mit Klick auf ``Load'' STL-Datei öffnen
-\item Objekt nach Wunsch skalieren, bewegen, drehen etc.
-\item Einfacher Modus (''Expert'' \ra ''Switch to quickprint...''):
+\item In der oberen Leiste links den richtigen Drucker auswählen (Ultimaker Ultimaker\ts{2+} oder Ultimaker\ts3)
+\item mit Klick auf das Ordnersymbol STL-Datei öffnen oder Datei einfach in das Cura-Fenster ziehen. So können auch mehrere Dateien hinzugefügt werden.
+\item Objekt nach Wunsch auf eine spezifische Seite legen, skalieren, bewegen, drehen etc.
+\item Sicherstellen dass in der oberen Leiste in der Mitte \enquote{Generic PLA} als Material ausgewählt ist
+\item Obere Leiste auf der rechten Seite anklicken:
   \begin{itemize}
-    \item links die gewünschte Qualität einstellen (''normal'' reicht normalerweise, ''high'' dauert sehr lange, ''fast'' ist oft auch noch i.O., wobei man es schon bemerkt)
-    \item je nach Objekt Stützstrukturen erlauben
+    \item Schichtdicke zwischen 0,06mm und 0,15mm (Ultimaker Ultimaker\ts{2+}) bzw. 0,2mm (Ultimaker\ts3) auswählen
+    \item Infill einstellen: 20\% sind meistens ein recht guter Kompromiss aus materialersparnis und Stabilität
+    \item ggf. ``Support`` (Stützstrukturen) und ''Adhesion``(zusätzliche Schürzze um Modell durcken für bessere Haftung) auswählen
+    \item Unter \enquote{Customize} kann noch eine Vielzahl anderer Option eingestellt werden. Bitte Verändere die Einstellungen zur Drucktemperatur und Gescwindigkeit nicht bzw. nur nach Rücksprache mit einer Betreuerin/einem Betreuer.
   \end{itemize}
-\item falls du mehr einstellen willst: \ra ``Expert'' \ra ``Switch to full settings...''
- \begin{itemize}
-  \item mit ''File'' \ra ''Reset Profile'' \ra ''Yes'' kann man die Einstellungen auf Standardwerte zurücksetzen
-%  \item \todoUnwichtig{Vordefinierte Profile abspeichern}
-  \item Unter Basic:
-  \begin{itemize}
-    \item minimale ``Layer height'' 0,1mm
-    \item ``Printing Temperature'' auf 210\textcelsius{} einstellen
-    \item ggf. ``Support`` und ''Platform adhesion type`` auswählen
-   \end{itemize}
- \end{itemize}
-\item Solange die Daten umgerechnet werden, ist der Print- oder Send-to-SD-Knopf ausgegraut. Unter dem Knopf erscheint ein Fortschrittsbalken.
-\item Über \enquote{View mode} \ra Layer im rechten oberen Eck kann man sich eine Vorschau der Druckbahnen inklusive Stützstruktur anzeigen lassen.
-\item ``Print'' oder ``Send to SD'' klicken. Wenn der Knopf ausgegraut ist, warten, bis die Datei fertig gescliced wurde und dann nochmal klicken.
-\item im sich öffnenden Dialog bei ``Temp'' die gewünschte Temperatur eingeben und enter drücken um aufzuheizen
-\item wenn aufgeheizt, ``Print'' oder ``Send to SD'' klicken und die erzeugte .gcode-Datei auf die SD-Karte kopieren
-\end{itemize}
-
-\subsection{MakerWare für Replicator}
-\begin{itemize}
-	\item auf ``Add'' klicken und STL-Datei auswählen
-	\item Objekt nach Wunsch skalieren, bewegen, drehen etc.
-	\item evtl. weitere Objekte hinzufügen
-	\item über ``Object'' den gewünschten Extruder auswählen
-	\item auf ``Make'' klicken
-	\item Von oben nach unten in Dialogfenster:
-	\begin{itemize}
-		\item ``Make it now'' für direktes Starten, ``Export to file'' für Druck von SD-Karte, momentan wird nur der Druck von SD-Karte unterstützt
-		\item ``Make with'': immer Replicator 2X auswählen
-		\item gewünschtes Material auswählen
-		\item gewünschte Präzision auswählen (Achtung! Höhere Präzion bedeutet längere Druckdauer)
-		\item evtl. Supports und Raft (zusätzliche Bodenschicht für bessere Haftung, lässt sich nach dem Druck entfernen) auswählen
-		\item Advanced Options:
-		\begin{itemize}
-			\item Unter Quality reichen in dem meisten Fällen 10\% Infill und 2 Shells
-			\item Unter Temperature die Temperatur auf dem Zettel am Replicator für das entsprechende Material einstellen:
-			Build Plate: ABS 110\textcelsius{}, PLA 90\textcelsius{}
-		\end{itemize}
-		\item um eine Preview und eine Abschätzung der Druckzeit des Baujobs zu erhalten, setze einen Haken bei ``Preview before printing''
-		\item mit Klick auf ``Make it'' wird der Druck gestartet, bzw. die Datei exportiert
-		\item wenn gewünscht, kann man die Anordnung, Skalierung etc. als .thing Datei speicher über ``Save''
-	\end{itemize}
-	\item für mehr Infos und Troubleshooting einen Betreuer fragen
+\item Solange die Daten umgerechnet werden, ist der Save-To-Disk/Removable-Knopf ausgegraut. Unter dem Knopf erscheint ein Fortschrittsbalken.
+\item Über \enquote{Preview} kann man sich eine Vorschau der Druckbahnen inklusive Stützstruktur anzeigen lassen.
+\item SD-Karte in den Kartenleser (Ultimaker\ts{2+}) oder USB-Stick (Ultimaker\ts3) einstecken
+\item Save-To-Disk/Removable-Knopf klicken. Wenn der Knopf ausgegraut ist, warten, bis die Datei fertig gescliced wurde und dann nochmal klicken.
+\item Wenn die Datei auf die Speicherkarte/den Stick gespeichert wurde, das Medium in Windows auswerfen und in den Drucker einstecken.
 \end{itemize}
 
 \section{Bezahlen und abschließen}
@@ -270,34 +223,9 @@ Es muss alles mitgewogen werden, auch die Stützstruktur und der Müll, den der 
 Manchmal muss man vor einem Druck, z.\,B. um die Plattform oder die Düse zu säubern, den Extruder bewegen.
 Das darf bei beiden Druckern \textbf{nicht von Hand} gemacht werden!
 
-\subsubsection{Ultimaker Original}
-\begin{itemize}
-	\item Am Drucker selbst aus dem Hauptmenü ''Prepare`` \ra ''Move Axis``
-	\item hier können die Achsen bewegt werden
-\end{itemize}
-Beim \textbf{Ultimaker\ts2} können die Achsen nicht verfahren werden.
-
-\subsubsection{Replicator}
-\begin{itemize}
- \item Am Drucker selbst aus dem Hauptmenü ''Utilities`` \ra ''Jog Mode``
- \item hier können die Achsen bewegt werden
-\end{itemize}
-
 % % % % % % % % % % % % % % %
 
 \section{Infos für Experten}
-
-\subsection{Experteninfos - Makerware} \label{expinfos}
-\subsubsection{Preslicing}
-Preslicing ist beim Druck von SD-Karte nicht notwendig.
-
-Wer schon einmal eine komplexere STL-Datei gesliced hat weiß, dass das dauern kann. Und manchmal gehen Drucke schief,
-oft schon gleich am Anfang. Um jetzt nicht jedes Mal komplett von Null zu beginnen, kann man eine gcode-Dateien erstellen
-und laden.
-\begin{itemize}
-\item zum erstellen bei ''Make`` ''Export to a File`` wählen, nach den Einstellungen auf ''Make It!'' und Datei als \texttt{.gcode} abspeichern
-\item zum Laden auf ''File`` \ra ''Make from File...`` oder Ctrl+Alt+P drücken und entsprechende \texttt{.gcode-Datei} auswählen (Achtung keine Preview!)
-\end{itemize}
 
 \subsection{Kurze Einführung in die wichtigsten Fachbegriffe bei STL:}
 
@@ -333,33 +261,11 @@ Körpers existieren.
 
 % % % % % % % % % % % % % %
 
-\section{Infos für Betreuer}
+\section{Infos für Betreuer:innen}
 
 \subsection{Filamentwechsel}\label{filamentwechsel}
 
-\subsubsection{Ultimaker}
-\begin{itemize}
-    \item Extruder muss heiß sein: ''Vorbereiten'' \ra ''Vorwärmen PLA/ABS''
-    \item ''Vorbereiten'' \ra ''Filament wechseln''
-    \item Warten bis komplett herausgefahren
-    \item neues Filament einfädeln und mit etwas Druck dagegen halten
-    \item Mit Knopfdruck bestätigen
-    \item Bis zum extrudieren warten
-    \item evtl. auf ''Extrude mehr''  drücken
-    \item ''Drucke weiter'' drücken \ra Fertig!
-\end{itemize}
-Alternativ:
-\begin{itemize}
-    \item Drucker vorheizen
-    \item ''Prepare``\ra ''Move Axis``\ra ''1 mm`` \ra ''Extruder``
-    \item Filament aus der Düse zurückfahren
-    \item Extruder öffnen
-    \item Filament herausziehen
-    \item neues Filament einfädeln
-    \item ''Extrude``bis Neues Filament extrudiert wird
-\end{itemize}
-
-\subsubsection{Ultimaker\ts2}
+\subsubsection{Ultimaker\ts{2+}}
 \begin{itemize}
     \item ''Material'' \ra ''Change''; Anweisungen im Display beachten
     \item Drucker heizt vor und fährt dann das Filament zurück
@@ -370,21 +276,10 @@ Alternativ:
     \item wenn er schön extrudiert, nochmal drücken und das eingelegte Filament wählen
 \end{itemize}
 
-\subsubsection{Replicator}
-\begin{itemize}
-	\item Deckel entfernen, wenn vorhanden
-	\item Filament-Führungsrohr entfernen
-	\item Drucker vorheizen
-	\item ''Utilities``\ra ''Change Filament``\ra ''Unload left/right``
-	\item Warten bis Filament den Extruder Verlassen hat
-	\item Neues Filament einfädeln und Führungsrohr einstecken
-	\item Auf ''Load``gehen
-	\item Warten bis neues Filament extrudiert wird
-\end{itemize}
 
 \subsection{Ausrichten der Buildplate}
 
-\subsubsection{Ultimaker\ts2}
+\subsubsection{Ultimaker\ts{2+}}
 \begin{itemize}
 \item Extruder reinigen, dass sich kein Rest zw. Buildplate und Extruder befindet
 \item Assistent: ''maintenance'' \ra ''buildplate''
@@ -392,25 +287,8 @@ Alternativ:
 \item man muss mal mit dem Rad und den Steppern, mal manuell mit den Schrauben die Buildplate leveln (zuerst auf 1mm, dann mit einem Blatt Papier)
 \end{itemize}
 
-\subsubsection{Ultimaker Original, Makerbot}
-\begin{itemize}
-\item Assistent: ''Utilities`` \ra ''Level buildplate``
-\item Dazu den Drucker per USB mit dem Rechner verbinden
-\item Am besten einen Flyer oder ein Stück Papier holen, um den Abstand Düse-Buildplate zu überprüfen
-\item anhand den vier Schrauben die Höhe der Buildplate regeln
-\item der Flyer sollte knapp zwischen Düse und Buildplate hindurchpassen
-\item USB-Verbindung wieder trennen (Grund: Drucker resettet manchmal während des Druckens von SD-Karte, wenn der Rechner eine Verbindung aufbauen will oder neu startet)
-\end{itemize}
 
-\subsection{Kapton Anbringen (Ultimaker Original, Makerbot)}
-
-\begin{itemize}
-\item Hole dir einen Helfer
-\item Mit einer Rakel möglichst blasenfrei und vorsichtig aufbringen (Nass- oder Trockenmethode, siehe \enquote{Verarbeitung Aufkleber} in der Plottereinweisung)
-\item danach Buildplate ausrichten
-\end{itemize}
-
-\subsection{Ultimaker Original Düse demontieren und putzen}
+\subsection{Ultimaker 2\texttt{+} demontieren und putzen}
 Lasse es dir vorher von jemand mit Ahnung zeigen! Nur durchführen wenn unbedingt nötig.
 
 Die Düse bitte nicht mit einem Metallstück freistochern, da hierdurch nur die Oberfläche verkratzt wird und die Düse nur noch schlechter funktioniert. Es ist möglich, fest sitzenden Dreck mit einem Stück Filament durchzudrücken. Dazu nimmt man sich ein Stück Filament und drückt es mit ausreichend Kraft durch den heißen Extruder. Eine Kombizange hilft. Dabei nicht abrutschen oder den Extruderkopf überlasten.
@@ -418,15 +296,18 @@ Die Düse bitte nicht mit einem Metallstück freistochern, da hierdurch nur die 
 Es kann allerdings auch sein, dass die Düse schlicht verschlissen ist und ausgetauscht werden sollte. Düsen haben in etwa eine Lebensdauer von 500-600 Druckstunden, danach kann man sie guten Gewissens austauschen.
 
 \begin{itemize}
- \item Aufheizen
- \item sinnvollerweise das Filament rausnehmen
- \item Düse mit 10er Gabelschlüssel abschrauben. Dabei den Alublock (Heizelement) mit einem Rollgabelschlüssel festhalten. Achtung, der Alublock darf nicht verdreht werden, da sonst das empfindliche Temperatursensorkabel abreißen kann!
+ \item Anleitung zum Wechseln Entfernen der Düse:\\
+ \url{https://support.ultimaker.com/hc/en-us/article_attachments/360010318879/Change_the_nozzle_of_the_Ultimaker_2plus.pdf}
  \item Für den folgenden Schritt Handschuhe und Gesichtsschutz tragen, es dürfen keine anderen Leute im Lab-Hauptraum sein, weil Kunststoffspritzer herumfliegen! Fenster öffnen und Lüftung anschalten.
  \item Düse auf feuerfeste Unterlage (Steinplatte) auf der Werkbank legen, mit Heißluftpistole auf 600\textcelsius{} einige Minuten lang erwärmen.
  \item Düse mit Zange greifen und mit Druckluft durchpusten.
  \item So oft aufheizen und auspusten, bis man durchschauen kann.
  \item Düse wieder einbauen (Alublock festhalten, Drucker muss aufgeheizt sein!). Dabei nur ganz schwach festschrauben.
 \end{itemize}
+
+\subsection{Ultimaker 3\texttt{+} demontieren und putzen}
+
+\textbf{ACHTUNG: Beim Ultimaker 3 kann die Düse nicht einzeln gewecheselt werden. Hier müssen die ganzen Printcores getauscht werden: \url{https://support.ultimaker.com/hc/en-us/articles/360011580799-Changing-materials-and-print-cores-on-the-Ultimaker-3}}
 
 
 \subsection{Pflege \& Wartung}
@@ -446,8 +327,7 @@ Ultimaker: \url{https://www.youtube.com/watch?v=grHmmmSoOfc}
 
 \begin{itemize}
 \item den Drucker über USB mit dem Rechner verbinden
-\item Cura oder MakerWare zum Updaten verwenden
-\item Achtung, die Firmware des Ultimaker Original ist nicht die Werksfirmware. Hier nicht einfach Updates einspielen! Unseren Firmwarestand gibt es hier: \url{https://github.com/fau-fablab/Marlin/tree/ultimaker1}
+\item Cura zum Updaten verwenden
 \end{itemize}
 
 \subsection{Ultimaker-App}
