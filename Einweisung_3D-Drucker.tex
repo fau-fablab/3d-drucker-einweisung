@@ -18,7 +18,6 @@
 \usepackage{qrcode}
 \renewcommand{\texteuro}{\euro}
 \newcommand{\fachbegriff}[1]{(\textit{#1})}
-\newcommand{\ts}[1]{\textsuperscript{#1}}
 \newcommand{\ra}{$\Rightarrow$}
 
 % \linespread{1.2}
@@ -129,56 +128,67 @@ In diesem Abschnitt wird kurz beschrieben, welche Formen sich auch ohne Stützko
 
 \section{Vorbereitung}
 
-\subsection{Putzen} \label{putzen}
+\subsection{Reinigung} \label{Reinigung}
 
-Spätestens bei sichtbarem Schmutz (Staub o.Ä. auf der Plattform) oder bei schlechten Druckergebnissen
+Spätestens bei sichtbaren Verschmutzungen (Staub o.ä. auf der Druckplattform) oder schlechten Druckergebnissen.
 
 \begin{itemize}
  \item Bodenplatte mit Papiertuch und Oberflächenreiniger reinigen
- \item Kunststoff(Filament)abfälle und leere Filamentspulen in die Sammelbox bei den Drucken
+ \item Kunststoffabfälle aus PLA und leere Filamentspulen werden von uns recycelt, daher bitten wir Sie, diese Reste in den Behälter auf der rechten Seite des Druckers zu werfen.
 \end{itemize}
 
 \subsection{Material}
-Im Fablab drucken wir ausschließlich mit PLA. Andere Materialien werden zu einem späteren Zeitpunkt angeboten.
+Im Fablab wird ausschließlich mit PLA gedruckt. Andere Materialien werden zu einem späteren Zeitpunkt angeboten.
 
 \subsection{Materialwechsel}
-Wir haben verschiedene Materialfarben auf Lager. Wenn du eine andere möchtest, frag einfach nach.
-Der Materialwechsel sollte aber \textbf{nur durch einen Betreuer} erfolgen. (Infos für Betreuer $\to$ \ref{filamentwechsel})
+Wir haben verschiedene Farben von PLA auf Lager. Wenn du eine andere möchtest, frag einfach nach.
+Ein Materialwechsel an einem \textbf{Ultimaker} sollte jedoch nur von einem Betreuer durchgeführt werden. 
 
+Für einen Materialwechsel beim \textbf{Bambu P1S} kann dies in der Software 'OrcaSlicer' ausgewählt werden. Hier stehen durch das proprietäre AMS - \textit{Automatic Material System} - insgesamt vier verschiedene Materialien für einen Druck zur Verfügung, entweder als Mehrfarbendruck oder wie gewohnt als Einfarbendruck. 
+
+Besonders hervorzuheben ist, dass durch den Einsatz des AMS auch Filamente fast vollständig ausgenutzt werden können. Ist eine Farbe leer, kann nahtlos auf eine andere Rolle der gleichen Farbe/Materialart zugegriffen werden, so dass der Druck nicht beeinflusst wird. Dazu muss das AMS jedoch richtig eingestellt sein. 
+
+Weitere Informationen zum Materialwechsel und zur Einstellung für den Betreuer $\to$ \ref{Materialwechsel})
+
+\newpage
 % % % % % % % % % % % %
 
-\section{3D-Modell umwandeln und ausdrucken}
+\section{3D-Modell für den Druck vorbereiten}
 
-\subsection{Cura für Ultimaker (2\texttt{+} und 3)}
+Damit ein 3D-Modell gedruckt werden kann, muss es in Schichtbilder übersetzt werden, die der Drucker nach und nach zu einem dreidimensionalen Objekt zusammensetzt. Dazu verwenden wir sowohl für den Ultimaker als auch für den Bambu P1S eine Slicer-Software namens \textit{OracSlicer}.
+
+\vspace{2em}
+
+\begin{figure} [H]
+	\centering
+	\includegraphics[width=1.0\textwidth]{./zeichnungen/OrcaSlicer.pdf}
+	\caption{Menüführung von OrcaSlicer. Druckerauswahlmenü \large\textcircled{\normalsize \texttt{1}}, Filamentauswahlmenü \large\textcircled{\normalsize \texttt{2}}, Auswahltder Qualitätsstufe \large\textcircled{\normalsize \texttt{3}}, Bauraum Slicen \large\textcircled{\normalsize \texttt{4}}, Bauraum exportieren \large\textcircled{\normalsize \texttt{5}} }
+	\label{abb.Grafik1}
+\end{figure}
+
+\vspace{2em}
+
 \begin{itemize}
-\item In der oberen Leiste links den richtigen Drucker auswählen (Ultimaker Ultimaker-2+ oder Ultimaker\ts3)
-\item mit Klick auf das Ordnersymbol STL-Datei öffnen oder Datei einfach in das Cura-Fenster ziehen. So können auch mehrere Dateien hinzugefügt werden.
-\item Objekt nach Wunsch auf eine spezifische Seite legen, skalieren, bewegen, drehen etc.
-\item Sicherstellen dass in der oberen Leiste in der Mitte \enquote{Generic PLA} als Material ausgewählt ist
-\item Obere Leiste auf der rechten Seite anklicken:
-  \begin{itemize}
-    \item Schichtdicke zwischen 0,06mm und 0,15mm (Ultimaker Ultimaker-2+) bzw. 0,2mm (Ultimaker\ts3) auswählen
-    \item Infill einstellen: 20\% sind meistens ein recht guter Kompromiss aus materialersparnis und Stabilität
-    \item ggf. ``Support`` (Stützstrukturen) und ''Adhesion``(zusätzliche Schürzze um Modell durcken für bessere Haftung) auswählen
-    \item Unter \enquote{Customize} kann noch eine Vielzahl anderer Option eingestellt werden. Bitte Verändere die Einstellungen zur Drucktemperatur und Gescwindigkeit nicht bzw. nur nach Rücksprache mit einer Betreuerin/einem Betreuer.
-  \end{itemize}
-\item Solange die Daten umgerechnet werden, ist der Save-To-Disk/Removable-Knopf ausgegraut. Unter dem Knopf erscheint ein Fortschrittsbalken.
-\item Über \enquote{Preview} kann man sich eine Vorschau der Druckbahnen inklusive Stützstruktur anzeigen lassen.
-\item SD-Karte in den Kartenleser (Ultimaker-2+) oder USB-Stick (Ultimaker\ts3) einstecken
-\item Save-To-Disk/Removable-Knopf klicken. Wenn der Knopf ausgegraut ist, warten, bis die Datei fertig gescliced wurde und dann nochmal klicken.
-\item Wenn die Datei auf die Speicherkarte/den Stick gespeichert wurde, das Medium in Windows auswerfen und in den Drucker einstecken.
+\item Ziehen Sie die STL/STEP-Datei einfach per Drag-and-Drop in das \textit{OrcaSlicer}-Fenster. Auf diese Weise können auch mehrere Dateien hinzugefügt werden.
+\item Das Objekt auf einer bestimmten Seite platzieren, skalieren, verschieben, drehen etc. wie gewünscht. Verwenden Sie dazu die Schaltflächen in der weißen Menüleiste über dem Bauraum.
+\item Den richtigen Drucker in der linken Menüleiste auswählen \large\textcircled{\normalsize \texttt{1}} (Ultimaker Ultimaker-2+, Ultimaker-3 oder BambuLab P1S)
+\item Stellen Sie sicher, dass in der linken Menüleiste \large\textcircled{\normalsize \texttt{2}} PLA als Material ausgewählt ist.\\Bei BambuLabs P1S kann mit einem Rechtsklick auf das Objekt im erscheinenden Kontextmenü das verwendete Filament geändert werden. Achtung, Mehrfarbendrucke erzeugen ein zusätzliches Objekt auf dem Bauraum, um die Düse zu reinigen. 
+\item Im Druckqualitätsmenü \large\textcircled{\normalsize \texttt{3}} eine geeignete Qualitätsstufe wählen. Empfohlen werden Sandart 0,20mm und Strenght 0,20mm. Die anderen Qualitätsstufen dauern nur wesentlich länger, wenn es um Qualitätsverbesserungen geht. 
+\item Gegebenenfalls sind Stützkonstruktionen erforderlich, wählen Sie dazu in der linken Seitenleiste das Menü \textit{Support} und setzen Sie das Häkchen bei aktiviert. Es stehen die Optionen \textit{Normal} oder \textit{Baum} für die Art der Stützkonstruktionen zur Verfügung. \textit{Baum} eignet sich sehr gut für organische Strukturen, während \textit{Normal} eher für technische Objekte mit klaren Kanten von Vorteil ist. 
+\item Durch Klicken auf den Slice-Button \large\textcircled{\normalsize \texttt{4}} kann die Umrechnung des Bauraums für die Maschine ausgelöst werden. 
+\item Erst nach einem Export der Datei auf ein Speichermedium kann der Drucker mit Daten versorgt werden. Wählen Sie dazu den Export Button \large\textcircled{\normalsize \texttt{5}} mit "Gesamten Bauraum als GCode exportieren" drücken und auf ein Speichermedium (SD für Ultimaker-2+ und Bambu P1S bzw. USB-Stick für Ultimaker-3) speichern.
+\item Stecken Sie die SD-Karte in den Kartenleser (Ultimaker-2+ oder Bambu P1S) oder den USB-Stick (Ultimaker-3). Beim Bambu kann es erforderlich sein, den MicroSD-Adapter aus- und wieder einzustecken, damit er erkannt wird. 
+\item Über das OnScreen Menü kann nun die Datei zum Drucken ausgewählt und gedruckt werden. 
 \end{itemize}
 
 \section{Bezahlen und abschließen}
 
-Um das Objekt von der Platte zu lösen vorsichtig arbeiten. Meistens lässt es sich von Hand lösen. Wenn nicht,
-warten bis sich die Platte etwas abgekühlt hat. \textbf{Nicht versuchen, das Objekt mit scharfen oder spitzen Gegenständen herunter zu hebeln!}
+Das Objekt vorsichtig von der Platte lösen. Meistens kann es von Hand gelöst werden. Wenn nicht
+warten, bis die Platte etwas abgekühlt ist. \textbf{Nicht versuchen, das Objekt mit scharfen oder spitzen Gegenständen herunterzuhebeln!}
 
-Drucker reinigen, siehe \ref{putzen}.
+Wiegen Sie das Objekt mit einer Feinwaage (in der Regel bei 3D-Druckern vorhanden), der Preis pro Gramm wird in das Kassensystem eingegeben.
 
-Wiegen des Objekts mit einer Feinwaage (in der Regel bei 3D-Druckern vorhanden), Preis pro Gramm wird im Kassensystem eingegeben.
-
-Es muss alles mitgewogen werden, auch die Stützstruktur. 
+Alles muss gewogen werden, auch die Stützstruktur. 
 \textbf{Fehldrucke müssen ebenfalls bezahlt werden.}
 
 \pagebreak
