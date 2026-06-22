@@ -138,24 +138,27 @@ Spätestens bei sichtbaren Verschmutzungen (Staub o.ä. auf der Druckplattform) 
 \end{itemize}
 
 \subsection{Material}
-Im Fablab wird ausschließlich mit PLA gedruckt. Andere Materialien werden zu einem späteren Zeitpunkt angeboten.
+Im Fablab wird üblicherweise mit PLA gedruckt. Nur für besondere Ausnahmefälle stehen teilweise auch andere Materialien zur verfügung, die bei Bedarf eingelegt werden müssen.
 
 \subsection{Materialwechsel}
 Wir haben verschiedene Farben von PLA auf Lager. Wenn du eine andere möchtest, frag einfach nach.
-Ein Materialwechsel an einem \textbf{Ultimaker} sollte jedoch nur von einem Betreuer durchgeführt werden. 
 
-Für einen Materialwechsel beim \textbf{Bambu P1S} kann dies in der Software 'OrcaSlicer' ausgewählt werden. Hier stehen durch das proprietäre AMS - \textit{Automatic Material System} - insgesamt vier verschiedene Materialien für einen Druck zur Verfügung, entweder als Mehrfarbendruck oder wie gewohnt als Einfarbendruck. 
+Für einen Materialwechsel bei den \textbf{Bambu P1S / X1C} können die aktuell eingelegten Filamente in der (Slicer-)Software '\textit{Bambu Studio}' eingesehen und bearbeitet werden. Hier stehen durch das proprietäre AMS - \textit{Automatic Material System} - insgesamt vier verschiedene Materialien für einen Druck zur Verfügung, entweder als Mehrfarbendruck oder wie gewohnt als Einfarbendruck. 
+
+Die Bambu Drucker verwalten Informationen zu den aktuell eingelegten Filamenten selbst. Der Slicer erhält die Filamentinformationen vom Drucker bei Aufruf des entsprechenden Gerätes im Tab '\textit{Device}'.
+
+\textbf{ACHTUNG:} Bei fehlgeschlagenem Einlesen des Filamentes seitens des AMS wird durch einen Bug automatisch der Filamenttyp 'ABS' (welcher im FabLab nicht verwendet wird) eingestellt. Prüfe grundsätzlich die Einstellungen auf übereinstimmung mit der Realität.
 
 Besonders hervorzuheben ist, dass durch den Einsatz des AMS auch Filamente fast vollständig ausgenutzt werden können. Ist eine Farbe leer, kann nahtlos auf eine andere Rolle der gleichen Farbe/Materialart zugegriffen werden, so dass der Druck nicht beeinflusst wird. Dazu muss das AMS jedoch richtig eingestellt sein. 
 
-Weitere Informationen zum Materialwechsel und zur Einstellung für den Betreuer $\to$ \ref{Materialwechsel})
+Weitere Informationen zum Materialwechsel und zur Einstellung für den Betreuer $\to$ \ref{filamentwechsel})
 
 \newpage
 % % % % % % % % % % % %
 
 \section{3D-Modell für den Druck vorbereiten}
 
-Damit ein 3D-Modell gedruckt werden kann, muss es in Schichtbilder übersetzt werden, die der Drucker nach und nach zu einem dreidimensionalen Objekt zusammensetzt. Dazu verwenden wir sowohl für den Ultimaker als auch für den Bambu P1S eine Slicer-Software namens \textit{OracSlicer}.
+	Damit ein 3D-Modell gedruckt werden kann, muss es in Schichtbilder übersetzt werden, die der Drucker nach und nach zu einem dreidimensionalen Objekt zusammensetzt. Dazu verwenden wir für unsere Bambulab Drucker eine Slicer-Software namens \textit{Bambu Studio} (basierend auf OracSlicer).
 
 \vspace{2em}
 
@@ -169,9 +172,9 @@ Damit ein 3D-Modell gedruckt werden kann, muss es in Schichtbilder übersetzt we
 \vspace{2em}
 
 \begin{itemize}
-\item Ziehen Sie die STL/STEP-Datei einfach per Drag-and-Drop in das \textit{OrcaSlicer}-Fenster. Auf diese Weise können auch mehrere Dateien hinzugefügt werden.
+\item Ziehen Sie die STL/STEP-Datei einfach per Drag-and-Drop in den \textit{Preview}-Tab des \textit{Bambu Studio}-Fensters. Auf diese Weise können auch mehrere Dateien hinzugefügt werden.
 \item Das Objekt auf einer bestimmten Seite platzieren, skalieren, verschieben, drehen etc. wie gewünscht. Verwenden Sie dazu die Schaltflächen in der weißen Menüleiste über dem Bauraum.
-\item Den richtigen Drucker in der linken Menüleiste auswählen \large\textcircled{\normalsize \texttt{1}} (Ultimaker Ultimaker-2+, Ultimaker-3 oder BambuLab P1S)
+\item Den richtigen Drucker in der linken Menüleiste auswählen \large\textcircled{\normalsize \texttt{1}} (BambuLab P1S oder BambuLab X1C)
 \item Stellen Sie sicher, dass in der linken Menüleiste \large\textcircled{\normalsize \texttt{2}} PLA als Material ausgewählt ist.\\Bei BambuLabs P1S kann mit einem Rechtsklick auf das Objekt im erscheinenden Kontextmenü das verwendete Filament geändert werden. Achtung, Mehrfarbendrucke erzeugen ein zusätzliches Objekt auf dem Bauraum, um die Düse zu reinigen. 
 \item Im Druckqualitätsmenü \large\textcircled{\normalsize \texttt{3}} eine geeignete Qualitätsstufe wählen. Empfohlen werden Sandart 0,20mm und Strenght 0,20mm. Die anderen Qualitätsstufen dauern nur wesentlich länger, wenn es um Qualitätsverbesserungen geht. 
 \item Gegebenenfalls sind Stützkonstruktionen erforderlich, wählen Sie dazu in der linken Seitenleiste das Menü \textit{Support} und setzen Sie das Häkchen bei aktiviert. Es stehen die Optionen \textit{Normal} oder \textit{Baum} für die Art der Stützkonstruktionen zur Verfügung. \textit{Baum} eignet sich sehr gut für organische Strukturen, während \textit{Normal} eher für technische Objekte mit klaren Kanten von Vorteil ist. 
