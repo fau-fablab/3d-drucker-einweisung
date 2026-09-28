@@ -1,2 +1,2 @@
-TARGET=Einweisung_3D-Drucker Einweisungsliste_3D-Drucker BA_X1C BA_P1S
+TARGET=Einweisung_3D-Drucker Einweisungsliste_3D-Drucker
 include fablab-document/Makefile.include

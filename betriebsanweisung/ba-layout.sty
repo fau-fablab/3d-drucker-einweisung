@@ -1,28 +1,12 @@
 % =====================================================================
 %  ba-layout.sty – Layout für Betriebsanweisungen (DGUV-Stil, A4)
 %  Enthält nur die Gestaltung; Inhalte stehen in den .tex-Dateien.
-%
-%  Eigenständige BA (z. B. BA_X1C.tex):
-%      \usepackage{betriebsanweisung/ba-layout}
-%  Eingebettet in ein anderes Dokument (z. B. die Einweisung):
-%      \usepackage[eingebettet]{betriebsanweisung/ba-layout}
-%      -> Seitenränder, Schrift und Seitenstil des Dokuments bleiben erhalten.
+%  Wird in der Einweisung eingebunden; Seitenränder, Schrift und Seitenstil
+%  des Dokuments bleiben erhalten.
 % =====================================================================
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{betriebsanweisung/ba-layout}[2026/09/28 Betriebsanweisung Layout]
 
-\newif\ifBA@eingebettet
-\DeclareOption{eingebettet}{\BA@eingebettettrue}
-\ProcessOptions\relax
-
-\ifBA@eingebettet\else
-  \RequirePackage[a4paper,margin=10mm]{geometry}
-  \RequirePackage[T1]{fontenc}
-  \RequirePackage[scaled]{helvet}
-  \renewcommand{\familydefault}{\sfdefault}
-  \pagestyle{empty}
-  \setlength{\parindent}{0pt}
-\fi
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{tabularx}
 \RequirePackage{enumitem}
@@ -42,7 +26,7 @@
 \newlength{\BApad}    \setlength{\BApad}{3mm}     % Innenabstand links/rechts
 \newlength{\BAsymw}   \setlength{\BAsymw}{20mm}   % Breite Symbolspalte
 \newlength{\BAgap}    \setlength{\BAgap}{4mm}     % Abstand Symbol -> Text
-\newlength{\BAsym}    \setlength{\BAsym}{14mm}    % Symbolgröße
+\newlength{\BAsym}    \setlength{\BAsym}{12mm}    % Symbolgröße
 \newlength{\BAvpad}   \setlength{\BAvpad}{1.5mm}  % Innenabstand oben/unten
 \newlength{\BAfooth}  \setlength{\BAfooth}{11mm}  % Höhe der Fußzeile
 \newlength{\BAtextw}                              % Breite der Textspalte
@@ -76,13 +60,12 @@
 \newcommand{\BAlogo}{}
 \newcommand{\BAbereich}{}
 \newcommand{\BAgeraet}{}
-\newcommand{\BAgeraetbild}{}
 \newcommand{\BAnummer}{}
 \newcommand{\BAdatum}{}
 \newcommand{\BAverantw}{}
 \newcommand{\BAgrundlage}{gemäß § 12 BetrSichV und § 4 DGUV Vorschrift 1}
-% Bildspalte im Kopf; bei mehreren Geräten mit \renewcommand anpassen
-\newcommand{\BAgeraetbilder}{\includegraphics[width=\BAsymw]{\BAgeraetbild}}
+% Bildspalte im Kopf (Gerätebilder), wird im Dokument gesetzt
+\newcommand{\BAgeraetbilder}{}
 
 % ---------------------------------------------------------------------
 %  Symbole: \BAsymlist{W017,W024}  (Dateien in symbole/)

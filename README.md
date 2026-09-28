@@ -7,8 +7,6 @@ Die neueste Version aus [github](https://github.com/fau-fablab/3d-drucker-einwei
 
 - [Einweisung](https://brain.fablab.fau.de/build/3d-drucker-einweisung/Einweisung_3D-Drucker.pdf)
 - [Einweisungsliste](https://brain.fablab.fau.de/build/3d-drucker-einweisung/Einweisungsliste_3D-Drucker.pdf)
-- [Betriebsanweisung X1 Carbon](https://brain.fablab.fau.de/build/3d-drucker-einweisung/BA_X1C.pdf)
-- [Betriebsanweisung P1S](https://brain.fablab.fau.de/build/3d-drucker-einweisung/BA_P1S.pdf)
 
 auschecken
 ----------
