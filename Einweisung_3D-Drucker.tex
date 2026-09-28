@@ -12,6 +12,7 @@
 \usepackage{tabularx}
 \usepackage{float}
 \usepackage{qrcode}
+\usetikzlibrary{calc}
 \usepackage{betriebsanweisung/ba-layout}
 
 % Stammdaten der Betriebsanweisung (Inhalt: betriebsanweisung/inhalt_bambu.tex)
@@ -101,17 +102,17 @@
 		\item Bambu Lab X1 Carbon: 256 mm $\times$ 256 mm $\times$ 256 mm
 	\end{itemize}
 	
-	Für gute Druckbarkeit beachten:
+	Für gute Druckbarkeit beachten (Nummern wie in der Abbildung):
 	
-	\begin{itemize}
-		\item Das Objekt sollte mit ausreichend großer Fläche auf der Druckplatte stehen.
-		\item Überhänge werden von der \textbf{Senkrechten} aus gemessen (siehe Abbildung). Bis 45$^\circ$ gelingen sie sicher ohne Stützstruktur, mit unseren Druckern meist auch bis etwa 60$^\circ$. Flachere Überhänge brauchen Stützstrukturen.
-		\item Brücken möglichst kürzer als 20 mm halten.
-		\item Falls nötig, Stützstrukturen in Bambu Studio aktivieren.
-	\end{itemize}
+	\begin{enumerate}
+		\item Das Objekt sollte mit einer flachen, ausreichend großen Fläche auf der Druckplatte stehen.
+		\item Überhänge werden von der \textbf{Senkrechten} aus gemessen. Bis 45$^\circ$ gelingen sie sicher ohne Stützstruktur, meist auch bis 60$^\circ$. Bambu Studio erzeugt Stützstrukturen standardmäßig erst ab 60$^\circ$ (Einstellung \textit{Threshold angle}: 30$^\circ$ zur Waagerechten).
+		\item Brücken möglichst kürzer als 20\,mm halten, längere hängen durch.
+		\item Stützstrukturen sind in Bambu Studio standardmäßig aus. Bei Bedarf unter \textit{Support} aktivieren, empfohlen ist der Typ \textit{tree(auto)}. Alternativ das Objekt so drehen, dass keine Stützen nötig sind.
+	\end{enumerate}
 	
 	\begin{center}
-		\includegraphics{./zeichnungen/formen.pdf}
+		\input{zeichnungen/druckbarkeit}
 	\end{center}
 	
 	\section{Vorbereitung am Drucker}
