@@ -22,6 +22,8 @@
 \renewcommand{\BAnummer}{BA-3D-01/02}
 
 \newcommand{\ra}{$\Rightarrow$}
+% Symbol aus der Werkzeugleiste von Bambu Studio
+\newcommand{\sym}[1]{\includegraphics[height=6.5mm]{zeichnungen/bambustudio-symbole/#1}}
 % Bewertung mit drei Punkten, z.B. \punkte{2} -> ●●○
 \newcommand{\punkte}[1]{\tikz[baseline=-0.6ex]{\foreach \i in {1,2,3}{%
 	\ifnum\i>#1 \fill[black!20] (\i*2.6mm,0) circle (1mm);\else\fill[fablab] (\i*2.6mm,0) circle (1mm);\fi}}}
@@ -228,27 +230,47 @@
 		\end{itemize}
 	\end{itemize}
 	
-	\subsection{Nützliche Werkzeuge}
+	\subsection{Werkzeugleiste}
 	
-	Die Werkzeuge liegen in der Leiste über der 3D-Ansicht. Namen in der englischen und deutschen Oberfläche:
+	Die Werkzeuge liegen in der Leiste über der 3D-Ansicht. \textbf{Fett} sind die Werkzeuge, die man fast immer braucht. Einige Symbole sind ausgegraut, bis ein Objekt geladen ist.
 	
 	\begin{center}
 		\small
-		\renewcommand{\arraystretch}{1.3}
-		\begin{tabularx}{\textwidth}{|l|X|}
+		\renewcommand{\arraystretch}{1.05}
+		\renewcommand{\tabularxcolumn}[1]{m{#1}}
+		\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{9mm}|m{67mm}|X|}
 			\hline
-			\textbf{Werkzeug} & \textbf{Wofür} \\ \hline
-			\textit{Lay on face} / \textit{Auf Fläche legen} & Fläche anklicken, die auf der Druckplatte liegen soll. Oft der einfachste Weg, Stützstrukturen zu vermeiden. \\ \hline
-			\textit{Auto orient} / \textit{Automatische Orientierung} & Bambu Studio dreht das Objekt selbst in eine günstige Lage. \\ \hline
-			\textit{Arrange} / \textit{Anordnen} (Taste A) & Verteilt mehrere Objekte sinnvoll auf der Druckplatte. \\ \hline
-			\textit{Move}, \textit{Rotate}, \textit{Scale} & Verschieben, Drehen, Größe ändern. Beim Skalieren werden die Maße in mm angezeigt. \\ \hline
-			\textit{Cut} / \textit{Zerschneiden} & Zu große Objekte teilen oder eine flache Auflage schaffen. \\ \hline
-			\textit{Support painting} / \textit{Stützen malen} & Stützstrukturen nur an bestimmten Stellen erzeugen. \\ \hline
+			 & \textbf{Werkzeug (englisch / deutsch)} & \textbf{Wofür} \\ \hline
+			\sym{hinzufuegen} & \textbf{\textit{Add} / Hinzufügen} & Modell laden (STL, STEP, 3MF). \\ \hline
+			\sym{druckplatte} & \textit{Add plate} / Druckplatte hinzufügen & Weitere Druckplatte im Projekt anlegen. \\ \hline
+			\sym{orientierung} & \textbf{\textit{Auto orient} / Automatische Orientierung} & Dreht das Objekt selbst in eine günstige Lage. \\ \hline
+			\sym{anordnen} & \textbf{\textit{Arrange} / Anordnen} & Verteilt alle Objekte auf der Platte (Taste A). \\ \hline
+			\sym{schichthoehe} & \textit{Variable layer height} / Variable Schichthöhe & Schichthöhe abschnittsweise ändern, für Fortgeschrittene. \\ \hline
+			\sym{bewegen} & \textbf{\textit{Move} / Bewegen} & Objekt verschieben. \\ \hline
+			\sym{drehen} & \textbf{\textit{Rotate} / Drehen} & Objekt drehen. \\ \hline
+			\sym{skalieren} & \textbf{\textit{Scale} / Skalieren} & Größe ändern, Maße werden in mm angezeigt. \\ \hline
+			\sym{flaeche} & \textbf{\textit{Lay on face} / Auf Fläche legen} & Fläche anklicken, die auf der Platte liegen soll. Oft der einfachste Weg, Stützen zu vermeiden. \\ \hline
+			\sym{schneiden} & \textit{Cut} / Zerschneiden & Objekt teilen, z.\,B. wenn es zu groß ist oder eine flache Auflage braucht. \\ \hline
+			\sym{boolesch} & \textit{Mesh boolean} / Boolesches Mesh & Körper vereinigen oder voneinander abziehen. \\ \hline
+			\sym{zusammenbau} & \textit{Assembly} / Zusammenbau & Teile aneinander ausrichten. \\ \hline
+			\sym{farbe} & \textit{Color painting} / Farbe malen & Flächen für Mehrfarbendrucke einfärben (nach Absprache). \\ \hline
+			\sym{text} & \textit{Text shape} / Form des Textes & Text auf das Modell setzen oder einprägen. \\ \hline
+			\sym{stuetzen} & \textit{Support painting} / Stützen malen & Stützstrukturen nur an bestimmten Stellen erzeugen. \\ \hline
+			\sym{naht} & \textit{Seam painting} / Naht aufmalen & Festlegen, wo die sichtbare Naht jeder Schicht liegt. \\ \hline
+			\sym{randohren} & \textit{Brim Ears} / Randohren & Kleine Scheiben an Ecken, damit sich das Teil nicht ablöst. \\ \hline
+			\sym{fuzzy} & \textit{Fuzzy skin painting} / Fuzzy Skin Bemalung & Raue, strukturierte Oberfläche an ausgewählten Stellen. \\ \hline
+			\sym{objekte} & \textit{Split to objects} / In Objekte trennen & Datei mit mehreren Körpern in einzelne Objekte aufteilen. \\ \hline
+			\sym{teile} & \textit{Split to parts} / In Teile trennen & Objekt in Teile aufteilen, z.\,B. für verschiedene Farben. \\ \hline
+			\sym{messen} & \textit{Measure} / Messen & Abstände und Winkel am Modell messen. \\ \hline
+			\sym{montageansicht} & \textit{Assembly view} / Montageansicht & Mehrteilige Modelle zusammengesetzt oder auseinandergezogen ansehen. \\ \hline
 		\end{tabularx}
 	\end{center}
 	
+	{\footnotesize Symbole: Bildschirmfoto aus Bambu Studio (Bambu Lab, AGPL-3.0).}
+	
 	\textbf{Modell in Zoll statt Millimeter?} Beim Import fragt Bambu Studio, ob ein sehr kleines Objekt auf Millimeter skaliert werden soll: mit \textit{Ja} bestätigen. Nachträglich geht das per Rechtsklick auf das Objekt \ra{} \textit{Convert from inch} (\textit{Von Inch umrechnen}). Maße danach immer kurz prüfen.
 	
+	\newpage
 	\subsection{Die wichtigsten Einstellungen}
 	
 	Für die meisten Drucke reicht das Profil \textit{0.20mm Standard}. Diese Einstellungen werden am häufigsten angepasst (links im Bereich \textit{Process}):
