@@ -169,7 +169,7 @@
 				\node[marke] at (0.933, 0.838) {5};
 			\end{scope}
 		\end{tikzpicture}
-		\caption{Menüführung von Bambu Studio. Drucker und Plattentyp \large\textcircled{\normalsize \texttt{1}}, Filamentauswahl \large\textcircled{\normalsize \texttt{2}}, Qualitätsstufe \large\textcircled{\normalsize \texttt{3}}, Slicen \large\textcircled{\normalsize \texttt{4}}, Exportieren über den Pfeil neben \textit{Print plate} \large\textcircled{\normalsize \texttt{5}}}
+		\caption{Menüführung von Bambu Studio. Drucker und Plattentyp \large\textcircled{\normalsize \texttt{1}}, Filamentauswahl \large\textcircled{\normalsize \texttt{2}}, Qualitätsstufe \large\textcircled{\normalsize \texttt{3}}, Slicen \large\textcircled{\normalsize \texttt{4}}, Drucken über \textit{Print plate} bzw.\ Exportieren über den Pfeil daneben \large\textcircled{\normalsize \texttt{5}}}
 		\label{abb.Grafik1}
 	\end{figure}
 	
@@ -186,9 +186,12 @@
 		\end{itemize}
 		\item Falls nötig, Stützstrukturen aktivieren.
 		\item Modell slicen.
-		\item Druckdatei auf MicroSD-Karte exportieren: Pfeil neben \textit{Print plate} \ra{} \textit{Export plate sliced file}.
-		\item MicroSD-Karte in den Drucker stecken.
-		\item Datei am Display auswählen und Druck starten.
+		\item Druck starten, wahlweise per MicroSD-Karte oder über das Netzwerk:
+		\begin{itemize}
+			\item \textbf{MicroSD-Karte:} Pfeil neben \textit{Print plate} \ra{} \textit{Export plate sliced file}. Die Druckdatei hat die Endung \texttt{.gcode.3mf}. Karte in den Drucker stecken, Datei am Display auswählen und Druck starten.
+			\item \textbf{Netzwerk:} \textit{Print plate} anklicken, im Dialog den richtigen Drucker auswählen, Zuordnung der Filamente zu den AMS-Plätzen prüfen und mit \textit{Send} starten.
+		\end{itemize}
+		\item Auch beim Start über das Netzwerk am Drucker bleiben und die erste Schicht beobachten.
 	\end{itemize}
 	
 	\section{Druck beobachten}
