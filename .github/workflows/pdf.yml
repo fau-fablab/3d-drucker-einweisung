@@ -1,0 +1,35 @@
+name: PDF bauen
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest
+    steps:
+      - name: Git und make installieren
+        run: apt-get update && apt-get install -y --no-install-recommends git make ca-certificates
+
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Untermodul fablab-document laden
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE/fablab-document"
+          # .gitmodules verweist per SSH, im Runner über HTTPS laden
+          git config --global url."https://github.com/".insteadOf "git@github.com:"
+          git submodule update --init --recursive
+
+      - name: PDFs bauen
+        run: make
+
+      - name: PDFs hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: output/*.pdf
+          if-no-files-found: error
