@@ -171,7 +171,7 @@
 		\centering
 		% Markierungen: Koordinaten relativ zum Bild (0,0 = unten links, 1,1 = oben rechts)
 		\begin{tikzpicture}[marke/.style={circle, draw=black, fill=white, line width=1.2pt, minimum size=6.5mm, inner sep=0pt, font=\bfseries\large}]
-			\node[anchor=south west, inner sep=0pt] (bild) at (0,0) {\includegraphics[width=0.85\textwidth]{./zeichnungen/BambuStudio.png}};
+			\node[anchor=south west, inner sep=0pt] (bild) at (0,0) {\includegraphics[width=0.7\textwidth]{./zeichnungen/BambuStudio.png}};
 			\begin{scope}[x={(bild.south east)}, y={(bild.north west)}]
 				\node[marke] at (0.332, 0.842) {1};
 				\node[marke] at (0.332, 0.562) {2};
@@ -202,9 +202,8 @@
 		\item Druck starten, wahlweise per MicroSD-Karte oder über das Netzwerk:
 		\begin{itemize}
 			\item \textbf{MicroSD-Karte:} Pfeil neben \textit{Print plate} \ra{} \textit{Export plate sliced file}. Die Druckdatei hat die Endung \texttt{.gcode.3mf}. Karte in den Drucker stecken, Datei am Display auswählen und Druck starten.
-			\item \textbf{Netzwerk:} \textit{Print plate} anklicken, im Dialog den richtigen Drucker auswählen, Zuordnung der Filamente zu den AMS-Plätzen prüfen und mit \textit{Send} starten.
+			\item \textbf{Netzwerk:} \textit{Print plate} anklicken, im Dialog den richtigen Drucker auswählen, Zuordnung der Filamente zu den AMS-Plätzen prüfen und mit \textit{Send} starten. Danach zum Drucker gehen und die erste Schicht beobachten.
 		\end{itemize}
-		\item Auch beim Start über das Netzwerk am Drucker bleiben und die erste Schicht beobachten.
 	\end{itemize}
 	
 	\section{Druck beobachten}
