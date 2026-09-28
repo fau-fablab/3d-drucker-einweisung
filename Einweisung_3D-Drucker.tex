@@ -228,6 +228,47 @@
 		\end{itemize}
 	\end{itemize}
 	
+	\subsection{Nützliche Werkzeuge}
+	
+	Die Werkzeuge liegen in der Leiste über der 3D-Ansicht. Namen in der englischen und deutschen Oberfläche:
+	
+	\begin{center}
+		\small
+		\renewcommand{\arraystretch}{1.3}
+		\begin{tabularx}{\textwidth}{|l|X|}
+			\hline
+			\textbf{Werkzeug} & \textbf{Wofür} \\ \hline
+			\textit{Lay on face} / \textit{Auf Fläche legen} & Fläche anklicken, die auf der Druckplatte liegen soll. Oft der einfachste Weg, Stützstrukturen zu vermeiden. \\ \hline
+			\textit{Auto orient} / \textit{Automatische Orientierung} & Bambu Studio dreht das Objekt selbst in eine günstige Lage. \\ \hline
+			\textit{Arrange} / \textit{Anordnen} (Taste A) & Verteilt mehrere Objekte sinnvoll auf der Druckplatte. \\ \hline
+			\textit{Move}, \textit{Rotate}, \textit{Scale} & Verschieben, Drehen, Größe ändern. Beim Skalieren werden die Maße in mm angezeigt. \\ \hline
+			\textit{Cut} / \textit{Zerschneiden} & Zu große Objekte teilen oder eine flache Auflage schaffen. \\ \hline
+			\textit{Support painting} / \textit{Stützen malen} & Stützstrukturen nur an bestimmten Stellen erzeugen. \\ \hline
+		\end{tabularx}
+	\end{center}
+	
+	\textbf{Modell in Zoll statt Millimeter?} Beim Import fragt Bambu Studio, ob ein sehr kleines Objekt auf Millimeter skaliert werden soll: mit \textit{Ja} bestätigen. Nachträglich geht das per Rechtsklick auf das Objekt \ra{} \textit{Convert from inch} (\textit{Von Inch umrechnen}). Maße danach immer kurz prüfen.
+	
+	\subsection{Die wichtigsten Einstellungen}
+	
+	Für die meisten Drucke reicht das Profil \textit{0.20mm Standard}. Diese Einstellungen werden am häufigsten angepasst (links im Bereich \textit{Process}):
+	
+	\begin{center}
+		\small
+		\renewcommand{\arraystretch}{1.3}
+		\begin{tabularx}{\textwidth}{|l|l|l|X|}
+			\hline
+			\textbf{Einstellung} & \textbf{Reiter} & \textbf{Standard} & \textbf{Wann ändern?} \\ \hline
+			Profil / \textit{Layer height} & -- & 0,20\,mm & Feine Details: \textit{0.16mm Optimal} oder \textit{0.12mm Fine}. Schneller Entwurf: \textit{0.24mm Draft}. \\ \hline
+			\textit{Wall loops} (Wandlinien) & \textit{Strength} & 2 & Stabilere Teile: 3--4, oder gleich das Profil \textit{0.20mm Strength}. \\ \hline
+			\textit{Sparse infill density} (Fülldichte) & \textit{Strength} & 15\,\% & Belastete Teile: 25--40\,\%. Mehr bringt selten etwas, kostet aber Material und Zeit. \\ \hline
+			\textit{Enable support} (Stützstrukturen) & \textit{Support} & aus & Bei Überhängen über 60$^\circ$ einschalten, Typ \textit{tree(auto)}. \\ \hline
+			\textit{Brim type} (Rand) & \textit{Others} & auto & Hohe, schmale oder kleine Teile, die sich lösen: \textit{Outer brim only}. \\ \hline
+		\end{tabularx}
+	\end{center}
+	
+	Nach jeder Änderung neu slicen und Druckzeit und Gewicht prüfen.
+	
 	\section{Druck beobachten}
 	
 	\subsection{Erste Schicht}
