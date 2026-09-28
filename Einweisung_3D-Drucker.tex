@@ -29,6 +29,10 @@
 	\ifnum\i>#1 \fill[black!20] (\i*2.6mm,0) circle (1mm);\else\fill[fablab] (\i*2.6mm,0) circle (1mm);\fi}}}
 
 \date{\today}
+% Versionsnummer: version.tex wird von der GitHub Action erzeugt,
+% lokal steht stattdessen "Entwurf" mit Datum in der Fußzeile.
+\InputIfFileExists{version}{}{\newcommand{\Version}{Entwurf \today}}
+\fancyfoot[R]{Version \Version}
 \author{kontakt@fablab.fau.de}
 \title{Einweisung 3D-Drucker}
 
@@ -36,7 +40,8 @@
 	
 	\maketitle
 	\begin{center}
-		Für die 3D-Drucker \textbf{Bambu Lab P1S} und \textbf{Bambu Lab X1 Carbon}
+		Für die 3D-Drucker \textbf{Bambu Lab P1S} und \textbf{Bambu Lab X1 Carbon}\\[1mm]
+		{\small Version \Version}
 	\end{center}
 	
 	\textbf{Nur eingewiesene Benutzer dürfen die Drucker selbstständig benutzen.}
