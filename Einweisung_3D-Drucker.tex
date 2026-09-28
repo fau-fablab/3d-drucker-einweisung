@@ -149,14 +149,27 @@
 		\item Mehrfarbendrucke vorher mit einem Betreuer absprechen.
 	\end{itemize}
 	
+	\newpage
 	\section{Modell in Bambu Studio vorbereiten}
 	
 	Damit ein Modell gedruckt werden kann, muss es in Schichten umgerechnet werden. Dafür verwenden wir \textit{Bambu Studio}.
 	
 	\begin{figure} [H]
 		\centering
-	%	\includegraphics[width=1.0\textwidth]{./zeichnungen/BambuStudio.pdf}
-		\caption{Menüführung von Bambu Studio. Druckerauswahl \large\textcircled{\normalsize \texttt{1}}, Filamentauswahl \large\textcircled{\normalsize \texttt{2}}, Qualitätsstufe \large\textcircled{\normalsize \texttt{3}}, Slicen \large\textcircled{\normalsize \texttt{4}}, Exportieren \large\textcircled{\normalsize \texttt{5}}}
+		% Markierungen: Koordinaten relativ zum Bild (0,0 = unten links, 1,1 = oben rechts)
+		\begin{tikzpicture}[marke/.style={circle, draw=black, fill=white, line width=1.2pt, minimum size=6.5mm, inner sep=0pt, font=\bfseries\large}]
+			\node[anchor=south west, inner sep=0pt] (bild) at (0,0) {\includegraphics[width=0.85\textwidth]{./zeichnungen/BambuStudio.png}};
+			\begin{scope}[x={(bild.south east)}, y={(bild.north west)}]
+				\node[marke] at (0.332, 0.842) {1};
+				\node[marke] at (0.332, 0.562) {2};
+				\node[marke] at (0.332, 0.426) {3};
+				\draw[line width=1.2pt, white] (0.854, 0.838) -- (0.854, 0.937);
+				\node[marke] at (0.854, 0.838) {4};
+				\draw[line width=1.2pt, white] (0.933, 0.838) -- (0.910, 0.937);
+				\node[marke] at (0.933, 0.838) {5};
+			\end{scope}
+		\end{tikzpicture}
+		\caption{Menüführung von Bambu Studio. Drucker und Plattentyp \large\textcircled{\normalsize \texttt{1}}, Filamentauswahl \large\textcircled{\normalsize \texttt{2}}, Qualitätsstufe \large\textcircled{\normalsize \texttt{3}}, Slicen \large\textcircled{\normalsize \texttt{4}}, Exportieren über den Pfeil neben \textit{Print plate} \large\textcircled{\normalsize \texttt{5}}}
 		\label{abb.Grafik1}
 	\end{figure}
 	
@@ -173,7 +186,7 @@
 		\end{itemize}
 		\item Falls nötig, Stützstrukturen aktivieren.
 		\item Modell slicen.
-		\item G-Code auf MicroSD-Karte exportieren.
+		\item Druckdatei auf MicroSD-Karte exportieren: Pfeil neben \textit{Print plate} \ra{} \textit{Export plate sliced file}.
 		\item MicroSD-Karte in den Drucker stecken.
 		\item Datei am Display auswählen und Druck starten.
 	\end{itemize}
