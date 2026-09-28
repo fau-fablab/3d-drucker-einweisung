@@ -15,6 +15,17 @@
 \usepackage{wrapfig}
 \usepackage{float}
 \usepackage{qrcode}
+\usepackage[eingebettet]{betriebsanweisung/ba-layout}
+
+% Stammdaten der Betriebsanweisung (Inhalt: betriebsanweisung/inhalt_bambu.tex)
+\renewcommand{\BAfirma}{FAU FabLab, Friedrich-Alexander-Universität Erlangen-Nürnberg}
+\renewcommand{\BAlogo}{FabLab_Logo}
+\renewcommand{\BAbereich}{Raum U1.239, Hörsaalgebäude (MHB), Erwin-Rommel-Str.\ 60, 91058 Erlangen}
+\renewcommand{\BAgeraet}{3D-Drucker Bambu Lab P1S und X1 Carbon (FDM, geschlossener Bauraum)}
+\renewcommand{\BAgeraetbilder}{\includegraphics[width=0.75\BAsymw]{P1S}\par\vspace{1mm}\includegraphics[width=0.75\BAsymw]{X1C}}
+\renewcommand{\BAnummer}{BA-3D-01/02}
+\renewcommand{\BAdatum}{28.09.2026}
+\renewcommand{\BAverantw}{Name der verantwortlichen Person}
 
 \renewcommand{\texteuro}{\euro}
 \newcommand{\fachbegriff}[1]{(\textit{#1})}
@@ -57,6 +68,17 @@
 		\item \textbf{Wiegen und Bezahlen nicht vergessen.}
 	\end{itemize}
 	
+	Zusätzlich gilt die \textbf{Betriebsanweisung} auf der nächsten Seite (Abschnitt~\ref{sec:betriebsanweisung}). Sie hängt an jedem Drucker aus und ist Bestandteil dieser Einweisung.
+	
+	\newpage
+	
+	% Betriebsanweisung als ganze Seite im Format des Aushangs am Drucker
+	\newgeometry{margin=10mm,hoffset=0pt,voffset=0pt}
+	\thispagestyle{empty}
+	\refstepcounter{section}\label{sec:betriebsanweisung}
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection}Betriebsanweisung}
+	{\small\input{betriebsanweisung/inhalt_bambu}}
+	\restoregeometry
 	\newpage
 	
 	\renewcommand{\contentsname}{Inhaltsverzeichnis / Arbeitsablauf}

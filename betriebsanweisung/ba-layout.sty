@@ -1,0 +1,150 @@
+% =====================================================================
+%  ba-layout.sty – Layout für Betriebsanweisungen (DGUV-Stil, A4)
+%  Enthält nur die Gestaltung; Inhalte stehen in den .tex-Dateien.
+%
+%  Eigenständige BA (z. B. BA_X1C.tex):
+%      \usepackage{betriebsanweisung/ba-layout}
+%  Eingebettet in ein anderes Dokument (z. B. die Einweisung):
+%      \usepackage[eingebettet]{betriebsanweisung/ba-layout}
+%      -> Seitenränder, Schrift und Seitenstil des Dokuments bleiben erhalten.
+% =====================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{betriebsanweisung/ba-layout}[2026/09/28 Betriebsanweisung Layout]
+
+\newif\ifBA@eingebettet
+\DeclareOption{eingebettet}{\BA@eingebettettrue}
+\ProcessOptions\relax
+
+\ifBA@eingebettet\else
+  \RequirePackage[a4paper,margin=10mm]{geometry}
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage[scaled]{helvet}
+  \renewcommand{\familydefault}{\sfdefault}
+  \pagestyle{empty}
+  \setlength{\parindent}{0pt}
+\fi
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{tabularx}
+\RequirePackage{enumitem}
+\RequirePackage{graphicx}
+\graphicspath{{betriebsanweisung/symbole/}{betriebsanweisung/bilder/}}
+
+% ---------------------------------------------------------------------
+%  Rahmenfarbe: Blau = Maschinen/Geräte, Orange = Gefahrstoffe,
+%               Grün = Biostoffe (übliche Konvention)
+% ---------------------------------------------------------------------
+\definecolor{BAframe}{RGB}{0,84,159}
+
+% ---------------------------------------------------------------------
+%  Raster – EINE Stelle für alle Abstände, damit alles bündig ist
+% ---------------------------------------------------------------------
+\newlength{\BArand}   \setlength{\BArand}{5mm}    % Rahmenbreite links/rechts
+\newlength{\BApad}    \setlength{\BApad}{3mm}     % Innenabstand links/rechts
+\newlength{\BAsymw}   \setlength{\BAsymw}{20mm}   % Breite Symbolspalte
+\newlength{\BAgap}    \setlength{\BAgap}{4mm}     % Abstand Symbol -> Text
+\newlength{\BAsym}    \setlength{\BAsym}{14mm}    % Symbolgröße
+\newlength{\BAvpad}   \setlength{\BAvpad}{1.5mm}  % Innenabstand oben/unten
+\newlength{\BAfooth}  \setlength{\BAfooth}{11mm}  % Höhe der Fußzeile
+\newlength{\BAtextw}                              % Breite der Textspalte
+% \BAtextw wird in \BAkopf aus der aktuellen Zeilenbreite berechnet, damit es
+% auch nach einem Seitenrand-Wechsel (\newgeometry) im Dokument stimmt.
+
+\tcbset{
+  BAbase/.style={
+    enhanced, sharp corners, colback=white, colframe=BAframe,
+    boxrule=0pt, leftrule=\BArand, rightrule=\BArand,
+    toprule=0pt, bottomrule=0pt,
+    left=\BApad, right=\BApad, top=\BAvpad, bottom=\BAvpad,
+    boxsep=0pt, before skip=0pt, after skip=0pt, parbox=false,
+  },
+  BAtwocol/.style={
+    sidebyside, sidebyside align=center, segmentation hidden,
+    lefthand width=\BAsymw, sidebyside gap=\BAgap,
+  },
+}
+
+% Listenformat nur innerhalb der BA-Kästen (lokal), damit Listen im
+% umgebenden Dokument unverändert bleiben.
+\newcommand{\BAlisten}{%
+  \setlist[itemize]{leftmargin=3.5mm, labelsep=1.5mm, itemsep=0.8pt,
+                    topsep=0pt, parsep=0pt, partopsep=0pt, label=\textbullet}}
+
+% ---------------------------------------------------------------------
+%  Stammdaten (werden in der .tex-Datei mit \renewcommand gesetzt)
+% ---------------------------------------------------------------------
+\newcommand{\BAfirma}{}
+\newcommand{\BAlogo}{}
+\newcommand{\BAbereich}{}
+\newcommand{\BAgeraet}{}
+\newcommand{\BAgeraetbild}{}
+\newcommand{\BAnummer}{}
+\newcommand{\BAdatum}{}
+\newcommand{\BAverantw}{}
+\newcommand{\BAgrundlage}{gemäß § 12 BetrSichV und § 4 DGUV Vorschrift 1}
+% Bildspalte im Kopf; bei mehreren Geräten mit \renewcommand anpassen
+\newcommand{\BAgeraetbilder}{\includegraphics[width=\BAsymw]{\BAgeraetbild}}
+
+% ---------------------------------------------------------------------
+%  Symbole: \BAsymlist{W017,W024}  (Dateien in symbole/)
+% ---------------------------------------------------------------------
+\newcommand{\BAsymbol}[1]{\includegraphics[width=\BAsym]{#1}}
+\newcommand{\BAsymlist}[1]{%
+  \@for\BA@s:=#1\do{\BAsymbol{\BA@s}\par\vspace{1.5mm}}\vspace{-1.5mm}}
+
+% ---------------------------------------------------------------------
+%  Kopf
+% ---------------------------------------------------------------------
+\newcommand{\BAkopf}[1]{% #1 = Tätigkeit
+  \global\BAtextw=\dimexpr\linewidth-2\BArand-2\BApad-\BAsymw-\BAgap\relax
+  \begin{tcolorbox}[BAbase, BAtwocol, toprule=\BArand]
+    \centering\BAgeraetbilder
+    \tcblower
+    \begin{tabularx}{\linewidth}{@{}X@{}r@{}}
+      {\Huge\bfseries BETRIEBSANWEISUNG} &
+        \raisebox{-0.5mm}{\includegraphics[height=7mm]{\BAlogo}} \\[1mm]
+      {\small\BAgrundlage} &
+        {\small Nr.\ \BAnummer\quad Stand: \BAdatum}
+    \end{tabularx}\\[1.5mm]
+    \small
+    \begin{tabularx}{\linewidth}{@{}l@{\hspace{3mm}}X@{}}
+      \textbf{Betreiber:}      & \BAfirma \\
+      \textbf{Arbeitsbereich:} & \BAbereich \\
+      \textbf{Arbeitsmittel:}  & \BAgeraet \\
+      \textbf{Tätigkeit:}      & #1
+    \end{tabularx}
+  \end{tcolorbox}}
+
+% ---------------------------------------------------------------------
+%  Abschnitt:  \BAblock[tcb-Optionen]{Titel}{Symbole}{Text}
+% ---------------------------------------------------------------------
+\newcommand{\BAblock}[4][]{%
+  \begin{tcolorbox}[BAbase, BAtwocol,
+      title={#2}, colbacktitle=BAframe, coltitle=white,
+      fonttitle=\bfseries\large, halign title=center, titlerule=0pt,
+      toptitle=0.8mm, bottomtitle=0.8mm, #1]
+    \centering\BAsymlist{#3}
+    \tcblower
+    \BAlisten\raggedright #4
+  \end{tcolorbox}}
+
+% ---------------------------------------------------------------------
+%  Letzter Abschnitt: füllt die Seite, Fußzeile fest am unteren Rand
+% ---------------------------------------------------------------------
+\newcommand{\BAfusszeile}{\small
+  \begin{tabularx}{\BAtextw}{@{}l@{\hspace{2mm}}l@{\hspace{8mm}}l@{\hspace{2mm}}X@{}}
+    Datum: & \BAdatum & Verantwortlich (Unterschrift): & \hrulefill \\[-1mm]
+           &          &                                & \scriptsize\BAverantw
+  \end{tabularx}}
+
+\newcommand{\BAletzterblock}[3]{%
+  \BAblock[height fill, bottomrule=\BArand,
+    bottom=\dimexpr\BAfooth+\BAvpad\relax,
+    overlay={%
+      \draw[BAframe,line width=0.6mm]
+        ([yshift=\BAfooth]interior.south west) --
+        ([yshift=\BAfooth]interior.south east);
+      \node[anchor=south west, inner sep=0pt, text width=\BAtextw]
+        at ([xshift=\BApad+\BAsymw+\BAgap, yshift=1.5mm]interior.south west)
+        {\BAfusszeile};}]{#1}{#2}{#3}}
+
+\endinput
