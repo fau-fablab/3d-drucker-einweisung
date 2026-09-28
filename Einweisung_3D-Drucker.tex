@@ -22,6 +22,9 @@
 \renewcommand{\BAnummer}{BA-3D-01/02}
 
 \newcommand{\ra}{$\Rightarrow$}
+% Bewertung mit drei Punkten, z.B. \punkte{2} -> ●●○
+\newcommand{\punkte}[1]{\tikz[baseline=-0.6ex]{\foreach \i in {1,2,3}{%
+	\ifnum\i>#1 \fill[black!20] (\i*2.6mm,0) circle (1mm);\else\fill[fablab] (\i*2.6mm,0) circle (1mm);\fi}}}
 
 \date{\today}
 \author{kontakt@fablab.fau.de}
@@ -133,9 +136,28 @@
 		\item Druckobjekte nur durch Biegen der flexiblen Druckplatte lösen. Die PEI-Beschichtung nicht verkratzen.
 	\end{itemize}
 	
+	\newpage
 	\subsection{Material und AMS}
 	
 	Zugelassen sind \textbf{PLA}, \textbf{PETG} und \textbf{ASA}, Standardmaterial ist PLA. Andere Materialien dürfen nur nach Freigabe durch einen Betreuer verwendet werden.
+	
+	\begin{center}
+		\small
+		\renewcommand{\arraystretch}{1.35}
+		\begin{tabularx}{\textwidth}{|l|X|X|X|}
+			\hline
+			& \textbf{PLA} & \textbf{PETG} & \textbf{ASA} \\ \hline
+			\textbf{Empfehlung} & \textbf{Standard, erste Wahl} & für Funktionsteile & für draußen \\ \hline
+			Typische Teile & Modelle, Prototypen, Deko & Halter, Clips, Gehäuse & Teile für Garten, Fahrrad, Auto \\ \hline
+			Einfach zu drucken & \punkte{3} & \punkte{2} & \punkte{1} \\ \hline
+			Zäh, bricht nicht so leicht & \punkte{1} & \punkte{3} & \punkte{2} \\ \hline
+			Hitzebeständig & \punkte{1}~ca.\ 55\,\textcelsius & \punkte{2}~ca.\ 70\,\textcelsius & \punkte{3}~ca.\ 95\,\textcelsius \\ \hline
+			Sonne und Wetter & \punkte{1} & \punkte{2} & \punkte{3} \\ \hline
+			Geruch beim Drucken & kaum & kaum & ja, Tür geschlossen halten \\ \hline
+		\end{tabularx}
+	\end{center}
+	
+	\textbf{Im Zweifel PLA nehmen.} PETG oder ASA nur, wenn das Teil es wirklich braucht.
 	
 	Faserverstärkte und andere abrasive Filamente (z.\,B. mit Carbon- oder Glasfaser, erkennbar an \enquote{CF} oder \enquote{GF} im Namen) nutzen die Düse schnell ab. Sie dürfen \textbf{nur nach Rücksprache mit einem Betreuer} verwendet werden.
 	
