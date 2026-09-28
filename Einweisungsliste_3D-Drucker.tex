@@ -15,6 +15,10 @@
 
 \fancyfoot[C]{\small github.com/fau-fablab/3d-drucker-einweisung}
 \fancyfoot[L]{Einweisungsliste Nr. \underline{\hspace{3em}}}
+% Versionsnummer: version.tex wird von der GitHub Action erzeugt,
+% lokal steht stattdessen "Entwurf" mit Datum in der Fußzeile.
+\InputIfFileExists{version}{}{\newcommand{\Version}{Entwurf \today}}
+\fancyfoot[R]{Version \Version}
 
 \begin{document}
 \vspace*{-2em}
