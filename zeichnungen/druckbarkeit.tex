@@ -1,0 +1,98 @@
+% =====================================================================
+%  Druckbarkeit: Auflagefläche, Überhänge, Brücken, Stützstrukturen
+%  Werte nach Bambu Studio (Stützstruktur ab 30° zur Waagerechten,
+%  d. h. ab 60° zur Senkrechten).
+% =====================================================================
+\begin{tikzpicture}[x=1mm, y=1mm, font=\scriptsize,
+    teil/.style={fill=black!18, draw=black!75, line width=0.7pt, line join=round},
+    ok/.pic={\fill[okgruen] (0,0) circle (3);
+      \draw[white, line width=1.3pt, line cap=round, line join=round]
+        (-1.4,0.1) -- (-0.4,-1.1) -- (1.5,1.2);},
+    nok/.pic={\fill[nokrot] (0,0) circle (3);
+      \draw[white, line width=1.3pt, line cap=round]
+        (-1.1,-1.1) -- (1.1,1.1) (-1.1,1.1) -- (1.1,-1.1);},
+  ]
+  \definecolor{okgruen}{RGB}{46,160,67}
+  \definecolor{nokrot}{RGB}{207,34,46}
+  \definecolor{mittel}{RGB}{230,150,0}
+  \definecolor{stuetze}{RGB}{47,111,183}
+  \definecolor{feld}{RGB}{244,246,248}
+  \definecolor{bett}{RGB}{60,64,70}
+
+  % Feldrahmen, Titel und Druckplatte: \feld{x}{y}{Titel}
+  \newcommand{\feld}[3]{%
+    \fill[feld, rounded corners=2mm] (#1,#2) rectangle ++(82,50);
+    \node[anchor=north west, font=\small\bfseries] at (#1+3,#2+48) {#3};
+    \fill[bett] (#1+5,#2+6.5) rectangle ++(72,1.5);}
+
+  % ---------------- 1 Auflagefläche ----------------------------------
+  \feld{0}{55}{1\quad Auflagefläche}
+  \begin{scope}[shift={(0,55)}]
+    \draw[teil] (24,19) ellipse (8 and 11);
+    \begin{scope}
+      \clip (40,8) rectangle (76,40);
+      \draw[teil] (58,17) ellipse (8 and 11);
+    \end{scope}
+    \draw[black!75, line width=0.7pt] (51.2,8) -- (64.8,8);
+    \pic at (36,30) {nok};
+    \pic at (70,30) {ok};
+    \node at (24,3) {Punktauflage};
+    \node at (58,3) {flache Unterseite};
+  \end{scope}
+
+  % ---------------- 2 Überhänge -------------------------------------
+  \feld{88}{55}{2\quad Überhänge}
+  \begin{scope}[shift={(88,55)}]
+    % Winkelfächer, gemessen von der Senkrechten
+    \fill[okgruen, opacity=0.35] (30,8) -- ++(90:30) arc (90:45:30) -- cycle;
+    \fill[mittel,  opacity=0.35] (30,8) -- ++(45:30) arc (45:30:30) -- cycle;
+    \fill[nokrot,  opacity=0.35] (30,8) -- ++(30:30) arc (30:0:30) -- cycle;
+    \draw[teil] (10,8) -- (30,8) -- (37,18) -- (10,18) -- cycle;
+    \draw[black!75, dashed] (30,8) -- (30,39);
+    \node at ($(30,8)+(45:33)$) {45°};
+    \node at ($(30,8)+(30:34)$) {60°};
+    % Legende
+    \fill[okgruen, opacity=0.6] (63,31) rectangle ++(3,3);
+    \node[anchor=west] at (66.5,32.5) {sicher};
+    \fill[mittel, opacity=0.6] (63,25) rectangle ++(3,3);
+    \node[anchor=west] at (66.5,26.5) {meist ok};
+    \fill[nokrot, opacity=0.6] (63,19) rectangle ++(3,3);
+    \node[anchor=west, align=left] at (66.5,20.5) {Stütze};
+    \node at (40,3) {Winkel zur Senkrechten};
+  \end{scope}
+
+  % ---------------- 3 Brücken ---------------------------------------
+  \feld{0}{0}{3\quad Brücken}
+  \begin{scope}
+    % kurze Brücke
+    \draw[teil] (6,8) -- (6,31) -- (28,31) -- (28,8) -- (23,8) -- (23,26)
+      -- (11,26) -- (11,8) -- cycle;
+    \draw[<->, black!75] (11,21) -- (23,21);
+    \pic at (17,38) {ok};
+    % lange Brücke, hängt durch
+    \draw[teil] (34,8) -- (34,31) -- (77,31) -- (77,8) -- (72,8) -- (72,26)
+      .. controls (63,20) and (48,20) .. (39,26) -- (39,8) -- cycle;
+    \draw[<->, black!75] (39,15) -- (72,15);
+    \pic at (55.5,38) {nok};
+    \node at (17,28.5) {$\le$ 20\,mm};
+    \node at (55.5,28.5) {$>$ 20\,mm};
+    \node at (17,3) {druckt frei};
+    \node at (55.5,3) {hängt durch};
+  \end{scope}
+
+  % ---------------- 4 Stützstrukturen -------------------------------
+  \feld{88}{0}{4\quad Stützstrukturen}
+  \begin{scope}[shift={(88,0)}]
+    % Baumstütze (tree) unter den Überhängen
+    \begin{scope}[stuetze, line width=0.9pt, line cap=round]
+      \draw (16,8) -- (16,14) -- (12,21.5) (16,14) -- (19,21.5);
+      \draw (44,8) -- (44,14) -- (41,21.5) (44,14) -- (48,21.5);
+    \end{scope}
+    \draw[teil] (24,8) -- (24,22) -- (10,22) -- (10,30) -- (50,30)
+      -- (50,22) -- (36,22) -- (36,8) -- cycle;
+    \pic at (64,38) {ok};
+    \node[anchor=west, align=left] at (55,20)
+      {in Bambu Studio\\aktivieren,\\Typ \textit{tree(auto)}};
+    \node at (30,3) {Stützen später entfernen};
+  \end{scope}
+\end{tikzpicture}

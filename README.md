@@ -1,7 +1,7 @@
 3D-Drucker Einweisung
 =====================
 
-Einweisung des [FAU FabLab](https://fablab.fau.de) in den [3D-Drucker](https://fablab.fau.de/tool/3d-drucker-ultimaker).
+Einweisung des [FAU FabLab](https://fablab.fau.de) in die [3D-Drucker](https://fablab.fau.de/tool/3d-drucker/) Bambu Lab P1S und X1 Carbon.
 
 Die neueste Version aus [github](https://github.com/fau-fablab/3d-drucker-einweisung) ist als PDF abrufbar:
 

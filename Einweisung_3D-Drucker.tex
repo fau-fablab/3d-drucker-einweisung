@@ -2,286 +2,439 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % COPYRIGHT: (C) 2012-2015 FAU FabLab and others
 % Bearbeitungen ab 2015-02-20 fallen unter CC-BY-SA 3.0
-% Sobald alle Mitautoren zugestimmt haben, steht die komplette Datei unter CC-BY-SA 3.0. Bis dahin ist der Lizenzstatus aller alten Bestandteile ungeklärt.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\basedir}{fablab-document}
 \documentclass{\basedir/fablab-document}
 
-\usepackage{amssymb} % Symbole für Knöpfe
-\usepackage{subfigure,caption}
-\usepackage{eurosym}
-\usepackage{textcomp} % \textcelsius
-\usepackage{tabularx} % Tabellen mit bestimmtem Breitenverhältnis der Spalten
-\usepackage{wrapfig} % Textumlauf um Bilder
-\usepackage{float} % Ermöglicht H als Platzierungsoption
+\usepackage{caption}
+\usepackage{textcomp}
+\usepackage{tabularx}
+\usepackage{float}
 \usepackage{qrcode}
-\renewcommand{\texteuro}{\euro}
-\newcommand{\fachbegriff}[1]{(\textit{#1})}
-\newcommand{\ra}{$\Rightarrow$}
+\usetikzlibrary{calc}
+\usepackage{betriebsanweisung/ba-layout}
 
-% \linespread{1.2}
-% \fancyhead{}
+% Stammdaten der Betriebsanweisung (Inhalt: betriebsanweisung/inhalt_bambu.tex)
+\input{betriebsanweisung/stammdaten}
+\renewcommand{\BAgeraet}{3D-Drucker Bambu Lab P1S und X1 Carbon (FDM, geschlossener Bauraum)}
+\renewcommand{\BAgeraetbilder}{\includegraphics[width=0.75\BAsymw]{P1S}\par\vspace{1mm}\includegraphics[width=0.75\BAsymw]{X1C}}
+\renewcommand{\BAnummer}{BA-3D-01/02}
+
+\newcommand{\ra}{$\Rightarrow$}
+% Symbol aus der Werkzeugleiste von Bambu Studio
+\newcommand{\sym}[1]{\includegraphics[height=6.5mm]{zeichnungen/bambustudio-symbole/#1}}
+% Bewertung mit drei Punkten, z.B. \punkte{2} -> ●●○
+\newcommand{\punkte}[1]{\tikz[baseline=-0.6ex]{\foreach \i in {1,2,3}{%
+	\ifnum\i>#1 \fill[black!20] (\i*2.6mm,0) circle (1mm);\else\fill[fablab] (\i*2.6mm,0) circle (1mm);\fi}}}
+
 \date{\today}
 \author{kontakt@fablab.fau.de}
 \title{Einweisung 3D-Drucker}
 
 \begin{document}
-
-\maketitle
-\begin{center}
-	Für die 3D-Drucker \textbf{BambuLab P1S}, \textbf{Ultimaker-2+} und \textbf{Ultimaker-3}
-\end{center}
-
-\textbf{Nur eingewiesene Benutzer dürfen den Drucker selbstständig benutzen}, um  Beschädigungen zu vermeiden. Wenn du noch nicht eingewiesen bist, frage einen Betreuer. Er erklärt dir die eigenständige Bedienung. Wenn du alles verstanden hast, darfst auch du dann die Einweisung unterschreiben und den Drucker in Zukunft selbstständig verwenden.
-
-\section{Regeln und Hinweise}
-Für die Benutzung ist es wichtig, dass du folgende Hinweise beachtest:
-
-\begin{itemize}
- \item Obwohl der 3D-Druck unter den Begriff 'Rapid Prototyping' fällt, kann ein Druck je nach Größe und Genauigkeit mehrere Stunden dauern. Die Software gibt nach dem Slicen einen Schätzwert für die Dauer an.
- \item Nicht unbeaufsichtigt drucken, vor allem am Anfang immer wieder nachschauen.\
-Wenn du nicht bis zum Ende des Drucks da sein kannst, frage vorher einen Betreuer und hinterlasse einen Zettel mit deinem Namen und deinen Kontaktdaten.
-   \item Der \textbf{Extruder wird bis zu 280°C heiß!} Zu deiner eigenen Sicherheit nicht direkt berühren.
- \item Drucker ausschalten,
- \begin{itemize}
-  \item wenn der Drucker grobe Fehler macht 
-  \item sehr untypische Geräusche macht
-  \item sich der Ein-/Ausschalter befindet
-  \begin{itemize}
-   \item beim Ultimaker-2+ hinten links am Gehäuse
-   \item beim Ultimaker-3 hinten rechts am Gehäuse
-   \item beim BambuLab P1S hinten rechts am Gehäuse
-  \end{itemize}
- \end{itemize}
- \item \textbf{Keine Schaber, Messer oder ähnliches verwenden} um Objekte von der Plattform zu entfernen
- \item Nichts manuell am Drucker bewegen. Dazu gibt es die Option Manuelles Verfahren auf dem Gerätedisplay.
- \item Materialwechsel und andere Wartungsarbeiten dürfen nur zusammen mit einer Aufsichtsperson durchgeführt werden.
- \item \textbf{Wiegen und Bezahlen nicht vergessen!}
-\end{itemize}
-
-\newpage
-% % % % % % % % % % % % % % % %
-
-\renewcommand{\contentsname}{Inhaltsverzeichnis / Arbeitsablauf}
-\setcounter{tocdepth}{2}
-\tableofcontents
-\newpage
-
-% % % % % % % % % % % % % % % %
-\section{3D-Modell erstellen}
-\subsection{Dateiformat}
-
-Im STL-Dateiformat, Einheit: Millimeter. Alle gängigen 3D-Programme haben einen STL-Export.
-
-\begin{itemize}
-\item auf \href{https://thingiverse.com}{Thingiverse.com} gibt es viele vorgefertigte Modelle, als
-Grundlage oder gleich zum fertig ausdrucken.
-\item oder erstelle es mit einem Programm deiner Wahl
-\begin{table}[H]
-\centering
-\begin{tabularx}{\textwidth}{|l|X|}
-\hline \textbf{Name} & \textbf{Beschreibung} \\
-\hline \multicolumn{2}{|c|}{\textit{kostenlose Software}}  \\
-\hline Blender & relativ komplex aber auch für Freiformflächen geeignet  \\
-\hline OpenSCAD & Skriptsprache für Konstruktion aus geometrischen Grundkörpern \\
-\hline DesignSpark Mechanical & Angelehnt an professionelle CAD-Software, aber relativ einfach zu bedienen  \\
-\hline TinkerCAD & sehr einfach, für Kinder gut geeignet  \\
-\hline Google SketchUp & wenig Einarbeitung, geringer Funktionsumfang, für einfache Teile \\
-\hline & \\
-\hline \multicolumn{2}{|c|}{\textit{kostenpflichtige Software (proprietär)}}  \\
-\hline PTC Creo, Solid Edge, Siemens NX & kostenlos beim RRZE für Studenten, professionelle Software \\
-\hline Autocad Inventor & kostenlos bei Autodesk für Studenten ebenfalls für professionelle Anwendungen \\
-\hline
-\end{tabularx}
-\end{table}
-\item Die 3D-Daten müssen bestimmten Regeln entsprechen. Bei Modellierungsprogrammen wie Blender ist etwas Vorsicht bzw. Nacharbeit nötig, die meisten Konstruktionsprogramme (Solid Edge und Co., auch OpenSCAD) machen es prinzipbedingt von selbst richtig. Zu den Einschränkungen von Blender gibt es am Ende der Anleitung weitere Informationen.
-\end{itemize}
-
-\subsection{Einschränkungen der Formen}
-\begin{itemize}
-\item \textbf{Maximale Abmessungen}
-\begin{itemize}
- \item Ultimaker-2+: L:223 B:220 H:205mm
- \item Ultimaker-3: L:215 B:215 H:200mm
- \item BambuLab P1S: L:256 B:256 H:256mm
-\end{itemize}
-\item Durch das Druckverfahren sind gewisse Formen schlecht druckbar. Oft ist Ausprobieren angesagt.
-\item Um auch \enquote{schwierige} Formen drucken zu können, kann die Software \textbf{Stützstrukturen} erzeugen. Wenn diese Option aktiviert ist, erzeugt der Drucker unter Überhängen und Brücken ein loses Geflecht, das nach dem Drucken mit einer Zange oder einem Skalpell entfernt werden kann. Auf diese Weise können diese Einschränkungen umgangen werden. Nachteil ist die schlechtere Oberflächenqualität und der höhere Nachbearbeitungsaufwand.
-\end{itemize}
-
-\subsubsection{Drucken ohne Stützstruktur}
-In diesem Abschnitt wird kurz beschrieben, welche Formen sich auch ohne Stützkonstruktion besonders gut bedrucken lassen. Wenn es ohne großen Aufwand möglich ist, sollten die Konstruktionen von vornherein so gewählt werden, dass sie gut bedruckbar sind.
-\begin{center}
-\includegraphics{./zeichnungen/formen.pdf}
-\end{center}
-\begin{itemize}
-\item Überhänge sollten nicht zu groß sein
-(Empfehlung\,{\textless}\,60$^\circ$)
-\item Brücken sollten nicht zu weit sein (Empfehlung\,{\textless}\,20mm)
-\item Das Objekt sollte mit ausreichend großer Fläche plan auf dem Boden aufliegen
-\item Der untere Teil des Objekts sollte immer eine stabile Unterlage für die darüberliegenden Schichten bilden. (Den Eiffelturm sollte man also nicht auf dem Kopf stehend drucken.)
-\end{itemize}
-\newpage
-
-% % % % % % % % % % % %
-
-\section{Vorbereitung}
-
-\subsection{Reinigung} \label{Reinigung}
-
-Spätestens bei sichtbaren Verschmutzungen (Staub o.ä. auf der Druckplattform) oder schlechten Druckergebnissen.
-
-\begin{itemize}
- \item Bodenplatte mit Papiertuch und Oberflächenreiniger reinigen
- \item Kunststoffabfälle aus PLA und leere Filamentspulen werden von uns recycelt, daher bitten wir Sie, diese Reste in den Behälter auf der rechten Seite des Druckers zu werfen.
-\end{itemize}
-
-\subsection{Material}
-Im Fablab wird ausschließlich mit PLA gedruckt. Andere Materialien werden zu einem späteren Zeitpunkt angeboten.
-
-\subsection{Materialwechsel}
-Wir haben verschiedene Farben von PLA auf Lager. Wenn du eine andere möchtest, frag einfach nach.
-Ein Materialwechsel an einem \textbf{Ultimaker} sollte jedoch nur von einem Betreuer durchgeführt werden. 
-
-Für einen Materialwechsel beim \textbf{Bambu P1S} kann dies in der Software 'OrcaSlicer' ausgewählt werden. Hier stehen durch das proprietäre AMS - \textit{Automatic Material System} - insgesamt vier verschiedene Materialien für einen Druck zur Verfügung, entweder als Mehrfarbendruck oder wie gewohnt als Einfarbendruck. 
-
-Besonders hervorzuheben ist, dass durch den Einsatz des AMS auch Filamente fast vollständig ausgenutzt werden können. Ist eine Farbe leer, kann nahtlos auf eine andere Rolle der gleichen Farbe/Materialart zugegriffen werden, so dass der Druck nicht beeinflusst wird. Dazu muss das AMS jedoch richtig eingestellt sein. 
-
-Weitere Informationen zum Materialwechsel und zur Einstellung für den Betreuer $\to$ \ref{Materialwechsel})
-
-\newpage
-% % % % % % % % % % % %
-
-\section{3D-Modell für den Druck vorbereiten}
-
-Damit ein 3D-Modell gedruckt werden kann, muss es in Schichtbilder übersetzt werden, die der Drucker nach und nach zu einem dreidimensionalen Objekt zusammensetzt. Dazu verwenden wir sowohl für den Ultimaker als auch für den Bambu P1S eine Slicer-Software namens \textit{OracSlicer}.
-
-\vspace{2em}
-
-\begin{figure} [H]
-	\centering
-	\includegraphics[width=1.0\textwidth]{./zeichnungen/OrcaSlicer.pdf}
-	\caption{Menüführung von OrcaSlicer. Druckerauswahlmenü \large\textcircled{\normalsize \texttt{1}}, Filamentauswahlmenü \large\textcircled{\normalsize \texttt{2}}, Auswahltder Qualitätsstufe \large\textcircled{\normalsize \texttt{3}}, Bauraum Slicen \large\textcircled{\normalsize \texttt{4}}, Bauraum exportieren \large\textcircled{\normalsize \texttt{5}} }
-	\label{abb.Grafik1}
-\end{figure}
-
-\vspace{2em}
-
-\begin{itemize}
-\item Ziehen Sie die STL/STEP-Datei einfach per Drag-and-Drop in das \textit{OrcaSlicer}-Fenster. Auf diese Weise können auch mehrere Dateien hinzugefügt werden.
-\item Das Objekt auf einer bestimmten Seite platzieren, skalieren, verschieben, drehen etc. wie gewünscht. Verwenden Sie dazu die Schaltflächen in der weißen Menüleiste über dem Bauraum.
-\item Den richtigen Drucker in der linken Menüleiste auswählen \large\textcircled{\normalsize \texttt{1}} (Ultimaker Ultimaker-2+, Ultimaker-3 oder BambuLab P1S)
-\item Stellen Sie sicher, dass in der linken Menüleiste \large\textcircled{\normalsize \texttt{2}} PLA als Material ausgewählt ist.\\Bei BambuLabs P1S kann mit einem Rechtsklick auf das Objekt im erscheinenden Kontextmenü das verwendete Filament geändert werden. Achtung, Mehrfarbendrucke erzeugen ein zusätzliches Objekt auf dem Bauraum, um die Düse zu reinigen. 
-\item Im Druckqualitätsmenü \large\textcircled{\normalsize \texttt{3}} eine geeignete Qualitätsstufe wählen. Empfohlen werden Sandart 0,20mm und Strenght 0,20mm. Die anderen Qualitätsstufen dauern nur wesentlich länger, wenn es um Qualitätsverbesserungen geht. 
-\item Gegebenenfalls sind Stützkonstruktionen erforderlich, wählen Sie dazu in der linken Seitenleiste das Menü \textit{Support} und setzen Sie das Häkchen bei aktiviert. Es stehen die Optionen \textit{Normal} oder \textit{Baum} für die Art der Stützkonstruktionen zur Verfügung. \textit{Baum} eignet sich sehr gut für organische Strukturen, während \textit{Normal} eher für technische Objekte mit klaren Kanten von Vorteil ist. 
-\item Durch Klicken auf den Slice-Button \large\textcircled{\normalsize \texttt{4}} kann die Umrechnung des Bauraums für die Maschine ausgelöst werden. 
-\item Erst nach einem Export der Datei auf ein Speichermedium kann der Drucker mit Daten versorgt werden. Wählen Sie dazu den Export Button \large\textcircled{\normalsize \texttt{5}} mit "Gesamten Bauraum als GCode exportieren" drücken und auf ein Speichermedium (SD für Ultimaker-2+ und Bambu P1S bzw. USB-Stick für Ultimaker-3) speichern.
-\item Stecken Sie die SD-Karte in den Kartenleser (Ultimaker-2+ oder Bambu P1S) oder den USB-Stick (Ultimaker-3). Beim Bambu kann es erforderlich sein, den MicroSD-Adapter aus- und wieder einzustecken, damit er erkannt wird. 
-\item Über das OnScreen Menü kann nun die Datei zum Drucken ausgewählt und gedruckt werden. 
-\end{itemize}
-
-\section{Bezahlen und abschließen}
-
-Das Objekt vorsichtig von der Platte lösen. Meistens kann es von Hand gelöst werden. Wenn nicht
-warten, bis die Platte etwas abgekühlt ist. \textbf{Nicht versuchen, das Objekt mit scharfen oder spitzen Gegenständen herunterzuhebeln!}
-
-Wiegen Sie das Objekt mit einer Feinwaage (in der Regel bei 3D-Druckern vorhanden), der Preis pro Gramm wird in das Kassensystem eingegeben.
-
-Alles muss gewogen werden, auch die Stützstruktur. 
-\textbf{Fehldrucke müssen ebenfalls bezahlt werden.}
-
-\pagebreak
-
-% % % % % % % % % % % % % % %
-
-\section{Infos für Experten}
-
-\subsection{Kurze Einführung in die wichtigsten Fachbegriffe bei STL:}
-
-\begin{itemize}
-\item Einheit \fachbegriff{unit}: Länge, die der Zahl „1“ entsprechen soll (bei uns
-1 Millimeter)
-\item Punkt \fachbegriff{vertex}: Stelle im Raum
-\item Kante \fachbegriff{edge}: Verbindungslinie zwischen zwei Punkten
-\item Fläche \fachbegriff{face}: Dreieck, das zwischen drei Punkten bzw. zwei
-benachbarten Kanten aufgespannt wird. Im verwendeten STL-Dateiformat
-gibt es nur Dreiecksflächen. Krümmungen werden aus vielen
-Dreiecksflächen angenähert.
-\item Polygonnetz \fachbegriff{mesh}: Gesamtheit aller Flächen, die einen Körper
-ergibt. Alles innerhalb des Netzes soll mit Kunststoff gefüllt werden,
-alles außerhalb ist Luft.
-\end{itemize}
-
-\subsection{Einschränkungen bei Blender und manchen anderen Programmen} \label{lowlevel-einschraenkungen}
-
-Das 3D-Modell muss gewisse Einschränkungen erfüllen, damit die Drucksoftware es versteht. Da man mit Tools wie Blender auch unsinnige Dinge bauen kann (Modelle mit Löchern, unlogische Dinge bei denen innen und außen nicht eindeutig ist), muss auf folgendes geachtet werden.
-\begin{itemize}
-\item Wasserdicht: Der Körper muss rundum geschlossen sein, er darf keine
-Löcher aufweisen,  die Hülle muss ein zusammenhängendes Netz sein.
-\item Polygonnetz \fachbegriff{mesh} schneidet sich nicht selbst: Verschiedene
-Körper dürfen sich nicht überlappen. Sie müssen stattdessen zu einem
-Körper vereinigt werden. In Blender geht dies zum Beispiel mit dem
-Boolean Modifier.
-\item Mannigfaltig \fachbegriff{manifold}: Dieser Begriff ist schwierig zu
-beschreiben. Vereinfacht gesagt dürfen zu jeder Kante nur zwei Flächen
-gehören. Es dürfen also zum Beispiel keine Flächen innerhalb eines
-Körpers existieren.
-\end{itemize}
-
-% % % % % % % % % % % % % %
-
-\newpage
-
-\section{Infos für Betreuer}
-
-\subsection{Filamentwechsel}\label{filamentwechsel}
-
-\subsubsection{Ultimaker-2+}
-\begin{itemize}
-    \item ''Material'' \ra ''Change''; Anweisungen im Display beachten
-    \item Drucker heizt vor und fährt dann das Filament zurück
-    \item Filament hinten vorsichtig entnehmen; nicht verknoten oder brechen!
-    \item neues Filament auf Spindel und ''Ready'' drücken
-    \item neues Filament einführen bis Fördermotor zieht; aufpassen dass Filament sich nicht verknotet!
-    \item ''Ready'' drücken; Drucker fährt Filament vor und extrudiert
-    \item wenn er schön extrudiert, nochmal drücken und das eingelegte Filament wählen
-\end{itemize}
-
-
-\subsection{Ausrichten der Buildplate}
-
-\subsubsection{Ultimaker-2+}
-\begin{itemize}
-\item Extruder reinigen, dass sich kein Rest zw. Buildplate und Extruder befindet
-\item Assistent: ''maintenance'' \ra ''buildplate''
-\item den Anweisungen auf dem Display befolgen
-\item man muss mal mit dem Rad und den Steppern, mal manuell mit den Schrauben die Buildplate leveln (zuerst auf 1mm, dann mit einem Blatt Papier)
-\end{itemize}
-
-
-\subsection{Ultimaker demontieren und putzen}
-Lasse es dir vorher von jemand mit Ahnung zeigen! Nur durchführen wenn unbedingt nötig.
-
-Die Düse bitte nicht mit einem Metallstück freistochern, da hierdurch nur die Oberfläche verkratzt wird und die Düse nur noch schlechter funktioniert. Es ist möglich, fest sitzenden Dreck mit einem Stück Filament durchzudrücken. Dazu nimmt man sich ein Stück Filament und drückt es mit ausreichend Kraft durch den heißen Extruder. Eine Kombizange hilft. Dabei nicht abrutschen oder den Extruderkopf überlasten.
-\\
-
-Eine Anleitung zum Wechseln der Düse beim Ultimaker 2+: 
- \\ https://support.makerbot.com/s/article/1667411296273 \hspace{2cm}
-\qrcode[height=2cm]{https://support.makerbot.com/s/article/1667411296273}
-
-\vspace{1cm}
-
-Beim Ultimaker 3 kann die Düse nicht einzeln gewecheselt werden. Hier müssen die ganzen Printcores getauscht werden.
-
-\subsection{Pflege \& Wartung}
-
-\begin{itemize}
-\item Achsen sollten regelmäßig gefettet werden (1x monatlich)
-\item Riemenspannung und Riemenzustand überprüfen
-\item die Ausrichtung und den Zustand der Buildplate überprüfen
-\end{itemize}
-
-\ccLicense{3d-drucker-einweisung}{Einweisung 3D-Drucker}
-
+	
+	\maketitle
+	\begin{center}
+		Für die 3D-Drucker \textbf{Bambu Lab P1S} und \textbf{Bambu Lab X1 Carbon}
+	\end{center}
+	
+	\textbf{Nur eingewiesene Benutzer dürfen die Drucker selbstständig benutzen.}
+	Wenn du noch nicht eingewiesen bist, frage einen Betreuer. Nach der Einweisung und Unterschrift darfst du die Drucker selbstständig verwenden.
+	
+	\section{Regeln und Sicherheit}
+	
+	\begin{itemize}
+		\item Drucke können mehrere Stunden dauern. Die Druckdauer wird nach dem Slicen in \textit{Bambu Studio} geschätzt.
+		\item Die \textbf{erste Schicht} komplett am Drucker beobachten. Sie zeigt, ob das Objekt richtig auf der Druckplatte haftet.
+		\item Danach läuft der Druck in der Regel reibungslos. Du musst nicht daneben stehen bleiben, solltest den Druck aber regelmäßig kontrollieren.
+		\item Drucke dürfen auch über Nacht laufen. Wenn du vor Druckende gehst, sag einem Betreuer Bescheid und hinterlasse Name und Kontaktdaten.
+		\item Die Düse wird bis zu \textbf{300\,\textcelsius{} heiß}, das Druckbett bis ca.\ 100\,\textcelsius{}. Nicht berühren.
+		\item Nicht während des Drucks in den Bauraum greifen. Druckkopf, Druckbett und Achsen bewegen sich schnell.
+		\item Druck abbrechen bei ungewöhnlichen Geräuschen, starkem Geruch, gelöstem Druckobjekt, Filamentklumpen an der Düse oder sonstigen offensichtlichen Problemen.
+		\item Drucker nur bei Rauch, Brandgeruch oder Funkenbildung ausschalten oder Netzstecker ziehen. Sonst eingeschaltet lassen, damit der Lüfter die heiße Düse kühlt. Der Ein-/Ausschalter befindet sich hinten rechts am Gehäuse.
+		\item Keine Spachtel, Messer, Schaber oder spitzen Gegenstände zum Lösen von Druckteilen verwenden. Die PEI-Druckplatte darf nicht verkratzt werden.
+		\item Druckkopf und Achsen nicht von Hand bewegen. Die Druckplatte darf nach dem Druck herausgenommen werden.
+		\item Filament wechseln und das AMS bestücken darf, wer eingewiesen ist, aber nur nach Absprache mit einem Betreuer. Wartung nur durch Betreuer.
+		\item \textbf{Wiegen und Bezahlen nicht vergessen.}
+	\end{itemize}
+	
+	Zusätzlich gilt die \textbf{Betriebsanweisung} auf der nächsten Seite (Abschnitt~\ref{sec:betriebsanweisung}). Sie hängt an jedem Drucker aus und ist Bestandteil dieser Einweisung.
+	
+	\newpage
+	
+	% Betriebsanweisung als ganze Seite im Format des Aushangs am Drucker
+	\newgeometry{margin=10mm,hoffset=0pt,voffset=0pt}
+	\thispagestyle{empty}
+	\refstepcounter{section}\label{sec:betriebsanweisung}
+	\addcontentsline{toc}{section}{\protect\numberline{\thesection}Betriebsanweisung}
+	{\small\input{betriebsanweisung/inhalt_bambu}}
+	\restoregeometry
+	\newpage
+	
+	\renewcommand{\contentsname}{Inhaltsverzeichnis / Arbeitsablauf}
+	\setcounter{tocdepth}{2}
+	\tableofcontents
+	\newpage
+	
+	\section{3D-Modell vorbereiten}
+	
+	\subsection{Dateiformat}
+	
+	Das Modell sollte als \textbf{STL}, \textbf{STEP} oder \textbf{3MF} vorliegen. Die Einheit ist Millimeter. 3MF-Dateien können zusätzlich Druckeinstellungen, Farben und mehrere Objekte enthalten und werden von Bambu Studio direkt als Projekt geöffnet.
+	
+	Geeignete Programme sind zum Beispiel:
+	\begin{itemize}
+		\item TinkerCAD für einfache Modelle,
+		\item OpenSCAD für skriptbasierte Konstruktionen,
+		\item FreeCAD für technische Bauteile,
+		\item Blender für Freiformmodelle,
+		\item professionelle CAD-Programme wie Solid Edge, Inventor oder Fusion 360.
+	\end{itemize}
+	
+	Vorgefertigte Modelle gibt es zum Beispiel auf:
+	\begin{itemize}
+		\item \href{https://makerworld.com}{MakerWorld.com} -- Plattform von Bambu Lab, viele Modelle mit fertigen Druckprofilen für unsere Drucker,
+		\item \href{https://www.printables.com}{Printables.com},
+		\item \href{https://www.thingiverse.com}{Thingiverse.com}.
+	\end{itemize}
+	Fertige Druckprofile trotzdem prüfen: Drucker, Plattentyp und Material müssen zu unserem Drucker passen.
+	
+	\subsection{Bauraum und Druckbarkeit}
+	
+	\begin{itemize}
+		\item Bambu Lab P1S: 256 mm $\times$ 256 mm $\times$ 256 mm
+		\item Bambu Lab X1 Carbon: 256 mm $\times$ 256 mm $\times$ 256 mm
+	\end{itemize}
+	
+	Für gute Druckbarkeit beachten (Nummern wie in der Abbildung):
+	
+	\begin{enumerate}
+		\item Das Objekt sollte mit einer flachen, ausreichend großen Fläche auf der Druckplatte stehen.
+		\item Überhänge werden von der \textbf{Senkrechten} aus gemessen. Bis 45$^\circ$ gelingen sie sicher ohne Stützstruktur, meist auch bis 60$^\circ$. Wenn Stützstrukturen aktiviert sind, erzeugt Bambu Studio sie im Profil \textit{0.20mm Standard} ab 60$^\circ$ (Einstellung \textit{Threshold angle}: 30$^\circ$ zur Waagerechten). Andere Profile nutzen etwas andere Winkel.
+		\item Brücken möglichst kürzer als 20\,mm halten, längere hängen durch.
+		\item Stützstrukturen sind in Bambu Studio standardmäßig aus. Bei Bedarf unter \textit{Support} aktivieren, empfohlen ist der Typ \textit{tree(auto)}. Alternativ das Objekt so drehen, dass keine Stützen nötig sind.
+	\end{enumerate}
+	
+	\begin{center}
+		\input{zeichnungen/druckbarkeit}
+	\end{center}
+	
+	\section{Vorbereitung am Drucker}
+	
+	\subsection{Druckplatte}
+	
+	\begin{itemize}
+		\item Druckplatte muss sauber und korrekt eingesetzt sein.
+		\item Plattentyp prüfen (z.\,B. \textit{Textured PEI Plate}). In Bambu Studio muss derselbe Plattentyp eingestellt sein, sonst stimmen Betttemperatur und Haftung nicht.
+		\item Druckplatte nur am Rand anfassen. Fingerabdrücke verschlechtern die Haftung.
+		\item Bei Staub, Fett oder schlechter Haftung Druckplatte reinigen:
+		\begin{itemize}
+			\item gründlich: mit Spülmittel und warmem Wasser abwaschen und gut abtrocknen,
+			\item zwischendurch: mit Isopropanol und einem fusselfreien Tuch abwischen.
+		\end{itemize}
+		Keine Scheuermittel oder kratzenden Schwämme verwenden.
+		\item Druckobjekte erst nach ausreichender Abkühlung entfernen.
+		\item Druckobjekte nur durch Biegen der flexiblen Druckplatte lösen. Die PEI-Beschichtung nicht verkratzen.
+	\end{itemize}
+	
+	\newpage
+	\subsection{Material und AMS}
+	
+	Zugelassen sind \textbf{PLA}, \textbf{PETG} und \textbf{ASA}, Standardmaterial ist PLA. Andere Materialien dürfen nur nach Freigabe durch einen Betreuer verwendet werden.
+	
+	\begin{center}
+		\small
+		\renewcommand{\arraystretch}{1.35}
+		\begin{tabularx}{\textwidth}{|l|X|X|X|}
+			\hline
+			& \textbf{PLA} & \textbf{PETG} & \textbf{ASA} \\ \hline
+			\textbf{Empfehlung} & \textbf{Standard, erste Wahl} & für Funktionsteile & für draußen \\ \hline
+			Typische Teile & Modelle, Prototypen, Deko & Halter, Clips, Gehäuse & Teile für Garten, Fahrrad, Auto \\ \hline
+			Einfach zu drucken & \punkte{3} & \punkte{2} & \punkte{1} \\ \hline
+			Zäh, bricht nicht so leicht & \punkte{1} & \punkte{3} & \punkte{2} \\ \hline
+			Hitzebeständig & \punkte{1}~ca.\ 57\,\textcelsius & \punkte{2}~ca.\ 69\,\textcelsius & \punkte{3}~ca.\ 100\,\textcelsius \\ \hline
+			Sonne und Wetter & \punkte{1} & \punkte{2} & \punkte{3} \\ \hline
+			Geruch beim Drucken & kaum & kaum & ja, Tür geschlossen halten \\ \hline
+		\end{tabularx}
+	\end{center}
+	
+	\textbf{Im Zweifel PLA nehmen.} PETG oder ASA nur, wenn das Teil es wirklich braucht.
+	
+	Faserverstärkte und andere abrasive Filamente (z.\,B. mit Carbon- oder Glasfaser, erkennbar an \enquote{CF} oder \enquote{GF} im Namen) nutzen die Düse schnell ab. Sie dürfen \textbf{nur nach Rücksprache mit einem Betreuer} verwendet werden.
+	
+	Das AMS -- \textit{Automatic Material System} -- kann bis zu vier Filamente bereitstellen. Es ermöglicht Mehrfarbendrucke oder automatisches Weiterdrucken mit einer Ersatzrolle gleichen Materials.
+	
+	In der Regel verwenden wir \textbf{Filament von Bambu Lab}. Diese Spulen haben einen RFID-Chip (NFC), den das AMS beim Einlegen ausliest. Materialtyp und Farbe werden dabei automatisch erkannt. Liegt eine Bambu-Lab-Spule im AMS, kann man davon ausgehen, dass das Material passt. Wird der Chip nicht erkannt, Material und Farbe vom Etikett der Spule ablesen und am Drucker bzw. in Bambu Studio von Hand einstellen.
+	
+	\begin{itemize}
+		\item Nur freigegebenes Filament verwenden.
+		\item Filament nur nach Absprache mit einem Betreuer wechseln oder neu einlegen. Das gilt auch für \textbf{eigenes Filament} (nur zugelassene Materialien).
+		\item Filament sauber einlegen und Verknoten vermeiden.
+		\item Materialtyp und Farbe in Bambu Studio prüfen. Mit \textit{Sync info} wird die Belegung des AMS übernommen.
+	\end{itemize}
+	
+	\subsection{Drucken mit ASA}
+	
+	ASA ist wärme- und witterungsbeständiger als PLA. Beim Drucken entstehen aber Dämpfe (u.\,a. Styrol), siehe Betriebsanweisung.
+	
+	\begin{itemize}
+		\item In Bambu Studio ein passendes ASA-Filamentprofil wählen (z.\,B. \textit{Bambu ASA}). Düsen- und Betttemperatur werden damit richtig eingestellt.
+		\item Tür und Deckel während des gesamten Drucks geschlossen halten. Der warme Bauraum verhindert Verzug und Risse, der Aktivkohlefilter nimmt die Dämpfe auf.
+		\item Nach Druckende den Bauraum noch einige Minuten geschlossen lassen, damit der Filter die restlichen Dämpfe aufnimmt.
+		\item Nicht dauerhaft direkt am Drucker aufhalten, solange ASA gedruckt wird.
+	\end{itemize}
+	
+	\newpage
+	\section{Modell in Bambu Studio vorbereiten}
+	
+	Damit ein Modell gedruckt werden kann, muss es in Schichten umgerechnet werden. Dafür verwenden wir \textit{Bambu Studio}.
+	
+	\begin{figure} [H]
+		\centering
+		% Markierungen: Koordinaten relativ zum Bild (0,0 = unten links, 1,1 = oben rechts)
+		\begin{tikzpicture}[marke/.style={circle, draw=black, fill=white, line width=1.2pt, minimum size=6.5mm, inner sep=0pt, font=\bfseries\large}]
+			\node[anchor=south west, inner sep=0pt] (bild) at (0,0) {\includegraphics[width=0.7\textwidth]{./zeichnungen/BambuStudio.png}};
+			\begin{scope}[x={(bild.south east)}, y={(bild.north west)}]
+				\node[marke] at (0.332, 0.842) {1};
+				\node[marke] at (0.332, 0.562) {2};
+				\node[marke] at (0.332, 0.426) {3};
+				\draw[line width=1.2pt, white] (0.854, 0.838) -- (0.854, 0.937);
+				\node[marke] at (0.854, 0.838) {4};
+				\draw[line width=1.2pt, white] (0.933, 0.838) -- (0.910, 0.937);
+				\node[marke] at (0.933, 0.838) {5};
+			\end{scope}
+		\end{tikzpicture}
+		\caption{Menüführung von Bambu Studio. Drucker und Plattentyp \large\textcircled{\normalsize \texttt{1}}, Filamentauswahl \large\textcircled{\normalsize \texttt{2}}, Qualitätsstufe \large\textcircled{\normalsize \texttt{3}}, Slicen \large\textcircled{\normalsize \texttt{4}}, Drucken über \textit{Print plate} bzw.\ Exportieren über den Pfeil daneben \large\textcircled{\normalsize \texttt{5}}}
+		\label{abb.Grafik1}
+	\end{figure}
+	
+	\begin{itemize}
+		\item STL-, STEP- oder 3MF-Datei per Drag-and-Drop in Bambu Studio öffnen.
+		\item Objekt passend platzieren, drehen oder skalieren.
+		\item Richtigen Drucker auswählen: \textbf{Bambu Lab P1S} oder \textbf{Bambu Lab X1 Carbon}.
+		\item Plattentyp (\textit{Bed type}) passend zur eingelegten Druckplatte wählen.
+		\item Material passend zum eingelegten Filament auswählen (in der Regel PLA).
+		\item Geeignete Qualitätsstufe wählen, empfohlen:
+		\begin{itemize}
+			\item \textit{0.20mm Standard} für normale Drucke,
+			\item \textit{0.20mm Strength} für stabilere Bauteile.
+		\end{itemize}
+		\item Falls nötig, Stützstrukturen aktivieren.
+		\item Modell slicen.
+		\item Druck starten, wahlweise per MicroSD-Karte oder über das Netzwerk:
+		\begin{itemize}
+			\item \textbf{MicroSD-Karte:} Pfeil neben \textit{Print plate} \ra{} \textit{Export plate sliced file}. Die Druckdatei hat die Endung \texttt{.gcode.3mf}. Karte in den Drucker stecken, Datei am Display auswählen und Druck starten.
+			\item \textbf{Netzwerk:} \textit{Print plate} anklicken, im Dialog den richtigen Drucker auswählen, Zuordnung der Filamente zu den AMS-Plätzen prüfen und mit \textit{Send} starten. Danach zum Drucker gehen und die erste Schicht beobachten.
+		\end{itemize}
+	\end{itemize}
+	
+	\subsection{Werkzeugleiste}
+	
+	Die Werkzeuge liegen in der Leiste über der 3D-Ansicht. \textbf{Fett} sind die Werkzeuge, die man fast immer braucht. Einige Symbole sind ausgegraut, bis ein Objekt geladen ist.
+	
+	\begin{center}
+		\small
+		\renewcommand{\arraystretch}{1.05}
+		\renewcommand{\tabularxcolumn}[1]{m{#1}}
+		\begin{tabularx}{\textwidth}{|>{\centering\arraybackslash}m{9mm}|m{67mm}|X|}
+			\hline
+			 & \textbf{Werkzeug (englisch / deutsch)} & \textbf{Wofür} \\ \hline
+			\sym{hinzufuegen} & \textbf{\textit{Add} / Hinzufügen} & Modell laden (STL, STEP, 3MF). \\ \hline
+			\sym{druckplatte} & \textit{Add plate} / Druckplatte hinzufügen & Weitere Druckplatte im Projekt anlegen. \\ \hline
+			\sym{orientierung} & \textbf{\textit{Auto orient} / Automatische Orientierung} & Dreht das Objekt selbst in eine günstige Lage. \\ \hline
+			\sym{anordnen} & \textbf{\textit{Arrange} / Anordnen} & Verteilt alle Objekte auf der Platte (Taste A). \\ \hline
+			\sym{schichthoehe} & \textit{Variable layer height} / Variable Schichthöhe & Schichthöhe abschnittsweise ändern, für Fortgeschrittene. \\ \hline
+			\sym{bewegen} & \textbf{\textit{Move} / Bewegen} & Objekt verschieben. \\ \hline
+			\sym{drehen} & \textbf{\textit{Rotate} / Drehen} & Objekt drehen. \\ \hline
+			\sym{skalieren} & \textbf{\textit{Scale} / Skalieren} & Größe ändern, Maße werden in mm angezeigt. \\ \hline
+			\sym{flaeche} & \textbf{\textit{Lay on face} / Auf Fläche legen} & Fläche anklicken, die auf der Platte liegen soll. Oft der einfachste Weg, Stützen zu vermeiden. \\ \hline
+			\sym{schneiden} & \textit{Cut} / Zerschneiden & Objekt teilen, z.\,B. wenn es zu groß ist oder eine flache Auflage braucht. \\ \hline
+			\sym{boolesch} & \textit{Mesh boolean} / Boolesches Mesh & Körper vereinigen oder voneinander abziehen. \\ \hline
+			\sym{zusammenbau} & \textit{Assembly} / Zusammenbau & Teile aneinander ausrichten. \\ \hline
+			\sym{farbe} & \textit{Color painting} / Farbe malen & Flächen für Mehrfarbendrucke einfärben (nach Absprache). \\ \hline
+			\sym{text} & \textit{Text shape} / Form des Textes & Text auf das Modell setzen oder einprägen. \\ \hline
+			\sym{stuetzen} & \textit{Support painting} / Stützen malen & Stützstrukturen nur an bestimmten Stellen erzeugen. \\ \hline
+			\sym{naht} & \textit{Seam painting} / Naht aufmalen & Festlegen, wo die sichtbare Naht jeder Schicht liegt. \\ \hline
+			\sym{randohren} & \textit{Brim Ears} / Randohren & Kleine Scheiben an Ecken, damit sich das Teil nicht ablöst. \\ \hline
+			\sym{fuzzy} & \textit{Fuzzy skin painting} / Fuzzy Skin Bemalung & Raue, strukturierte Oberfläche an ausgewählten Stellen. \\ \hline
+			\sym{objekte} & \textit{Split to objects} / In Objekte trennen & Datei mit mehreren Körpern in einzelne Objekte aufteilen. \\ \hline
+			\sym{teile} & \textit{Split to parts} / In Teile trennen & Objekt in Teile aufteilen, z.\,B. für verschiedene Farben. \\ \hline
+			\sym{messen} & \textit{Measure} / Messen & Abstände und Winkel am Modell messen. \\ \hline
+			\sym{montageansicht} & \textit{Assembly view} / Montageansicht & Mehrteilige Modelle zusammengesetzt oder auseinandergezogen ansehen. \\ \hline
+		\end{tabularx}
+	\end{center}
+	
+	{\footnotesize Symbole: Bildschirmfoto aus Bambu Studio (Bambu Lab, AGPL-3.0).}
+	
+	\textbf{Modell in Zoll statt Millimeter?} Beim Import fragt Bambu Studio, ob ein sehr kleines Objekt auf Millimeter skaliert werden soll: mit \textit{Ja} bestätigen. Nachträglich geht das per Rechtsklick auf das Objekt \ra{} \textit{Convert from inch} (\textit{Von Inch umrechnen}). Maße danach immer kurz prüfen.
+	
+	\newpage
+	\subsection{Die wichtigsten Einstellungen}
+	
+	Für die meisten Drucke reicht das Profil \textit{0.20mm Standard}. Diese Einstellungen werden am häufigsten angepasst (links im Bereich \textit{Process}):
+	
+	\begin{center}
+		\small
+		\renewcommand{\arraystretch}{1.3}
+		\begin{tabularx}{\textwidth}{|l|l|l|X|}
+			\hline
+			\textbf{Einstellung} & \textbf{Reiter} & \textbf{Standard} & \textbf{Wann ändern?} \\ \hline
+			Profil / \textit{Layer height} & -- & 0,20\,mm & Feine Details: \textit{0.16mm Optimal} oder \textit{0.12mm Fine}. Schneller Entwurf: \textit{0.24mm Draft}. \\ \hline
+			\textit{Wall loops} (Wandlinien) & \textit{Strength} & 2 & Stabilere Teile: 3--4, oder gleich das Profil \textit{0.20mm Strength}. \\ \hline
+			\textit{Sparse infill density} (Fülldichte) & \textit{Strength} & 15\,\% & Belastete Teile: 25--40\,\%. Mehr bringt selten etwas, kostet aber Material und Zeit. \\ \hline
+			\textit{Enable support} (Stützstrukturen) & \textit{Support} & aus & Bei Überhängen über 60$^\circ$ einschalten, Typ \textit{tree(auto)}. \\ \hline
+			\textit{Brim type} (Rand) & \textit{Others} & auto & Hohe, schmale oder kleine Teile, die sich lösen: \textit{Outer brim only}. \\ \hline
+		\end{tabularx}
+	\end{center}
+	
+	Nach jeder Änderung neu slicen und Druckzeit und Gewicht prüfen.
+	
+	\section{Druck beobachten}
+	
+	\subsection{Erste Schicht}
+	
+	Die erste Schicht entscheidet oft, ob der Druck erfolgreich wird.
+	
+	\begin{itemize}
+		\item Filament muss gleichmäßig auf der Druckplatte haften.
+		\item Ecken dürfen sich nicht lösen.
+		\item Es darf kein Filament lose durch den Bauraum gezogen werden.
+		\item Bei Problemen Druck abbrechen und Betreuer informieren.
+	\end{itemize}
+	
+	\subsection{Druck abbrechen}
+	
+	Wenn ein Druck fehlschlägt, abbrechen: am Display des Druckers oder in Bambu Studio im Reiter \textit{Device}. Danach warten, bis Druckkopf und Druckplatte stillstehen. Filamentreste erst entfernen, wenn keine Teile mehr in Bewegung sind.
+	
+	\subsection{Kamera und Datenschutz}
+	
+	Beide Drucker haben eine Kamera. Die Kameras haben keinen Zugang zum Internet und sind nur lokal im Netz des FabLabs nutzbar. Es werden keine Bilder an Bambu Lab übertragen. Zeitraffer-Aufnahmen (\textit{Timelapse}) sind nicht vorgesehen, diese Option im Druckdialog ausgeschaltet lassen.
+	
+	\section{Nach dem Druck}
+	
+	\begin{itemize}
+		\item Warten, bis Druckplatte und Objekt etwas abgekühlt sind.
+		\item Druckplatte am Rand anfassen, aus dem Drucker herausnehmen und leicht biegen, bis sich das Objekt löst.
+		\item Druckplatte sauber wieder einsetzen.
+		\item Keine Spachtel, Messer oder scharfen Werkzeuge verwenden.
+		\item Wiegen und bezahlen, siehe unten.
+		\item Arbeitsplatz sauber hinterlassen.
+		\item Probleme oder Schäden einem Betreuer melden.
+	\end{itemize}
+	
+	\subsection{Lange Drucke und Abholung}
+	
+	\begin{itemize}
+		\item Drucke dürfen über das Ende des OpenLabs hinaus und über Nacht laufen.
+		\item Vorher einem Betreuer Bescheid sagen und Name und Kontaktdaten hinterlassen, damit der Druck zugeordnet werden kann.
+		\item Fertige Drucke liegen in der \textbf{Eurokiste unter den Druckern}. Abholen beim nächsten OpenLab, dann wiegen und bezahlen.
+	\end{itemize}
+	
+	\subsection{Wiegen und Bezahlen}
+	
+	\begin{itemize}
+		\item \textbf{Kosten vorher abschätzen:} Bambu Studio zeigt nach dem Slicen in der Vorschau an, wie viel Gramm Filament der Druck braucht.
+		\item Die \textbf{Waage} steht links neben dem linken Drucker an der Innenwand des Regals.
+		\item Gewogen und bezahlt werden das Objekt, die Stützstrukturen und bei Mehrfarbendrucken das Spülmaterial.
+		\item \textbf{Kalibrierungslinien}, die der Drucker vor dem Druck selbst auf die Platte druckt, müssen nicht bezahlt werden.
+		\item Den Verbrauch im Kassensystem bezahlen. Der Preis ist bei eigenem Filament derselbe.
+	\end{itemize}
+	
+	\textbf{Fehldrucke müssen ebenfalls bezahlt werden.}
+	
+	\section{Mehrfarbendrucke}
+	
+	Mehrfarbendrucke mit dem AMS erzeugen zusätzliches Spülmaterial, weil die Düse beim Farbwechsel gereinigt wird. Dieses Material zählt zum Verbrauch und muss mitbezahlt werden.
+	
+	Mehrfarbendrucke sollten daher vorher mit einem Betreuer abgesprochen werden.
+	
+	\section{Infos für Betreuer}
+	
+	\subsection{Bambu Lab P1S und X1 Carbon}
+	
+	Beide Drucker werden ähnlich bedient und verwenden \textit{Bambu Studio}. Der \textbf{Bambu Lab X1 Carbon} besitzt zusätzlich einen Lidar-Sensor, der unter anderem die erste Schicht prüft. Über die Kamera können die Drucker manche Fehldrucke (z.\,B. Spaghetti) erkennen, das läuft lokal auf dem Drucker.
+	
+	\begin{itemize}
+		\item Fehlermeldungen am Display beachten.
+		\item Automatische Erkennung ersetzt keine Sichtkontrolle.
+		\item Erste Schicht auch beim X1 Carbon beobachten.
+	\end{itemize}
+	
+	\subsection{Düse}
+	
+	\begin{itemize}
+		\item Abrasive Filamente (CF, GF) nur mit gehärteter Düse drucken. Der P1S hat serienmäßig eine Edelstahldüse, die dafür nicht geeignet ist.
+		\item Vor einem Druck mit abrasivem Filament prüfen, welche Düse eingebaut ist, und die Düse in Bambu Studio entsprechend einstellen.
+		\item Düsenwechsel nur im abgekühlten Zustand.
+	\end{itemize}
+	
+	\subsection{AMS}
+	
+	\begin{itemize}
+		\item Filamentrollen korrekt einlegen.
+		\item Filamentende gerade abschneiden.
+		\item Filament darf sich nicht verknoten.
+		\item Materialtyp und Farbe im AMS/Bambu Studio prüfen.
+		\item Keine kurzen Filamentreste in das AMS einführen.
+		\item Bei Lade- oder Entladefehlern nicht mit Gewalt ziehen.
+	\end{itemize}
+	
+	\subsection{Typische Fehler}
+	
+	\begin{itemize}
+		\item \textbf{Druck haftet nicht:} Druckplatte reinigen, Plattentyp und Einstellungen prüfen.
+		\item \textbf{Filament wird nicht extrudiert:} Filamentpfad, AMS und Düse prüfen.
+		\item \textbf{Objekt löst sich:} Druck abbrechen, Bauraum reinigen.
+		\item \textbf{Spaghetti-Fehldruck:} Druck abbrechen und Filamentreste entfernen.
+		\item \textbf{Filamentklumpen an der Düse:} Vorsichtig entfernen, Düse ist heiß.
+		\item \textbf{Falsches Filament gewählt:} Druck abbrechen und Einstellungen prüfen.
+	\end{itemize}
+	
+	\subsection{Pflege}
+	
+	\begin{itemize}
+		\item Druckraum regelmäßig von Filamentresten befreien.
+		\item Druckplatte regelmäßig prüfen und reinigen.
+		\item AMS auf Filamentreste und Ladeprobleme prüfen.
+		\item Wiederkehrende Fehler dokumentieren und melden.
+	\end{itemize}
+	
+	\subsection{Wartungsintervalle}
+	
+	Empfehlungen von Bambu Lab für X1 Carbon und P1S. Wartung nur im ausgeschalteten, abgekühlten Zustand (siehe Betriebsanweisung).
+	
+	\begin{center}
+		\small
+		\renewcommand{\arraystretch}{1.3}
+		\begin{tabularx}{\textwidth}{|l|l|X|}
+			\hline
+			\textbf{Bauteil} & \textbf{Intervall} & \textbf{Maßnahme} \\ \hline
+			Düsenabstreifer & vor jedem Druck & Frei von Filamentresten? PTFE-Seite unbeschädigt? Sonst tauschen. \\ \hline
+			Extruder & wöchentlich & Gelbes Zahnrad auf Filamentstaub prüfen, mit Druckluft ausblasen. \\ \hline
+			Carbonstangen (X-Achse) & monatlich prüfen & Nur bei Bedarf mit Isopropanol reinigen, bei ABS/ASA etwa alle 5 Rollen. Nicht zu oft reinigen, das verschlechtert die Druckqualität. \textbf{Nicht fetten oder ölen.} Dazu Riemenspanner lösen und danach neu kalibrieren, siehe Wiki. \\ \hline
+			Linearwellen (Y/Z) & monatlich prüfen & Bei Bedarf mit Isopropanol reinigen. Alle 3 Monate dünn einölen (Rostschutz). \\ \hline
+			Z-Gewindespindeln & alle 3 Monate & Reinigen und dünn fetten. \\ \hline
+			Filament-Schneider & alle 3--5 Rollen & Klinge prüfen, stumpfe Klinge tauschen. Bei abrasiven Filamenten schon nach 1--2 Rollen. \\ \hline
+			Aktivkohlefilter & alle 3 Monate & Tauschen (Herstellerangabe bei ca.\ 8 Stunden Betrieb pro Tag). \\ \hline
+			Hotend & bei Bedarf & Bei Materialwechsel oder Extrusionsproblemen reinigen (\textit{Cold Pull}). \\ \hline
+			Micro-Lidar (nur X1 Carbon) & bei Fehlermeldung & Kamera und Laser mit Isopropanol und Wattestäbchen reinigen. \\ \hline
+		\end{tabularx}
+	\end{center}
+	
+	Anleitungen im Bambu-Lab-Wiki:
+	
+	\begin{center}
+		\begin{tabular}{ccc}
+			\qrcode[height=2.2cm]{https://wiki.bambulab.com/en/x1/maintenance/basic-maintenance} &
+			\qrcode[height=2.2cm]{https://wiki.bambulab.com/en/p1/maintenance/p1p-maintenance} &
+			\qrcode[height=2.2cm]{https://wiki.bambulab.com/en/ams/maintenance/basic-maintenance} \\[1mm]
+			\href{https://wiki.bambulab.com/en/x1/maintenance/basic-maintenance}{X1 Carbon} &
+			\href{https://wiki.bambulab.com/en/p1/maintenance/p1p-maintenance}{P1S} &
+			\href{https://wiki.bambulab.com/en/ams/maintenance/basic-maintenance}{AMS}
+		\end{tabular}
+	\end{center}
+	
+	\ccLicense{3d-drucker-einweisung}{Einweisung 3D-Drucker}
+	
 \end{document}
