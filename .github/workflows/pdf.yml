@@ -1,3 +1,4 @@
+# Nach .github/workflows/pdf.yml im Projekt kopieren.
 name: PDF bauen
 
 on:
@@ -5,77 +6,12 @@ on:
   pull_request:
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
   pdf:
-    runs-on: ubuntu-latest
-    container: texlive/texlive:latest
-    outputs:
-      version: ${{ steps.version.outputs.version }}
-    steps:
-      - name: Git und make installieren
-        run: apt-get update && apt-get install -y --no-install-recommends git make ca-certificates
-
-      - name: Repository auschecken
-        uses: actions/checkout@v7
-
-      - name: Untermodul fablab-document laden
-        run: |
-          git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git config --global --add safe.directory "$GITHUB_WORKSPACE/fablab-document"
-          # .gitmodules verweist per SSH, im Runner über HTTPS laden
-          git config --global url."https://github.com/".insteadOf "git@github.com:"
-          git submodule update --init --recursive
-
-      - name: Version aus dem Datum bestimmen
-        id: version
-        shell: bash
-        run: |
-          VERSION=$(TZ=Europe/Berlin date +%Y.%m.%d)
-          # Builds außerhalb von master als Entwurf kennzeichnen
-          if [ "$GITHUB_REF" != "refs/heads/master" ]; then
-            VERSION="$VERSION-entwurf-${GITHUB_SHA::7}"
-          fi
-          echo "\\newcommand{\\Version}{$VERSION}" > version.tex
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-
-      - name: PDFs bauen
-        run: make
-
-      - name: PDFs hochladen
-        uses: actions/upload-artifact@v7
-        with:
-          name: pdf
-          path: output/*.pdf
-          if-no-files-found: error
-
-  release:
-    # Nur Pushes auf master werden als Release veröffentlicht
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-    needs: pdf
-    runs-on: ubuntu-latest
+    uses: fau-fablab/fablab-document/.github/workflows/pdf.yml@master
     permissions:
       contents: write
-    steps:
-      - name: PDFs herunterladen
-        uses: actions/download-artifact@v8
-        with:
-          name: pdf
-          path: pdf
-
-      - name: Release anlegen
-        env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-          VERSION: ${{ needs.pdf.outputs.version }}
-        run: |
-          TAG="v$VERSION"
-          for f in pdf/*.pdf; do mv "$f" "${f%.pdf}_$VERSION.pdf"; done
-          # Mehrere Pushes am selben Tag: Release des Tages ersetzen
-          gh release delete "$TAG" --cleanup-tag --yes || true
-          gh release create "$TAG" pdf/*.pdf \
-            --target "$GITHUB_SHA" \
-            --title "Einweisung 3D-Drucker $VERSION" \
-            --notes "Automatisch gebaut aus Commit ${GITHUB_SHA::7}."
+    # Optional:
+    # with:
+    #   pakete: libreoffice-calc-nogui   # zusätzliche Debian-Pakete
+    #   release: false                   # keine Releases anlegen

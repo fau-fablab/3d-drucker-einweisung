@@ -7,6 +7,7 @@ Die neueste Version aus [github](https://github.com/fau-fablab/3d-drucker-einwei
 
 - [Einweisung](https://brain.fablab.fau.de/build/3d-drucker-einweisung/Einweisung_3D-Drucker.pdf)
 - [Einweisungsliste](https://brain.fablab.fau.de/build/3d-drucker-einweisung/Einweisungsliste_3D-Drucker.pdf)
+- [Betriebsanweisung](https://brain.fablab.fau.de/build/3d-drucker-einweisung/Betriebsanweisung_3D-Drucker.pdf) (Aushang am Drucker)
 
 auschecken
 ----------

@@ -13,13 +13,7 @@
 \usepackage{float}
 \usepackage{qrcode}
 \usetikzlibrary{calc}
-\usepackage{betriebsanweisung/ba-layout}
-
-% Stammdaten der Betriebsanweisung (Inhalt: betriebsanweisung/inhalt_bambu.tex)
-\input{betriebsanweisung/stammdaten}
-\renewcommand{\BAgeraet}{3D-Drucker Bambu Lab P1S und X1 Carbon (FDM, geschlossener Bauraum)}
-\renewcommand{\BAgeraetbilder}{\includegraphics[width=0.75\BAsymw]{P1S}\par\vspace{1mm}\includegraphics[width=0.75\BAsymw]{X1C}}
-\renewcommand{\BAnummer}{BA-3D-01/02}
+\usepackage{fablab-document/fablab-ba}
 
 \newcommand{\ra}{$\Rightarrow$}
 % Symbol aus der Werkzeugleiste von Bambu Studio
@@ -69,13 +63,7 @@
 	\newpage
 	
 	% Betriebsanweisung als ganze Seite im Format des Aushangs am Drucker
-	\newgeometry{margin=10mm,hoffset=0pt,voffset=0pt}
-	\thispagestyle{empty}
-	\refstepcounter{section}\label{sec:betriebsanweisung}
-	\addcontentsline{toc}{section}{\protect\numberline{\thesection}Betriebsanweisung}
-	{\small\input{betriebsanweisung/inhalt_bambu}}
-	\restoregeometry
-	\newpage
+	\BAseite[sec:betriebsanweisung]{betriebsanweisung/ba_3d-drucker}
 	
 	\renewcommand{\contentsname}{Inhaltsverzeichnis / Arbeitsablauf}
 	\setcounter{tocdepth}{2}
