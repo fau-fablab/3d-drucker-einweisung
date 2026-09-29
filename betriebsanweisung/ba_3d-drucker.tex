@@ -1,9 +1,19 @@
 % =====================================================================
-%  Gemeinsamer Inhalt der Betriebsanweisungen für die Bambu-Lab-Drucker
-%  (wird von Einweisung_3D-Drucker.tex eingebunden)
+%  Betriebsanweisung 3D-Drucker Bambu Lab P1S und X1 Carbon
+%  Eigenes PDF: Betriebsanweisung_3D-Drucker.tex, Seite in der Einweisung
+%  über \BAseite. Layout: fablab-document/fablab-ba.sty
 % =====================================================================
+\BAsetup{
+  typ=maschine,
+  titel={3D-Drucker Bambu Lab P1S und X1 Carbon (FDM, geschlossener Bauraum)},
+  taetigkeit={Drucken, Filamentwechsel, Teileentnahme, Reinigung},
+  nummer=BA-3D-01,
+  stand=28.09.2026,
+  verantwortlich={Name der verantwortlichen Person},
+  bild={betriebsanweisung/bilder/P1S,betriebsanweisung/bilder/X1C},
+}
 
-\BAkopf{Drucken, Filamentwechsel, Teileentnahme, Reinigung}
+\BAkopf
 
 % ---------- 1 Anwendungsbereich --------------------------------------
 \BAblock{ANWENDUNGSBEREICH}{M002}{%
@@ -15,7 +25,7 @@
   \end{itemize}}
 
 % ---------- 2 Gefahren -----------------------------------------------
-\BAblock{GEFAHREN FÜR MENSCH UND UMWELT}{W017,W024,W012}{%
+\BAblock{GEFAHREN FÜR MENSCH UND UMWELT}{W017,W019,W012}{%
   \begin{itemize}
     \item \textbf{Verbrennungsgefahr} an Düse/Hotend (bis 300\,°C)
           und Druckbett (bis ca.\ 100\,°C bei ASA).
@@ -72,7 +82,7 @@
   \textbf{Notruf: 112}\qquad FabLab: 09131\,/\,85\,28013}
 
 % ---------- 6 Instandhaltung / Entsorgung (mit Fußzeile) --------------
-\BAletzterblock{INSTANDHALTUNG, ENTSORGUNG}{M006}{%
+\BAletzterblock{INSTANDHALTUNG, ENTSORGUNG}{M021}{%
   \begin{itemize}
     \item Wartung (Düse, Achsen, Aktivkohlefilter) nur durch
           eingewiesene Betreuer im ausgeschalteten, abgekühlten Zustand.
