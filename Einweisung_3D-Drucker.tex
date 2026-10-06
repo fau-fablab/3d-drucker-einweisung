@@ -29,6 +29,9 @@
 \fancyfoot[R]{Version \Version}
 \author{kontakt@fablab.fau.de}
 \title{Einweisung 3D-Drucker}
+% Farbe mit Farbfeld, Wort in etwas dunklerer Farbe (lesbar), z.B. \farbe{zahnradgelb}{Gelbes}
+\newcommand{\farbe}[2]{{\colorlet{farbefeld}{#1}\tikz[baseline=-0.6ex]\draw[fill=farbefeld, draw=black!60] (0,-1.1mm) rectangle (2.2mm,1.1mm);~\textcolor{farbefeld!70!black}{#2}}}
+\definecolor{zahnradgelb}{RGB}{245,200,0}
 
 \begin{document}
 	
@@ -404,7 +407,7 @@
 			\hline
 			\textbf{Bauteil} & \textbf{Intervall} & \textbf{Maßnahme} \\ \hline
 			Düsenabstreifer & vor jedem Druck & Frei von Filamentresten? PTFE-Seite unbeschädigt? Sonst tauschen. \\ \hline
-			Extruder & wöchentlich & Gelbes Zahnrad auf Filamentstaub prüfen, mit Druckluft ausblasen. \\ \hline
+			Extruder & wöchentlich & \farbe{zahnradgelb}{Gelbes} Zahnrad auf Filamentstaub prüfen, mit Druckluft ausblasen. \\ \hline
 			Carbonstangen (X-Achse) & monatlich prüfen & Nur bei Bedarf mit Isopropanol reinigen, bei ABS/ASA etwa alle 5 Rollen. Nicht zu oft reinigen, das verschlechtert die Druckqualität. \textbf{Nicht fetten oder ölen.} Dazu Riemenspanner lösen und danach neu kalibrieren, siehe Wiki. \\ \hline
 			Linearwellen (Y/Z) & monatlich prüfen & Bei Bedarf mit Isopropanol reinigen. Alle 3 Monate dünn einölen (Rostschutz). \\ \hline
 			Z-Gewindespindeln & alle 3 Monate & Reinigen und dünn fetten. \\ \hline
